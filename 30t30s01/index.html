@@ -1,0 +1,885 @@
+<style>
+  .build__wrap {
+    overflow: hidden;
+  }
+
+  /* ===== tab setting start ===== */
+  .tab__box {
+    display: flex;
+    padding-top: 5px;
+  }
+
+  .tab__item {
+    display: block;
+    padding: 5px;
+    width: 33.33%;
+    color: #5d5d5d;
+    background-color: rgba(230, 230, 230, 0.5);
+    border: 1px solid #999;
+    border-radius: 20px 20px 0 0;
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .tab__item span {
+    display: block;
+    margin: 0 6px;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  .tab__item.active {
+    background-color: #fff;
+  }
+
+  .build__wrap.tab__content {
+    display: none;
+    border: 1px solid #999;
+  }
+
+  .build__wrap.tab__content.active {
+    display: flex;
+  }
+
+  .build__wrap.tab__content.active .build__item {
+    animation: 1s left-right;
+  }
+
+  /* ===== card--small-space ===== */
+  .card--small-space .build__item {
+    margin-top: 0.4%;
+    margin-bottom: 0.4%;
+  }
+
+  .card--small-space .build__item:active,
+  .card--small-space .build__item:hover {
+    transform: scale(1.03);
+  }
+
+  .card--small-space .item__push span:before,
+  .card--small-space .item__push span:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 2px;
+    background-color: #999;
+  }
+
+  .card--small-space .item__push span:before {
+    top: 0;
+  }
+
+  .card--small-space .item__push span:after {
+    bottom: 0;
+  }
+
+  /* ===== card--small-space item *10 ===== */
+  .card--small-space.item--10 .build__item {
+    width: 49%;
+  }
+  
+  /* ===== RWD 768 ===== */
+  @media screen and (min-width: 768px) {
+    .card--small-space .build__item {
+      margin-top: 0.18%;
+      margin-bottom: 0.18%;
+    }
+
+    .card--small-space.item--10 .build__item {
+      width: 19.7%;
+    }
+  }
+
+  /* ===== animation ===== */
+  @keyframes left-right {
+    from {
+      transform: translateX(-20%);
+    }
+  }
+</style>
+<!-- banner 表頭 -->
+<section class="title__wrap" data-title="<!--[BANNER_ALT_1]-->">
+  <a href="<!--[BANNER_LINK_1]-->">
+    <div
+      class="title__wrap__img lazyload"
+      data-src="<!--[BANNER_IMG_1]-->"
+    ></div>
+  </a>
+</section>
+<!-- banner 表頭 end -->
+<main class="tab__wrap layout--main">
+  <div class="tab__box">
+    <a href="#tab1" class="tab__item active"
+      ><span><!--[CUSTOM_TAG1_1]--></span></a
+    >
+    <a href="#tab2" class="tab__item"
+      ><span><!--[CUSTOM_TAG1_2]--></span></a
+    >
+    <a href="#tab3" class="tab__item"
+      ><span><!--[CUSTOM_TAG1_3]--></span></a
+    >
+  </div>
+  <section
+    id="tab1"
+    class="build__wrap card--small-space item--10 tab__content active"
+  >
+    <div class="build__item">
+      <a href="<!--[GOOD_LINK_1]-->">
+        <div class="item__box">
+          <div class="item__pic">
+            <img
+              class="item__img lazyload"
+              data-src="<!--[GOOD_IMG_L_1]-->"
+              src="1x1_low.png"
+              alt=""
+            />
+          </div>
+          <div class="item__info">
+            <p class="item__push margin-top-sm margin-bottom-sm">
+              <span><!--[GOOD_DESC_1]--></span>
+            </p>
+            <p class="item__name margin-bottom-md"><!--[GOOD_NAME_1]--></p>
+            <div class="item__price margin-bottom-sm">
+              <span>$</span>
+              <span><!--[GOOD_SALEPRC_1]--></span>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="build__item">
+      <a href="<!--[GOOD_LINK_2]-->">
+        <div class="item__box">
+          <div class="item__pic">
+            <img
+              class="item__img lazyload"
+              data-src="<!--[GOOD_IMG_L_2]-->"
+              src="1x1_low.png"
+              alt=""
+            />
+          </div>
+          <div class="item__info">
+            <p class="item__push margin-top-sm margin-bottom-sm">
+              <span><!--[GOOD_DESC_2]--></span>
+            </p>
+            <p class="item__name margin-bottom-md"><!--[GOOD_NAME_2]--></p>
+            <div class="item__price margin-bottom-sm">
+              <span>$</span>
+              <span><!--[GOOD_SALEPRC_2]--></span>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="build__item">
+      <a href="<!--[GOOD_LINK_3]-->">
+        <div class="item__box">
+          <div class="item__pic">
+            <img
+              class="item__img lazyload"
+              data-src="<!--[GOOD_IMG_L_3]-->"
+              src="1x1_low.png"
+              alt=""
+            />
+          </div>
+          <div class="item__info">
+            <p class="item__push margin-top-sm margin-bottom-sm">
+              <span><!--[GOOD_DESC_3]--></span>
+            </p>
+            <p class="item__name margin-bottom-md"><!--[GOOD_NAME_3]--></p>
+            <div class="item__price margin-bottom-sm">
+              <span>$</span>
+              <span><!--[GOOD_SALEPRC_3]--></span>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="build__item">
+      <a href="<!--[GOOD_LINK_4]-->">
+        <div class="item__box">
+          <div class="item__pic">
+            <img
+              class="item__img lazyload"
+              data-src="<!--[GOOD_IMG_L_4]-->"
+              src="1x1_low.png"
+              alt=""
+            />
+          </div>
+          <div class="item__info">
+            <p class="item__push margin-top-sm margin-bottom-sm">
+              <span><!--[GOOD_DESC_4]--></span>
+            </p>
+            <p class="item__name margin-bottom-md"><!--[GOOD_NAME_4]--></p>
+            <div class="item__price margin-bottom-sm">
+              <span>$</span>
+              <span><!--[GOOD_SALEPRC_4]--></span>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="build__item">
+      <a href="<!--[GOOD_LINK_5]-->">
+        <div class="item__box">
+          <div class="item__pic">
+            <img
+              class="item__img lazyload"
+              data-src="<!--[GOOD_IMG_L_5]-->"
+              src="1x1_low.png"
+              alt=""
+            />
+          </div>
+          <div class="item__info">
+            <p class="item__push margin-top-sm margin-bottom-sm">
+              <span><!--[GOOD_DESC_5]--></span>
+            </p>
+            <p class="item__name margin-bottom-md"><!--[GOOD_NAME_5]--></p>
+            <div class="item__price margin-bottom-sm">
+              <span>$</span>
+              <span><!--[GOOD_SALEPRC_5]--></span>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="build__item">
+      <a href="<!--[GOOD_LINK_6]-->">
+        <div class="item__box">
+          <div class="item__pic">
+            <img
+              class="item__img lazyload"
+              data-src="<!--[GOOD_IMG_L_6]-->"
+              src="1x1_low.png"
+              alt=""
+            />
+          </div>
+          <div class="item__info">
+            <p class="item__push margin-top-sm margin-bottom-sm">
+              <span><!--[GOOD_DESC_6]--></span>
+            </p>
+            <p class="item__name margin-bottom-md"><!--[GOOD_NAME_6]--></p>
+            <div class="item__price margin-bottom-sm">
+              <span>$</span>
+              <span><!--[GOOD_SALEPRC_6]--></span>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="build__item">
+      <a href="<!--[GOOD_LINK_7]-->">
+        <div class="item__box">
+          <div class="item__pic">
+            <img
+              class="item__img lazyload"
+              data-src="<!--[GOOD_IMG_L_7]-->"
+              src="1x1_low.png"
+              alt=""
+            />
+          </div>
+          <div class="item__info">
+            <p class="item__push margin-top-sm margin-bottom-sm">
+              <span><!--[GOOD_DESC_7]--></span>
+            </p>
+            <p class="item__name margin-bottom-md"><!--[GOOD_NAME_7]--></p>
+            <div class="item__price margin-bottom-sm">
+              <span>$</span>
+              <span><!--[GOOD_SALEPRC_7]--></span>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="build__item">
+      <a href="<!--[GOOD_LINK_8]-->">
+        <div class="item__box">
+          <div class="item__pic">
+            <img
+              class="item__img lazyload"
+              data-src="<!--[GOOD_IMG_L_8]-->"
+              src="1x1_low.png"
+              alt=""
+            />
+          </div>
+          <div class="item__info">
+            <p class="item__push margin-top-sm margin-bottom-sm">
+              <span><!--[GOOD_DESC_8]--></span>
+            </p>
+            <p class="item__name margin-bottom-md"><!--[GOOD_NAME_8]--></p>
+            <div class="item__price margin-bottom-sm">
+              <span>$</span>
+              <span><!--[GOOD_SALEPRC_8]--></span>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="build__item">
+      <a href="<!--[GOOD_LINK_9]-->">
+        <div class="item__box">
+          <div class="item__pic">
+            <img
+              class="item__img lazyload"
+              data-src="<!--[GOOD_IMG_L_9]-->"
+              src="1x1_low.png"
+              alt=""
+            />
+          </div>
+          <div class="item__info">
+            <p class="item__push margin-top-sm margin-bottom-sm">
+              <span><!--[GOOD_DESC_9]--></span>
+            </p>
+            <p class="item__name margin-bottom-md"><!--[GOOD_NAME_9]--></p>
+            <div class="item__price margin-bottom-sm">
+              <span>$</span>
+              <span><!--[GOOD_SALEPRC_9]--></span>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="build__item">
+      <a href="<!--[GOOD_LINK_10]-->">
+        <div class="item__box">
+          <div class="item__pic">
+            <img
+              class="item__img lazyload"
+              data-src="<!--[GOOD_IMG_L_10]-->"
+              src="1x1_low.png"
+              alt=""
+            />
+          </div>
+          <div class="item__info">
+            <p class="item__push margin-top-sm margin-bottom-sm">
+              <span><!--[GOOD_DESC_10]--></span>
+            </p>
+            <p class="item__name margin-bottom-md"><!--[GOOD_NAME_10]--></p>
+            <div class="item__price margin-bottom-sm">
+              <span>$</span>
+              <span><!--[GOOD_SALEPRC_10]--></span>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+  </section>
+  <section
+    id="tab2"
+    class="build__wrap card--small-space item--10 tab__content"
+  >
+    <div class="build__item">
+      <a href="<!--[GOOD_LINK_11]-->">
+        <div class="item__box">
+          <div class="item__pic">
+            <img
+              class="item__img lazyload"
+              data-src="<!--[GOOD_IMG_L_11]-->"
+              src="1x1_low.png"
+              alt=""
+            />
+          </div>
+          <div class="item__info">
+            <p class="item__push margin-top-sm margin-bottom-sm">
+              <span><!--[GOOD_DESC_11]--></span>
+            </p>
+            <p class="item__name margin-bottom-md"><!--[GOOD_NAME_11]--></p>
+            <div class="item__price margin-bottom-sm">
+              <span>$</span>
+              <span><!--[GOOD_SALEPRC_11]--></span>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="build__item">
+      <a href="<!--[GOOD_LINK_12]-->">
+        <div class="item__box">
+          <div class="item__pic">
+            <img
+              class="item__img lazyload"
+              data-src="<!--[GOOD_IMG_L_12]-->"
+              src="1x1_low.png"
+              alt=""
+            />
+          </div>
+          <div class="item__info">
+            <p class="item__push margin-top-sm margin-bottom-sm">
+              <span><!--[GOOD_DESC_12]--></span>
+            </p>
+            <p class="item__name margin-bottom-md"><!--[GOOD_NAME_12]--></p>
+            <div class="item__price margin-bottom-sm">
+              <span>$</span>
+              <span><!--[GOOD_SALEPRC_12]--></span>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="build__item">
+      <a href="<!--[GOOD_LINK_13]-->">
+        <div class="item__box">
+          <div class="item__pic">
+            <img
+              class="item__img lazyload"
+              data-src="<!--[GOOD_IMG_L_13]-->"
+              src="1x1_low.png"
+              alt=""
+            />
+          </div>
+          <div class="item__info">
+            <p class="item__push margin-top-sm margin-bottom-sm">
+              <span><!--[GOOD_DESC_13]--></span>
+            </p>
+            <p class="item__name margin-bottom-md"><!--[GOOD_NAME_13]--></p>
+            <div class="item__price margin-bottom-sm">
+              <span>$</span>
+              <span><!--[GOOD_SALEPRC_13]--></span>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="build__item">
+      <a href="<!--[GOOD_LINK_14]-->">
+        <div class="item__box">
+          <div class="item__pic">
+            <img
+              class="item__img lazyload"
+              data-src="<!--[GOOD_IMG_L_14]-->"
+              src="1x1_low.png"
+              alt=""
+            />
+          </div>
+          <div class="item__info">
+            <p class="item__push margin-top-sm margin-bottom-sm">
+              <span><!--[GOOD_DESC_14]--></span>
+            </p>
+            <p class="item__name margin-bottom-md"><!--[GOOD_NAME_14]--></p>
+            <div class="item__price margin-bottom-sm">
+              <span>$</span>
+              <span><!--[GOOD_SALEPRC_14]--></span>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="build__item">
+      <a href="<!--[GOOD_LINK_15]-->">
+        <div class="item__box">
+          <div class="item__pic">
+            <img
+              class="item__img lazyload"
+              data-src="<!--[GOOD_IMG_L_15]-->"
+              src="1x1_low.png"
+              alt=""
+            />
+          </div>
+          <div class="item__info">
+            <p class="item__push margin-top-sm margin-bottom-sm">
+              <span><!--[GOOD_DESC_15]--></span>
+            </p>
+            <p class="item__name margin-bottom-md"><!--[GOOD_NAME_15]--></p>
+            <div class="item__price margin-bottom-sm">
+              <span>$</span>
+              <span><!--[GOOD_SALEPRC_15]--></span>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="build__item">
+      <a href="<!--[GOOD_LINK_16]-->">
+        <div class="item__box">
+          <div class="item__pic">
+            <img
+              class="item__img lazyload"
+              data-src="<!--[GOOD_IMG_L_16]-->"
+              src="1x1_low.png"
+              alt=""
+            />
+          </div>
+          <div class="item__info">
+            <p class="item__push margin-top-sm margin-bottom-sm">
+              <span><!--[GOOD_DESC_16]--></span>
+            </p>
+            <p class="item__name margin-bottom-md"><!--[GOOD_NAME_16]--></p>
+            <div class="item__price margin-bottom-sm">
+              <span>$</span>
+              <span><!--[GOOD_SALEPRC_16]--></span>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="build__item">
+      <a href="<!--[GOOD_LINK_17]-->">
+        <div class="item__box">
+          <div class="item__pic">
+            <img
+              class="item__img lazyload"
+              data-src="<!--[GOOD_IMG_L_17]-->"
+              src="1x1_low.png"
+              alt=""
+            />
+          </div>
+          <div class="item__info">
+            <p class="item__push margin-top-sm margin-bottom-sm">
+              <span><!--[GOOD_DESC_17]--></span>
+            </p>
+            <p class="item__name margin-bottom-md"><!--[GOOD_NAME_17]--></p>
+            <div class="item__price margin-bottom-sm">
+              <span>$</span>
+              <span><!--[GOOD_SALEPRC_17]--></span>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="build__item">
+      <a href="<!--[GOOD_LINK_18]-->">
+        <div class="item__box">
+          <div class="item__pic">
+            <img
+              class="item__img lazyload"
+              data-src="<!--[GOOD_IMG_L_18]-->"
+              src="1x1_low.png"
+              alt=""
+            />
+          </div>
+          <div class="item__info">
+            <p class="item__push margin-top-sm margin-bottom-sm">
+              <span><!--[GOOD_DESC_18]--></span>
+            </p>
+            <p class="item__name margin-bottom-md"><!--[GOOD_NAME_18]--></p>
+            <div class="item__price margin-bottom-sm">
+              <span>$</span>
+              <span><!--[GOOD_SALEPRC_18]--></span>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="build__item">
+      <a href="<!--[GOOD_LINK_19]-->">
+        <div class="item__box">
+          <div class="item__pic">
+            <img
+              class="item__img lazyload"
+              data-src="<!--[GOOD_IMG_L_19]-->"
+              src="1x1_low.png"
+              alt=""
+            />
+          </div>
+          <div class="item__info">
+            <p class="item__push margin-top-sm margin-bottom-sm">
+              <span><!--[GOOD_DESC_19]--></span>
+            </p>
+            <p class="item__name margin-bottom-md"><!--[GOOD_NAME_19]--></p>
+            <div class="item__price margin-bottom-sm">
+              <span>$</span>
+              <span><!--[GOOD_SALEPRC_19]--></span>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="build__item">
+      <a href="<!--[GOOD_LINK_20]-->">
+        <div class="item__box">
+          <div class="item__pic">
+            <img
+              class="item__img lazyload"
+              data-src="<!--[GOOD_IMG_L_20]-->"
+              src="1x1_low.png"
+              alt=""
+            />
+          </div>
+          <div class="item__info">
+            <p class="item__push margin-top-sm margin-bottom-sm">
+              <span><!--[GOOD_DESC_20]--></span>
+            </p>
+            <p class="item__name margin-bottom-md"><!--[GOOD_NAME_20]--></p>
+            <div class="item__price margin-bottom-sm">
+              <span>$</span>
+              <span><!--[GOOD_SALEPRC_20]--></span>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+  </section>
+  <section
+    id="tab3"
+    class="build__wrap card--small-space item--10 tab__content"
+  >
+    <div class="build__item">
+      <a href="<!--[GOOD_LINK_21]-->">
+        <div class="item__box">
+          <div class="item__pic">
+            <img
+              class="item__img lazyload"
+              data-src="<!--[GOOD_IMG_L_21]-->"
+              src="1x1_low.png"
+              alt=""
+            />
+          </div>
+          <div class="item__info">
+            <p class="item__push margin-top-sm margin-bottom-sm">
+              <span><!--[GOOD_DESC_21]--></span>
+            </p>
+            <p class="item__name margin-bottom-md"><!--[GOOD_NAME_21]--></p>
+            <div class="item__price margin-bottom-sm">
+              <span>$</span>
+              <span><!--[GOOD_SALEPRC_21]--></span>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="build__item">
+      <a href="<!--[GOOD_LINK_22]-->">
+        <div class="item__box">
+          <div class="item__pic">
+            <img
+              class="item__img lazyload"
+              data-src="<!--[GOOD_IMG_L_22]-->"
+              src="1x1_low.png"
+              alt=""
+            />
+          </div>
+          <div class="item__info">
+            <p class="item__push margin-top-sm margin-bottom-sm">
+              <span><!--[GOOD_DESC_22]--></span>
+            </p>
+            <p class="item__name margin-bottom-md"><!--[GOOD_NAME_22]--></p>
+            <div class="item__price margin-bottom-sm">
+              <span>$</span>
+              <span><!--[GOOD_SALEPRC_22]--></span>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="build__item">
+      <a href="<!--[GOOD_LINK_23]-->">
+        <div class="item__box">
+          <div class="item__pic">
+            <img
+              class="item__img lazyload"
+              data-src="<!--[GOOD_IMG_L_23]-->"
+              src="1x1_low.png"
+              alt=""
+            />
+          </div>
+          <div class="item__info">
+            <p class="item__push margin-top-sm margin-bottom-sm">
+              <span><!--[GOOD_DESC_23]--></span>
+            </p>
+            <p class="item__name margin-bottom-md"><!--[GOOD_NAME_23]--></p>
+            <div class="item__price margin-bottom-sm">
+              <span>$</span>
+              <span><!--[GOOD_SALEPRC_23]--></span>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="build__item">
+      <a href="<!--[GOOD_LINK_24]-->">
+        <div class="item__box">
+          <div class="item__pic">
+            <img
+              class="item__img lazyload"
+              data-src="<!--[GOOD_IMG_L_24]-->"
+              src="1x1_low.png"
+              alt=""
+            />
+          </div>
+          <div class="item__info">
+            <p class="item__push margin-top-sm margin-bottom-sm">
+              <span><!--[GOOD_DESC_24]--></span>
+            </p>
+            <p class="item__name margin-bottom-md"><!--[GOOD_NAME_24]--></p>
+            <div class="item__price margin-bottom-sm">
+              <span>$</span>
+              <span><!--[GOOD_SALEPRC_24]--></span>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="build__item">
+      <a href="<!--[GOOD_LINK_25]-->">
+        <div class="item__box">
+          <div class="item__pic">
+            <img
+              class="item__img lazyload"
+              data-src="<!--[GOOD_IMG_L_25]-->"
+              src="1x1_low.png"
+              alt=""
+            />
+          </div>
+          <div class="item__info">
+            <p class="item__push margin-top-sm margin-bottom-sm">
+              <span><!--[GOOD_DESC_25]--></span>
+            </p>
+            <p class="item__name margin-bottom-md"><!--[GOOD_NAME_25]--></p>
+            <div class="item__price margin-bottom-sm">
+              <span>$</span>
+              <span><!--[GOOD_SALEPRC_25]--></span>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="build__item">
+      <a href="<!--[GOOD_LINK_26]-->">
+        <div class="item__box">
+          <div class="item__pic">
+            <img
+              class="item__img lazyload"
+              data-src="<!--[GOOD_IMG_L_26]-->"
+              src="1x1_low.png"
+              alt=""
+            />
+          </div>
+          <div class="item__info">
+            <p class="item__push margin-top-sm margin-bottom-sm">
+              <span><!--[GOOD_DESC_26]--></span>
+            </p>
+            <p class="item__name margin-bottom-md"><!--[GOOD_NAME_26]--></p>
+            <div class="item__price margin-bottom-sm">
+              <span>$</span>
+              <span><!--[GOOD_SALEPRC_26]--></span>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="build__item">
+      <a href="<!--[GOOD_LINK_27]-->">
+        <div class="item__box">
+          <div class="item__pic">
+            <img
+              class="item__img lazyload"
+              data-src="<!--[GOOD_IMG_L_27]-->"
+              src="1x1_low.png"
+              alt=""
+            />
+          </div>
+          <div class="item__info">
+            <p class="item__push margin-top-sm margin-bottom-sm">
+              <span><!--[GOOD_DESC_27]--></span>
+            </p>
+            <p class="item__name margin-bottom-md"><!--[GOOD_NAME_27]--></p>
+            <div class="item__price margin-bottom-sm">
+              <span>$</span>
+              <span><!--[GOOD_SALEPRC_27]--></span>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="build__item">
+      <a href="<!--[GOOD_LINK_28]-->">
+        <div class="item__box">
+          <div class="item__pic">
+            <img
+              class="item__img lazyload"
+              data-src="<!--[GOOD_IMG_L_28]-->"
+              src="1x1_low.png"
+              alt=""
+            />
+          </div>
+          <div class="item__info">
+            <p class="item__push margin-top-sm margin-bottom-sm">
+              <span><!--[GOOD_DESC_28]--></span>
+            </p>
+            <p class="item__name margin-bottom-md"><!--[GOOD_NAME_28]--></p>
+            <div class="item__price margin-bottom-sm">
+              <span>$</span>
+              <span><!--[GOOD_SALEPRC_28]--></span>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="build__item">
+      <a href="<!--[GOOD_LINK_29]-->">
+        <div class="item__box">
+          <div class="item__pic">
+            <img
+              class="item__img lazyload"
+              data-src="<!--[GOOD_IMG_L_29]-->"
+              src="1x1_low.png"
+              alt=""
+            />
+          </div>
+          <div class="item__info">
+            <p class="item__push margin-top-sm margin-bottom-sm">
+              <span><!--[GOOD_DESC_29]--></span>
+            </p>
+            <p class="item__name margin-bottom-md"><!--[GOOD_NAME_29]--></p>
+            <div class="item__price margin-bottom-sm">
+              <span>$</span>
+              <span><!--[GOOD_SALEPRC_29]--></span>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="build__item">
+      <a href="<!--[GOOD_LINK_30]-->">
+        <div class="item__box">
+          <div class="item__pic">
+            <img
+              class="item__img lazyload"
+              data-src="<!--[GOOD_IMG_L_30]-->"
+              src="1x1_low.png"
+              alt=""
+            />
+          </div>
+          <div class="item__info">
+            <p class="item__push margin-top-sm margin-bottom-sm">
+              <span><!--[GOOD_DESC_30]--></span>
+            </p>
+            <p class="item__name margin-bottom-md"><!--[GOOD_NAME_30]--></p>
+            <div class="item__price margin-bottom-sm">
+              <span>$</span>
+              <span><!--[GOOD_SALEPRC_30]--></span>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+  </section>
+</main>
+<script src="lazyload.js"></script>
+<script>
+  var initLazyload = lazyload();
+</script>
+<script>
+  var tabs = document.getElementsByClassName("tab__item");
+  var contents = document.getElementsByClassName("tab__content");
+  function tabSwitch(e) {
+    e.preventDefault();
+    var tabEl = this.parentElement.children;
+    var tabContents = this.parentElement.parentElement.children;
+    var index = this.getAttribute("href");
+    index = index.split("#")[1];
+    for (var i = 0; i < tabEl.length; i++) {
+      tabEl[i].classList.remove("active");
+      tabContents[i + 1].classList.remove("active");
+      if (tabContents[i + 1].getAttribute("id") === index) {
+        tabContents[i + 1].classList.add("active");
+      }
+    }
+    this.classList.add("active");
+  }
+  for (var i = 0; i < tabs.length; i++) {
+    tabs[i].addEventListener("click", tabSwitch);
+  }
+</script>

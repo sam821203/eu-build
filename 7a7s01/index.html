@@ -1,0 +1,472 @@
+﻿<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<style>
+  /* ===== card--3c-special ===== */
+  .card--3c-special .build__item {
+    margin-bottom: 0.8%;
+  }
+
+  .card--3c-special .build__item:active,
+  .card--3c-special .build__item:hover {
+    transform: scale(1.05);
+  }
+
+  /* ===== card--3c-special item *6 ===== */
+  .card--3c-special.item--7 .build__item {
+    width: 48%;
+    margin: 1% 0.25%;
+  }
+
+  .card--3c-special .build__item {
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+  }
+
+  .card--3c-special .item__img {
+    border-radius: 0;
+  }
+
+  .card--3c-special .item__info {
+    position: relative;
+  }
+
+  .card--3c-special .item__name {
+    height: 32px;
+    margin-top: 5px;
+    font-size: 14px;
+  }
+
+  .card--3c-special .item__push span {
+    max-height: 21px;
+    line-height: 170%;
+    letter-spacing: 0;
+    color: #fff;
+    font-weight: 400;
+  }
+
+  /* 第一個宮格 */
+  .card--3c-special.item--7 .build__item__first {
+    width: 96%;
+  }
+
+  .card--3c-special.item--7 .build__item__first .item__info,
+  .card--3c-special.item--7 .build__item__first .item__pic {
+    float: left;
+  }
+
+  .card--3c-special.item--7 .build__item__first .item__info {
+    width: 60%;
+  }
+
+  .card--3c-special.item--7 .build__item__first .item__pic {
+    width: 40%;
+    height: auto;
+    padding: 0;
+    overflow: hidden;
+  }
+  
+  .card--3c-special .item__img {
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+  }
+
+  .card--3c-special .build__item__first .item__img {
+    border-radius: 0px;
+  }
+
+  .card--3c-special.item--7 .build__item__first .item__box {
+    display: flex;
+    align-items: center;
+    height: auto;
+    margin-top: 0;
+  }
+
+  .card--3c-special.item--7 .item__box:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+
+  .card--3c-special .build__item__first .item__special__title {
+    width: 100%;
+    height: 34px;
+    text-align: center;
+    font-weight: 300;
+  }
+
+  .card--3c-special .build__item__first .item__special__title h3 {
+    max-height: 34px;
+    background: #f01400;
+    background: -webkit-linear-gradient(to right, #f07219, #f01400, #f07219);
+    background: linear-gradient(to right, #f07219, #f01400, #f07219);
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    text-align: center;
+    color: #fff;
+    letter-spacing: 2px;
+    font-size: 20px;
+    line-height: 180%;
+  }
+
+  .card--3c-special .build__item__first .item__name {
+    height: auto;
+    font-size: 19px;
+  }
+
+  .card--3c-special.item--7 .build__item__first .item__push span {
+    width: 100%;
+    height: 41px;
+    max-height: 84px;
+    margin-left: 0;
+    color: #333;
+    text-align: left;
+    white-space: normal;
+    line-height: 1.5;
+  }
+
+  .card--3c-special.item--7 .build__item__first .item__push--outerFrame {
+    height: 41px;
+  }
+
+  .card--3c-special.item--7 .build__item__first .item__price {
+    margin-top: 0px;
+    font-size: 24px;
+  }
+
+  .card--3c-special.item--7 .build__item__first .item__price span {
+    height: 41px;
+    font-size: 18px;
+  }
+
+  .card--3c-special.item--7 .build__item__first .item__price,
+  .card--3c-special.item--7 .build__item__first .item__price span:last-child {
+    font-size: 24px;
+  }
+
+  .card--3c-special.item--7 .build__watchMore .watchMore__wrap a {
+    margin-top: 12%;
+    text-decoration: underline;
+    text-align: center;
+  }
+  /* 第一個宮格 END */
+
+  /* ===== item__push ===== */
+  .card--3c-special .item__push.bg__Custom {
+    background: #f01400;
+    background: <!--[CSS_BACKGROUND_COLOR]-->;
+    color: #fff;
+    /*color: <!--[CSS_COLOR]-->;*/
+    border-radius: 20px;
+    letter-spacing: 1.5px;
+  }
+
+  .card--3c-special .item__push--outerFrame {
+    width: 100%;
+    height: 21px;
+    font-size: 13px;
+    text-align: center;
+  }
+
+  .card--3c-special .item__push {
+    position: relative;
+    z-index: 1;
+    height: auto;
+    line-height: 140%;
+  }
+
+  .card--3c-special .build__item__first .item__img {
+    position: relative;
+  }
+
+  /* ===== RWD 413 ===== */
+  @media screen and (min-width: 413px) {
+    .card--3c-special .build__item__first .item__img {
+      border-radius: 0;
+      border-bottom-right-radius: 6px;
+    }
+  }
+
+  /* ===== RWD 768 ===== */
+  @media screen and (min-width: 768px) {
+    .card--3c-special .build__item {
+      margin-bottom: 0.35%;
+    }
+    
+    .card--3c-special.item--7 .build__item {
+      width: 24%;
+      margin: 0.33%;
+    }
+
+    .card--3c-special .item__push--outerFrame {
+      height: 28px;
+      font-size: 14px;
+    }
+
+    .card--3c-special .item__push span {
+      max-height: 28px;
+      line-height: 200%;
+    }
+
+    .card--3c-special .item__name {
+      height: 37px;
+      font-size: 15px;
+    }
+
+    .card--3c-special.item--7 .build__item__first {
+      width: 48.6%;
+    }
+
+    .card--3c-special.item--7 .build__item__first .item__info {
+      width: 50%;
+    }
+
+    .card--3c-special.item--7 .build__item__first .item__name {
+      font-size: 22px;
+    }
+
+    .card--3c-special.item--7 .build__item__first .item__pic {
+      width: 50%;
+    }
+
+    .card--3c-special.item--7 .build__item__first .item__push--outerFrame {
+      height: 84px;
+    }
+    
+    .card--3c-special.item--7 .build__item__first .item__push span {
+      height: auto;
+    }
+
+    .card--3c-special.item--7 .build__item__first .item__price {
+      margin-top: 10px;
+      font-size: 22px;
+    }
+
+    .card--3c-special.item--7 .build__item__first .item__price span {
+      font-size: 22px;
+    }
+
+    .card--3c-special.item--7 .build__item__first .item__price span:last-child {
+      font-size: 28px;
+    }
+
+    .card--3c-special.item--7 .build__item__first .item__box {
+      display: block;
+      margin-top: 7.5%;
+    }
+
+    .card--3c-special.item--7 .build__item__first .item__pic .item__img {
+      position: absolute;
+      border-radius: 0;
+    }
+
+    .card--3c-special.item--7 .build__item__first .item__pic {
+      height: 100%;
+    }
+  }
+</style>
+<!-- banner 表頭 -->
+<section class="title__wrap title--m" data-title="<!--[BANNER_ALT_1]-->">
+  <a href="<!--[BANNER_LINK_1]-->">
+    <div
+      class="title__wrap__img lazyload"
+      data-src="<!--[BANNER_IMG_1]-->"
+    ></div>
+  </a>
+</section>
+<!-- banner 表頭 end -->
+<section class="build__wrap layout--main build__grid--m card--3c-special item--7 wow">
+  <div class="build__item build__item__first">
+    <div class="item__special__title">
+      <h3><!--[CUSTOM_TAG1_1]--></h3>
+    </div>
+    <a href="<!--[GOOD_LINK_1]-->">
+      <div class="item__box">
+        <div class="item__info">
+          <p class="item__name margin-bottom-md"><!--[GOOD_NAME_1]--></p>
+          <div class="item__push--outerFrame">
+            <p class="item__push margin-top-sm margin-bottom-sm">
+              <span><!--[GOOD_DESC_1]--></span>
+            </p>
+          </div>
+          <div class="item__price margin-bottom-sm">
+            <span>$</span>
+            <span><!--[GOOD_SALEPRC_1]--></span>
+          </div>
+        </div>
+        <div class="item__pic">
+          <img
+            class="item__img lazyload"
+            data-src="<!--[GOOD_IMG_XXL_1]-->"
+            src="1x1_low.png"
+            alt=""
+          />
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="build__item">
+    <a href="<!--[GOOD_LINK_2]-->">
+      <div class="item__box">
+        <div class="item__pic">
+          <img
+            class="item__img lazyload"
+            data-src="<!--[GOOD_IMG_XXL_2]-->"
+            src="1x1_low.png"
+            alt=""
+          />
+        </div>
+        <div class="item__info">
+          <div class="item__push--outerFrame">
+            <p class="item__push margin-top-sm margin-bottom-sm bg__Custom">
+              <span><!--[GOOD_DESC_2]--></span>
+            </p>
+          </div>
+          <p class="item__name margin-bottom-md"><!--[GOOD_NAME_2]--></p>
+          <div class="item__price margin-bottom-sm">
+            <span>$</span>
+            <span><!--[GOOD_SALEPRC_2]--></span>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="build__item">
+    <a href="<!--[GOOD_LINK_3]-->">
+      <div class="item__box">
+        <div class="item__pic">
+          <img
+            class="item__img lazyload"
+            data-src="<!--[GOOD_IMG_L_3]-->"
+            src="1x1_low.png"
+            alt=""
+          />
+        </div>
+        <div class="item__info">
+          <div class="item__push--outerFrame">
+            <p class="item__push margin-top-sm margin-bottom-sm bg__Custom">
+              <span><!--[GOOD_DESC_3]--></span>
+            </p>
+          </div>
+          <p class="item__name margin-bottom-md"><!--[GOOD_NAME_3]--></p>
+          <div class="item__price margin-bottom-sm">
+            <span>$</span>
+            <span><!--[GOOD_SALEPRC_3]--></span>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="build__item">
+    <a href="<!--[GOOD_LINK_4]-->">
+      <div class="item__box">
+        <div class="item__pic">
+          <img
+            class="item__img lazyload"
+            data-src="<!--[GOOD_IMG_L_4]-->"
+            src="1x1_low.png"
+            alt=""
+          />
+        </div>
+        <div class="item__info">
+          <div class="item__push--outerFrame">
+            <p class="item__push margin-top-sm margin-bottom-sm bg__Custom">
+              <span><!--[GOOD_DESC_4]--></span>
+            </p>
+          </div>
+          <p class="item__name margin-bottom-md"><!--[GOOD_NAME_4]--></p>
+          <div class="item__price margin-bottom-sm">
+            <span>$</span>
+            <span><!--[GOOD_SALEPRC_4]--></span>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="build__item">
+    <a href="<!--[GOOD_LINK_5]-->">
+      <div class="item__box">
+        <div class="item__pic">
+          <img
+            class="item__img lazyload"
+            data-src="<!--[GOOD_IMG_L_5]-->"
+            src="1x1_low.png"
+            alt=""
+          />
+        </div>
+        <div class="item__info">
+          <div class="item__push--outerFrame">
+            <p class="item__push margin-top-sm margin-bottom-sm bg__Custom">
+              <span><!--[GOOD_DESC_5]--></span>
+            </p>
+          </div>
+          <p class="item__name margin-bottom-md"><!--[GOOD_NAME_5]--></p>
+          <div class="item__price margin-bottom-sm">
+            <span>$</span>
+            <span><!--[GOOD_SALEPRC_5]--></span>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="build__item">
+    <a href="<!--[GOOD_LINK_6]-->">
+      <div class="item__box">
+        <div class="item__pic">
+          <img
+            class="item__img lazyload"
+            data-src="<!--[GOOD_IMG_L_6]-->"
+            src="1x1_low.png"
+            alt=""
+          />
+        </div>
+        <div class="item__info">
+          <div class="item__push--outerFrame">
+            <p class="item__push margin-top-sm margin-bottom-sm bg__Custom">
+              <span><!--[GOOD_DESC_6]--></span>
+            </p>
+          </div>
+          <p class="item__name margin-bottom-md"><!--[GOOD_NAME_6]--></p>
+          <div class="item__price margin-bottom-sm">
+            <span>$</span>
+            <span><!--[GOOD_SALEPRC_6]--></span>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="build__item build__watchMore">
+    <div class="item__box">
+      <div class="item__pic">
+        <img
+          class="item__img lazyload"
+          data-src="<!--[GOOD_IMG_L_7]-->"
+          src="1x1_low.png"
+          alt=""
+        />
+      </div>
+      <div class="item__info">
+        <div class="item__push--outerFrame">
+          <p class="item__push margin-top-sm margin-bottom-sm bg__Custom">
+            <span><!--[GOOD_DESC_7]--></span>
+          </p>
+        </div>
+
+        <!-- 必填 -->
+        <p class="item__name margin-bottom-md" style="display: none">
+          <!--[GOOD_NAME_7]-->
+        </p>
+        <div class="watchMore__wrap">
+          <a href="<!--[GOOD_LINK_7]-->">看更多>></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<script src="wow.min.js"></script>
+<script src="lazyload.js"></script>
+<script>
+  new WOW().init();
+  var initLazyload = lazyload();
+</script>

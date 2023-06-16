@@ -1,0 +1,344 @@
+<style>
+  /* ===== card--material ===== */
+  .card--material .build__item:active,
+  .card--material .build__item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2), 0 3px 3px rgba(0, 0, 0, 0.25);
+  }
+
+
+  /* ===== card--material item *4 ===== */
+  .card--material.item--4 .build__item {
+    width: 48%;
+  }
+
+  @media screen and (min-width: 768px) {
+    .card--material .build__item {
+      margin-top: 0.5%;
+      margin-bottom: 0.5%;
+    }
+
+    .card--material.item--4 .build__item {
+      width: 24%;
+    }
+  }
+
+  /* train */
+  .pull {
+    animation: pull 2s infinite linear;
+  }
+
+  .putt {
+    animation: putt .4s linear infinite;
+  }
+
+  @keyframes pull {
+    0% {
+      transform: translateX(5%);
+    }
+    25% {
+      transform: translateX(10%);
+    }
+    50% {
+      transform: translateX(5%);
+    }
+    75% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(5%);
+    }
+  }
+
+  @keyframes putt {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(1px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+
+  .smoke::after {
+    content: "";
+    position: absolute;
+    top: 9px;
+    left: 1.75%;
+    width: 12px;
+    height: 12px;
+    background: #acacac;
+    border-radius: 100%;
+    transform: translate(-50%, 0px) scale(0);
+    opacity: 0.5;
+    animation: smoke 1s linear infinite;
+  }
+
+  @keyframes smoke {
+    0% {
+      transform: translate(-50%, 0px) scale(0);
+    }
+    10% {
+      transform: translate(-50%, -6px) scale(0.2);
+    }
+    20% {
+      transform: translate(-50%, -8px) scale(0.4);
+    }
+    30% {
+      transform: translate(-50%, -10px) scale(0.6);
+    }
+    40% {
+      transform: translate(-50%, -12px) scale(0.8);
+    }
+    50% {
+      transform: translate(-50%, -14px) scale(1);
+    }
+    60% {
+      transform: translate(-50%, -16px) scale(0.8);
+    }
+    70% {
+      transform: translate(-50%, -18px) scale(0.6);
+    }
+    80% {
+      transform: translate(-50%, -20px) scale(0.4);
+    }
+    90% {
+      transform: translate(-50%, -22px) scale(0.2);
+    }
+    100% {
+      transform: translate(-50%, -24px) scale(0);
+    }
+  }
+
+  /* ===== shine ===== */
+  .shine {
+    position: relative;
+    background: -webkit-linear-gradient(30deg, #cc1e05, #cc1e05);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.4s ease-in-out 0s;
+  }
+
+  .shine::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -25px;
+    width: 30px;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.65);
+    transform: skewX(-15deg);
+    -webkit-filter: blur(2px);
+    animation: shine 2.5s linear infinite;
+  }
+
+  @keyframes shine {
+    0%,
+    65%,
+    90% {
+      opacity: 0;
+      left: -25px;
+    }
+    75%, 
+    100% {
+      opacity: 1;
+      left: 50px;
+    }
+    76% {
+      opacity: 0;
+      left: 50px;
+    }
+  }
+
+  /* ===== flip X ===== */
+  .price-flip-x {
+    animation: 2s priceFlipX ease infinite;
+  }
+
+  @keyframes priceFlipX {
+    0% {
+      opacity: 0;
+      transform: rotateX(90deg);
+    }
+    70% {
+      opacity: 1;
+      transform: rotateX(720deg);
+    }
+    100% {
+      opacity: 1;
+      transform: rotateX(720deg);
+    }
+  }
+
+  /* after img */
+  .price__info span:last-child.after-img {
+    position: relative;
+  }
+
+  .price__info span:last-child.after-img::after {
+    content: "";
+    position: absolute;
+    top: -2.5px;
+    z-index: 1;
+    width: 24px;
+    height: 32px;
+    margin-left: 6px;
+    background: url(flame.svg) center 0 no-repeat;
+    animation: afterImg 1s ease-in-out -1s infinite;
+  }
+
+  @media screen and (min-width: 960px) {
+    .after-img::after {
+      width: 30px;
+      height: 36px;
+    }
+  }
+
+  @keyframes afterImg {
+    0% {
+      transform: translateX(0) skewX(2deg);
+      transform-origin: bottom right 60px;
+      opacity: 0;
+    }
+    6.5% {
+      transform: translateX(-2px) rotateY(-6deg) skewX(-2deg);
+      filter: brightness(1.1);
+      opacity: 1;
+    }
+    18.5% {
+      transform: translateX(2px) rotateY(5deg) skewX(2deg);
+      filter: brightness(1.15);
+    }
+    31.5% {
+      transform: translateX(-1px) rotateY(-3deg) skewX(-2deg);
+      filter: brightness(1.2);
+    }
+    43.5% {
+      transform: translateX(1px) rotateY(1deg) skewX(0deg);
+      filter: brightness(1.25);
+    }
+    50% {
+      transform: translateX(0);
+      filter: brightness(1.15);
+    }
+    60% {
+      opacity: 1;
+    }
+
+    80% {
+      filter: brightness(1);
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+</style>
+<!-- banner 表頭 -->
+<section class="title__wrap" data-title="<!--[BANNER_ALT_1]-->">
+  <a href="<!--[BANNER_LINK_1]-->">
+    <div
+      class="title__wrap__img lazyload"
+      data-src="<!--[BANNER_IMG_1]-->"
+    ></div>
+  </a>
+</section>
+<!-- banner 表頭 end -->
+<section class="build__wrap layout--main card--material item--4" data-animate="<!--[CUSTOM_TAG1_1]-->">
+  <div class="build__item">
+    <a href="<!--[GOOD_LINK_1]-->">
+      <div class="item__box">
+        <div class="item__pic xl__item">
+          <img
+            class="item__img lazyload"
+            data-src="<!--[GOOD_IMG_XXL_1]-->"
+            src="1x1_low.png"
+            alt=""
+          />
+        </div>
+        <div class="item__info">
+          <p class="item__name margin-bottom-md"><!--[GOOD_NAME_1]--></p>
+          <div class="item__price margin-bottom-sm">
+            <div class="price__info after-img">
+              <span>$</span>
+              <span><!--[GOOD_SALEPRC_1]--></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="build__item">
+    <a href="<!--[GOOD_LINK_2]-->">
+      <div class="item__box">
+        <div class="item__pic xl__item">
+          <img
+            class="item__img lazyload"
+            data-src="<!--[GOOD_IMG_XXL_2]-->"
+            src="1x1_low.png"
+            alt=""
+          />
+        </div>
+        <div class="item__info">
+          <p class="item__name margin-bottom-md"><!--[GOOD_NAME_2]--></p>
+          <div class="item__price margin-bottom-sm">
+            <div class="price__info after-img">
+              <span>$</span>
+              <span><!--[GOOD_SALEPRC_2]--></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="build__item">
+    <a href="<!--[GOOD_LINK_3]-->">
+      <div class="item__box">
+        <div class="item__pic xl__item">
+          <img
+            class="item__img lazyload"
+            data-src="<!--[GOOD_IMG_XXL_3]-->"
+            src="1x1_low.png"
+            alt=""
+          />
+        </div>
+        <div class="item__info">
+          <p class="item__name margin-bottom-md"><!--[GOOD_NAME_3]--></p>
+          <div class="item__price margin-bottom-sm">
+            <div class="price__info after-img">
+              <span>$</span>
+              <span><!--[GOOD_SALEPRC_3]--></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="build__item">
+    <a href="<!--[GOOD_LINK_4]-->">
+      <div class="item__box">
+        <div class="item__pic xl__item">
+          <img
+            class="item__img lazyload"
+            data-src="<!--[GOOD_IMG_XXL_4]-->"
+            src="1x1_low.png"
+            alt=""
+          />
+        </div>
+        <div class="item__info">
+          <p class="item__name margin-bottom-md"><!--[GOOD_NAME_4]--></p>
+          <div class="item__price margin-bottom-sm">
+            <div class="price__info">
+              <span>$</span>
+              <span><!--[GOOD_SALEPRC_4]--></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+</section>
+<script src="lazyload.js"></script>
+<script src="index.js"></script>

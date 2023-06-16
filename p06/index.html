@@ -1,0 +1,101 @@
+<style>
+  /* ===== p02 setting start ===== */
+  .p06 .build__item {
+    margin-top: 0.4%;
+    margin-bottom: 0.4%;
+    background-color: #fff;
+    border: 1px solid #ededed;
+    transition: transform 0.16s;
+  }
+
+  .p06 .build__item:active,
+  .p06 .build__item:hover {
+    transform: scale(1.03);
+  }
+
+  .p06 .item__push span:before,
+  .p06 .item__push span:after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #999;
+  }
+
+  .p06 .item__push span:before {
+    top: 0;
+  }
+
+  .p06 .item__push span:after {
+    bottom: 0;
+  }
+
+  /* ===== p06 item *4 ===== */
+  .p06.item--4 .build__item {
+    width: 49%;
+  }
+
+  .title__wrap__text .title__info {
+    color: #fff;
+    font-size: 2em;
+  }
+
+  /* ===== RWD 768 ===== */
+  @media screen and (min-width: 768px) {
+    .p06 .build__item {
+      margin-top: 0.2%;
+      margin-bottom: 0.2%;
+    }
+
+    .p06.item--4 .build__item {
+      width: 24.7%;
+    }
+  }
+</style>
+<!-- banner 表頭 -->
+<section
+  class="title__wrap__text"
+  style="background-color: <!--[CSS_BACKGROUND_COLOR]-->"
+>
+  <a href="<!--[BANNER_LINK_1]-->">
+    <div class="title__info" style="color: <!--[CSS_COLOR]-->">
+      <!--[BANNER_TITLE_1]-->
+    </div>
+    <div
+      class="title__wrap__text__img lazyload"
+      data-src="<!--[BANNER_IMG_1]-->"
+      style="display: none"
+    ></div>
+  </a>
+</section>
+<!-- banner 表頭 end -->
+<section class="build__wrap layout--main p06 item--4" style="display: none">
+  <div class="build__item">
+    <a href="<!--[GOOD_LINK_1]-->">
+      <div class="item__box">
+        <div class="item__pic xl__item">
+          <img
+            class="item__img lazyload"
+            data-src="<!--[GOOD_IMG_XXL_1]-->"
+            src="1x1_low.png"
+            alt=""
+          />
+          <!--<img class="item__img lazyload" data-src="https://media.etmall.com.tw/NXimg/002573/2573372/2573372-1_XXL.jpg" src="1x1_low.png" alt="">-->
+        </div>
+        <div class="item__info">
+          <p class="item__name margin-bottom-md"><!--[GOOD_NAME_1]--></p>
+          <div class="item__price margin-bottom-sm">
+            <span>$</span>
+            <span><!--[GOOD_SALEPRC_1]--></span>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+</section>
+<script src="lazyload.js"></script>
+<script>
+  var initLazyload = lazyload();
+</script>

@@ -1,0 +1,101 @@
+<style>
+  /* ===== card--material hover & active ===== */
+  .card--material .build__item:active,
+  .card--material .build__item:hover {
+    transform: translateY(-3px); 
+    box-shadow: 0 3px 6px rgba(0,0,0,0.2), 0 3px 3px rgba(0,0,0,0.25);
+  }
+
+  .item__logo{
+    width: 100%;
+    height: auto;
+    padding: 0 25%;
+  }
+
+  .item__logo img{
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+  }
+
+  /* ===== card--material item *4 ===== */
+  .card--material.item--4 .build__item {
+    width: 48%;
+  }
+
+  /* ===== RWD 768 ===== */
+  @media screen and (min-width: 768px) {
+    .card--material .build__item {
+      margin-top: 0.5%;
+      margin-bottom: 0.5%;
+    }
+
+    .card--material.item--4 .build__item {
+      width: 24%;
+    }
+  }
+</style>
+<section class="build__wrap layout--main card--material item--4">
+  <div class="build__item">
+    <a href="<!--[GOOD_LINK_1]-->">
+      <div class="item__box">
+        <div class="item__pic">
+          <!-- <img class="item__img" src="[GOOD_IMG_XL_1]" alt=""> -->
+          <img class="item__img" src="<!--[GOOD_IMG_XL_1]-->" alt="">
+        </div>
+        <div class="item__info">
+          <!-- <p class="item__name margin-bottom-md">[GOOD_NAME_1]</p> -->
+          <p class="item__name"><!--[GOOD_NAME_1]--></p>
+          <div class="item__logo">
+            <img src="https://media.etmall.com.tw/sp/12846/OPPO.jpg" alt="">
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="build__item">
+    <a href="<!--[GOOD_LINK_2]-->">
+      <div class="item__box">
+        <div class="item__pic">
+          <img class="item__img" src="<!--[GOOD_IMG_XL_2]-->" alt="">
+        </div>
+        <div class="item__info">
+          <p class="item__name"><!--[GOOD_NAME_2]--></p>
+          <div class="item__logo">
+            <img src="https://media.etmall.com.tw/sp/12846/LG.jpg" alt="">
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="build__item">
+    <a href="<!--[GOOD_LINK_3]-->">
+      <div class="item__box">
+        <div class="item__pic">
+          <img class="item__img" src="<!--[GOOD_IMG_XL_3]-->" alt="">
+        </div>
+        <div class="item__info">
+          <p class="item__name"><!--[GOOD_NAME_3]--></p>
+          <div class="item__logo">
+            <img src="https://media.etmall.com.tw/sp/12846/EPSON.jpg" alt="">
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="build__item">
+    <a href="<!--[GOOD_LINK_4]-->">
+      <div class="item__box">
+        <div class="item__pic">
+          <img class="item__img" src="<!--[GOOD_IMG_XL_4]-->" alt="">
+        </div>
+        <div class="item__info">
+          <p class="item__name"><!--[GOOD_NAME_4]--></p>
+          <div class="item__logo">
+            <img src="https://media.etmall.com.tw/sp/12846/BENQ.jpg" alt="">
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+</section>

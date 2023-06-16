@@ -1,0 +1,1372 @@
+<style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  *:before,
+  *:after {
+    box-sizing: border-box;
+  }
+
+  a {
+    display: block;
+    text-decoration: none;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  img {
+    border: 0;
+  }
+
+  section {
+    display: block;
+    margin-bottom: 10%;
+  }
+
+  body {
+    font-size: 14px;
+    font-family: PingFangTC-regular, Roboto, "LiHei Pro", "Source Han Sans TC",
+      -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, "Microsoft JhengHei",
+      sans-serif;
+  }
+
+  /* 小網title */
+  .head__wrap {
+    margin: 0 auto;
+    max-width: 960px;
+    height: 55px;
+    background: #fff;
+    padding: 5px;
+  }
+
+  .head__wrap :after {
+    clear: both;
+    content: "";
+    display: block;
+    overflow: auto;
+  }
+
+  .community__ico {
+    float: right;
+  }
+
+  .head__ico {
+    float: left;
+  }
+
+  .head__ico img {
+    height: 45px;
+    width: auto;
+    padding-left: 5px;
+  }
+
+  .bg-line a {
+    width: 35px;
+    height: 35px;
+    background: url("./images/line.jpg") no-repeat;
+    background-size: 35px, 35px;
+    border-radius: 5px;
+  }
+
+  .bg-facebook a {
+    width: 35px;
+    height: 35px;
+    background: url("./images/facebook.jpg") no-repeat;
+    background-size: 35px, 35px;
+  }
+
+  .community__ico li {
+    display: inline-block;
+    margin-top: 4px;
+    margin-right: 5px;
+    line-height: 40px;
+    cursor: pointer;
+  }
+
+  .community__ico li.bg-line {
+    display: none;
+  }
+  /* 小網title End */
+
+  /* margin 調整 */
+  .margin-top-sm {
+    margin-top: 2%;
+  }
+
+  .margin-bottom-sm {
+    margin-bottom: 2%;
+  }
+
+  .margin-bottom-md {
+    margin-bottom: 4%;
+  }
+
+  .margin-bottom-lg {
+    margin-bottom: 8%;
+  }
+
+  /* build & item */
+  .layout--main {
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .build__wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .build__item a {
+    color: #323232;
+  }
+
+  .item__pic {
+    position: relative;
+    z-index: 0;
+    padding-top: 100%;
+    overflow: hidden;
+  }
+
+  .item__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    display: block;
+    width: 100%;
+  }
+
+  .item__info {
+    padding: 2%;
+  }
+
+  .item__push {
+    width: 100%;
+    height: 28px;
+    text-align: center;
+  }
+
+  .item__push span {
+    position: relative;
+    z-index: 0;
+    display: block;
+    max-height: 28px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    line-height: 200%;
+    color: #cc1e05;
+    font-weight: bold;
+    overflow: hidden;
+  }
+
+  .item__name {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    text-overflow: ellipsis;
+    height: 36px;
+    line-height: 120%;
+    font-size: 15px;
+    overflow: hidden;
+  }
+
+  .item__price span:last-child {
+    color: #cc1e05;
+    font-size: 22px;
+  }
+
+  /* ===== animation setting start ===== */
+  .build__wrap.wow {
+    animation: 0.5s bounce-in-left both;
+  }
+
+  @keyframes bounce-in-left {
+    from {
+      transform: translateX(-30%);
+    }
+
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes bounce-in-left-top {
+    from {
+      transform: translate(-50%, 0);
+    }
+
+    to {
+      transform: translate(0, 0);
+    }
+  }
+  /* ===== animation setting end ===== */
+
+  /* banner 表頭 */
+  .title__wrap {
+    max-width: 960px;
+    margin: 0.5% auto;
+    padding: 0;
+  }
+
+  .title__wrap__img {
+    margin: 0;
+    height: 65px;
+    border: 0;
+    background: 50% 0% / auto auto no-repeat;
+  }
+  /* banner 表頭 end */
+
+  /* ===== item__push & item__btn background-color start ===== */
+  .item__push.bg__blue,
+  .item__btn.bg__blue {
+    background: #3000b1;
+    background: -webkit-linear-gradient(to right, #1a00ea, #3000b1, #1a00ea);
+    background: linear-gradient(to right, #1a00ea, #3000b1, #1a00ea);
+    border-radius: 20px;
+    color: #fff;
+    letter-spacing: 1.5px;
+  }
+
+  .item__push.bg__green,
+  .item__btn.bg__green {
+    background: #3ca55c;
+    background: -webkit-linear-gradient(to right, #7fc313, #3ca55c, #7fc313);
+    background: linear-gradient(to right, #7fc313, #3ca55c, #7fc313);
+    border-radius: 20px;
+    color: #fff;
+    letter-spacing: 1.5px;
+  }
+
+  .item__push.bg__red,
+  .item__btn.bg__red {
+    background: #f01400;
+    background: -webkit-linear-gradient(to right, #f07219, #f01400, #f07219);
+    background: linear-gradient(to right, #f07219, #f01400, #f07219);
+    border-radius: 20px;
+    color: #fff;
+    letter-spacing: 1.5px;
+  }
+
+  .item__push.bg__gradient--orange,
+  .item__btn.bg__gradient--orange {
+    background: -webkit-linear-gradient(to right, #FFBB99, #FE884E);
+    background: linear-gradient(to right, #FFBB99, #FE884E);
+    color: #fff;
+    letter-spacing: 1px;
+  }
+
+  .item__push.bg__gradient--orange2,
+  .item__btn.bg__gradient--orange2 {
+    background: -webkit-linear-gradient(to right, #FE884E, #FE5A0A);
+    background: linear-gradient(to right, #FE884E, #FE5A0A);
+    color: #fff;
+    letter-spacing: 1px;
+  }
+
+  .item__push.bg__gradient--red,
+  .item__btn.bg__gradient--red {
+    background: -webkit-linear-gradient(to right, #FC9486, #F93013);
+    background: linear-gradient(to right, #FC9486, #F93013);
+    color: #fff;
+    letter-spacing: 1px;
+  }
+
+  .item__push.bg__gradient--red2,
+  .item__btn.bg__gradient--red2 {
+    background: -webkit-linear-gradient(to right, #F93013, #B21A04);
+    background: linear-gradient(to right, #F93013, #B21A04);
+    color: #fff;
+    letter-spacing: 1px;
+  }
+
+  .item__push.bg__gradient--blue,
+  .item__btn.bg__gradient--blue {
+    background: -webkit-linear-gradient(to right, #98CEFF, #2297FF);
+    background: linear-gradient(to right, #98CEFF, #2297FF);
+    color: #fff;
+    letter-spacing: 1px;
+  }
+
+  .item__push.bg__gradient--blue2,
+  .item__btn.bg__gradient--blue2 {
+    background: -webkit-linear-gradient(to right, #2297FF, #0065BF);
+    background: linear-gradient(to right, #2297FF, #0065BF);
+    color: #fff;
+    letter-spacing: 1px;
+  } 
+
+  .item__push.bg__gradient--green,
+  .item__btn.bg__gradient--green {
+    background: -webkit-linear-gradient(to right, #9BDAA6, #50BE64);
+    background: linear-gradient(to right, #9BDAA6, #50BE64);
+    color: #fff;
+    letter-spacing: 1px;
+  }
+
+  .item__push.bg__gradient--green2,
+  .item__btn.bg__gradient--green2 {
+    background: -webkit-linear-gradient(to right, #9BDAA6, #22A14E);
+    background: linear-gradient(to right, #9BDAA6, #22A14E);
+    color: #fff;
+    letter-spacing: 1px;
+  }
+  /* ===== item__push & item__btn background-color end ===== */
+
+  /* ===== card--discount-price-4 ===== */
+  .card--discount-price-4 .build__item {
+    margin-bottom: 0.8%;
+    background-color: #fff;
+    transition: transform 0.16s;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 20%);
+  }
+
+  .card--discount-price-4 .build__item:active,
+  .card--discount-price-4 .build__item:hover {
+    transform: scale(1.02);
+  }
+
+  /* ===== card--discount-price-4 item *6 ===== */
+  .card--discount-price-4.item--4 .build__item {
+    width: 49%;
+    margin: 1% 0.25%;
+  }
+
+  .card--discount-price-4 .build__item,
+  .card--discount-price-4 .item__img {
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+  }
+
+  .card--discount-price-4 .item__info {
+    position: relative;
+    padding: 0 0 2%
+  }
+
+  .card--discount-price-4 .item__name {
+    height: 32px;
+    margin-top: 0;
+    padding-left: 3%;
+    padding-right: 3%;
+    font-size: 14px;
+    line-height: 130%;
+  }
+
+  .card--discount-price-4 .item__price {
+    padding-left: 3%;
+    padding-right: 3%;
+  }
+
+  /* ===== item__push ===== */
+  .card--discount-price-4 .item__push span {
+    max-height: 21px;
+    color: #fff;
+    font-weight: 400;
+    line-height: 170%;
+    letter-spacing: 0.5px;
+  }
+
+  .card--discount-price-4 .item__push--outerFrame {
+    height: 21px;
+    font-size: 14px;
+    text-align: center;
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 20%);
+  }
+
+  .card--discount-price-4 .item__push {
+    position: relative;
+    z-index: 1;
+    height: auto;
+    margin-top: 0;
+    padding: 0 5%;
+    line-height: 140%;
+  }
+
+  .card--discount-price-4 .item__price span {
+    display: inline-flex;
+    height: 20px;
+    line-height: 20px;
+  }
+
+  .card--discount-price-4 .item__price .price-original {
+    display: block;
+    text-decoration: line-through;
+    height: 20px;
+    color: #999;
+  }
+
+  .card--discount-price-4 .item__price .price-discount {
+    color: #cc1e05;
+    font-size: 22px;
+  }
+
+  .card--discount-price-4 .item__price .price-t {
+    max-width: 44px;
+    margin-left: 0;
+    overflow: hidden;
+  }
+
+  .card--discount-price-4 .item__price .price-unit {
+    max-width: 44px;
+    overflow: hidden;
+  }
+
+  .card--discount-price-4 .item__price .price-t,
+  .card--discount-price-4 .item__price .price-symbol,
+  .card--discount-price-4 .item__price .price-unit {
+    color: #cc1e05;
+    font-weight: 400;
+    font-size: 14px;
+  }
+
+   /* ===== RWD 425 ===== */
+  @media screen and (min-width: 425px) {
+    .card--discount-price-4 .item__price .price-discount {
+      font-size: 28px;
+    }
+
+    .card--discount-price-4 .item__price .price-t {
+      max-width: 50px;
+    }
+
+    .card--discount-price-4 .item__price .price-t {
+      margin-left: 10px;
+    }
+
+    .card--discount-price-4 .item__price .price-t,
+    .card--discount-price-4 .item__price .price-symbol,
+    .card--discount-price-4 .item__price .price-unit {
+      font-size: 16px;
+    }
+  }
+
+  /* ===== RWD 768 ===== */
+  @media screen and (min-width: 768px) {
+    .card--discount-price-4 .build__item {
+      margin-bottom: 0.35%;
+    }
+
+    .card--discount-price-4.item--4 .build__item {
+      width: 24%;
+      margin: 0.33%;
+    }
+
+    .card--discount-price-4 .item__name {
+      height: 34px;
+      margin-top: 12px;
+    }
+
+    .card--discount-price-4 .item__push span {
+      max-height: 32px;
+      line-height: 200%;
+      font-weight: bold;
+    }
+
+    .card--discount-price-4 .item__push--outerFrame {
+      width: 100%;
+      height: 28px;
+    }
+  }
+</style>
+<!-- banner 表頭 -->
+<section class="title__wrap" data-title="<!--[BANNER_ALT_1]-->">
+  <a href="<!--[BANNER_LINK_1]-->">
+    <div
+      class="title__wrap__img lazyload"
+      data-src="<!--[BANNER_IMG_1]-->"
+    ></div>
+  </a>
+</section>
+<!-- banner 表頭 end -->
+<section class="build__wrap layout--main card--discount-price-4 item--4 wow">
+  <!-- ===== orange ===== -->
+  <div class="build__item">
+    <a href="<!--[GOOD_LINK_1]-->">
+      <div class="item__box">
+        <div class="item__pic xl__item">
+          <img
+            class="item__img lazyload"
+            data-src="https://media.etmall.com.tw/NXimg/003492/3492737/3492737-1_XXL.jpg"
+            src="1x1_low.png"
+            alt=""
+          />
+        </div>
+        <div class="item__info">
+          <div class="item__push--outerFrame">
+            <p class="item__push margin-top-sm margin-bottom-sm bg__gradient--orange">
+              <span>Arden明星暢銷品</span>
+            </p>
+          </div>
+          <p class="item__name margin-bottom-md">直升機香薰機 加熱式迷你擴香機/香氛機 無火精油 兩段風速 擴香/香氛/驅蚊 USB供電</p>
+          <div class="item__price margin-bottom-sm">
+            <span class="price-original">2400</span>
+            <span class="price-symbol">$</span>
+            <span class="price-discount">2199</span>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="build__item">
+    <a href="<!--[GOOD_LINK_2]-->">
+      <div class="item__box">
+        <div class="item__pic xl__item">
+          <img
+            class="item__img lazyload"
+            data-src="https://media.etmall.com.tw/NXimg/003501/3501234/3501234-1_XXL.jpg"
+            src="1x1_low.png"
+            alt=""
+          />
+        </div>
+        <div class="item__info">
+          <div class="item__push--outerFrame">
+            <p class="item__push margin-top-sm margin-bottom-sm bg__gradient--orange">
+              <span>ECOCERT有機專利 啤酒花強化肌膚保護力</span>
+            </p>
+          </div>
+          <p class="item__name margin-bottom-md">自然美BIO UP高純度5D逆時超V女神面膜</p>
+          <div class="item__price margin-bottom-sm">
+            <span class="price-original">2400</span>
+            <span class="price-symbol">$</span>
+            <span class="price-discount">1100</span>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="build__item">
+    <a href="<!--[GOOD_LINK_3]-->">
+      <div class="item__box">
+        <div class="item__pic xl__item">
+          <img
+            class="item__img lazyload"
+            data-src="https://media.etmall.com.tw/NXimg/003552/3552412/3552412-1_XXL.jpg"
+            src="1x1_low.png"
+            alt=""
+          />
+        </div>
+        <div class="item__info">
+          <div class="item__push--outerFrame">
+            <p class="item__push margin-top-sm margin-bottom-sm bg__gradient--orange">
+              <span>飽滿淡皺、緊緻肌膚，打造臉部清晰輪廓線條</span>
+            </p>
+          </div>
+          <p class="item__name margin-bottom-md">DeMon NB 全能淨透組</p>
+          <div class="item__price margin-bottom-sm">            
+            <span class="price-original">5600</span>
+            <span class="price-symbol">$</span>
+            <span class="price-discount">4530</span>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="build__item">
+    <a href="<!--[GOOD_LINK_4]-->">
+      <div class="item__box">
+        <div class="item__pic xl__item">
+          <img
+            class="item__img lazyload"
+            data-src="https://media.etmall.com.tw/NXimg/003559/3559941/3559941-1_XXL.jpg"
+            src="1x1_low.png"
+            alt=""
+          />
+        </div>
+        <div class="item__info">
+          <div class="item__push--outerFrame">
+            <p class="item__push margin-top-sm margin-bottom-sm bg__gradient--orange">
+              <span>DeMon NB 全能淨透組</span>
+            </p>
+          </div>
+          <p class="item__name margin-bottom-md">《台塑生醫》醫之方先孅炭焙黑咖啡15盒</p>
+          <div class="item__price margin-bottom-sm">
+            <span class="price-original">899</span>
+            <span class="price-symbol">$</span>
+            <span class="price-discount">499</span>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="build__item">
+    <a href="<!--[GOOD_LINK_1]-->">
+      <div class="item__box">
+        <div class="item__pic xl__item">
+          <img
+            class="item__img lazyload"
+            data-src="https://media.etmall.com.tw/NXimg/003492/3492737/3492737-1_XXL.jpg"
+            src="1x1_low.png"
+            alt=""
+          />
+        </div>
+        <div class="item__info">
+          <div class="item__push--outerFrame">
+            <p class="item__push margin-top-sm margin-bottom-sm bg__gradient--orange2">
+              <span>Arden明星暢銷品</span>
+            </p>
+          </div>
+          <p class="item__name margin-bottom-md">直升機香薰機 加熱式迷你擴香機/香氛機 無火精油 兩段風速 擴香/香氛/驅蚊 USB供電</p>
+          <div class="item__price margin-bottom-sm">
+            <span class="price-original">2400</span>
+            <span class="price-symbol">$</span>
+            <span class="price-discount">2199</span>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="build__item">
+    <a href="<!--[GOOD_LINK_2]-->">
+      <div class="item__box">
+        <div class="item__pic xl__item">
+          <img
+            class="item__img lazyload"
+            data-src="https://media.etmall.com.tw/NXimg/003501/3501234/3501234-1_XXL.jpg"
+            src="1x1_low.png"
+            alt=""
+          />
+        </div>
+        <div class="item__info">
+          <div class="item__push--outerFrame">
+            <p class="item__push margin-top-sm margin-bottom-sm bg__gradient--orange2">
+              <span>ECOCERT有機專利 啤酒花強化肌膚保護力</span>
+            </p>
+          </div>
+          <p class="item__name margin-bottom-md">自然美BIO UP高純度5D逆時超V女神面膜</p>
+          <div class="item__price margin-bottom-sm">
+            <span class="price-original">2400</span>
+            <span class="price-symbol">$</span>
+            <span class="price-discount">1100</span>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="build__item">
+    <a href="<!--[GOOD_LINK_3]-->">
+      <div class="item__box">
+        <div class="item__pic xl__item">
+          <img
+            class="item__img lazyload"
+            data-src="https://media.etmall.com.tw/NXimg/003552/3552412/3552412-1_XXL.jpg"
+            src="1x1_low.png"
+            alt=""
+          />
+        </div>
+        <div class="item__info">
+          <div class="item__push--outerFrame">
+            <p class="item__push margin-top-sm margin-bottom-sm bg__gradient--orange2">
+              <span>飽滿淡皺、緊緻肌膚，打造臉部清晰輪廓線條</span>
+            </p>
+          </div>
+          <p class="item__name margin-bottom-md">DeMon NB 全能淨透組</p>
+          <div class="item__price margin-bottom-sm">            
+            <span class="price-original">5600</span>
+            <span class="price-symbol">$</span>
+            <span class="price-discount">4530</span>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="build__item">
+    <a href="<!--[GOOD_LINK_4]-->">
+      <div class="item__box">
+        <div class="item__pic xl__item">
+          <img
+            class="item__img lazyload"
+            data-src="https://media.etmall.com.tw/NXimg/003559/3559941/3559941-1_XXL.jpg"
+            src="1x1_low.png"
+            alt=""
+          />
+        </div>
+        <div class="item__info">
+          <div class="item__push--outerFrame">
+            <p class="item__push margin-top-sm margin-bottom-sm bg__gradient--orange2">
+              <span>DeMon NB 全能淨透組</span>
+            </p>
+          </div>
+          <p class="item__name margin-bottom-md">《台塑生醫》醫之方先孅炭焙黑咖啡15盒</p>
+          <div class="item__price margin-bottom-sm">
+            <span class="price-original">899</span>
+            <span class="price-symbol">$</span>
+            <span class="price-discount">499</span>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<section class="build__wrap layout--main card--discount-price-4 item--4 wow">
+  <!-- ===== red ===== -->
+  <div class="build__item">
+    <a href="<!--[GOOD_LINK_1]-->">
+      <div class="item__box">
+        <div class="item__pic xl__item">
+          <img
+            class="item__img lazyload"
+            data-src="https://media.etmall.com.tw/NXimg/003492/3492737/3492737-1_XXL.jpg"
+            src="1x1_low.png"
+            alt=""
+          />
+        </div>
+        <div class="item__info">
+          <div class="item__push--outerFrame">
+            <p class="item__push margin-top-sm margin-bottom-sm bg__gradient--red">
+              <span>Arden明星暢銷品</span>
+            </p>
+          </div>
+          <p class="item__name margin-bottom-md">直升機香薰機 加熱式迷你擴香機/香氛機 無火精油 兩段風速 擴香/香氛/驅蚊 USB供電</p>
+          <div class="item__price margin-bottom-sm">
+            <span class="price-original">2400</span>
+            <span class="price-symbol">$</span>
+            <span class="price-discount">2199</span>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="build__item">
+    <a href="<!--[GOOD_LINK_2]-->">
+      <div class="item__box">
+        <div class="item__pic xl__item">
+          <img
+            class="item__img lazyload"
+            data-src="https://media.etmall.com.tw/NXimg/003501/3501234/3501234-1_XXL.jpg"
+            src="1x1_low.png"
+            alt=""
+          />
+        </div>
+        <div class="item__info">
+          <div class="item__push--outerFrame">
+            <p class="item__push margin-top-sm margin-bottom-sm bg__gradient--red">
+              <span>ECOCERT有機專利 啤酒花強化肌膚保護力</span>
+            </p>
+          </div>
+          <p class="item__name margin-bottom-md">自然美BIO UP高純度5D逆時超V女神面膜</p>
+          <div class="item__price margin-bottom-sm">
+            <span class="price-original">2400</span>
+            <span class="price-symbol">$</span>
+            <span class="price-discount">1100</span>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="build__item">
+    <a href="<!--[GOOD_LINK_3]-->">
+      <div class="item__box">
+        <div class="item__pic xl__item">
+          <img
+            class="item__img lazyload"
+            data-src="https://media.etmall.com.tw/NXimg/003552/3552412/3552412-1_XXL.jpg"
+            src="1x1_low.png"
+            alt=""
+          />
+        </div>
+        <div class="item__info">
+          <div class="item__push--outerFrame">
+            <p class="item__push margin-top-sm margin-bottom-sm bg__gradient--red">
+              <span>飽滿淡皺、緊緻肌膚，打造臉部清晰輪廓線條</span>
+            </p>
+          </div>
+          <p class="item__name margin-bottom-md">DeMon NB 全能淨透組</p>
+          <div class="item__price margin-bottom-sm">            
+            <span class="price-original">5600</span>
+            <span class="price-symbol">$</span>
+            <span class="price-discount">4530</span>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="build__item">
+    <a href="<!--[GOOD_LINK_4]-->">
+      <div class="item__box">
+        <div class="item__pic xl__item">
+          <img
+            class="item__img lazyload"
+            data-src="https://media.etmall.com.tw/NXimg/003559/3559941/3559941-1_XXL.jpg"
+            src="1x1_low.png"
+            alt=""
+          />
+        </div>
+        <div class="item__info">
+          <div class="item__push--outerFrame">
+            <p class="item__push margin-top-sm margin-bottom-sm bg__gradient--red">
+              <span>DeMon NB 全能淨透組</span>
+            </p>
+          </div>
+          <p class="item__name margin-bottom-md">《台塑生醫》醫之方先孅炭焙黑咖啡15盒</p>
+          <div class="item__price margin-bottom-sm">
+            <span class="price-original">899</span>
+            <span class="price-symbol">$</span>
+            <span class="price-discount">499</span>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="build__item">
+    <a href="<!--[GOOD_LINK_1]-->">
+      <div class="item__box">
+        <div class="item__pic xl__item">
+          <img
+            class="item__img lazyload"
+            data-src="https://media.etmall.com.tw/NXimg/003492/3492737/3492737-1_XXL.jpg"
+            src="1x1_low.png"
+            alt=""
+          />
+        </div>
+        <div class="item__info">
+          <div class="item__push--outerFrame">
+            <p class="item__push margin-top-sm margin-bottom-sm bg__gradient--red2">
+              <span>Arden明星暢銷品</span>
+            </p>
+          </div>
+          <p class="item__name margin-bottom-md">直升機香薰機 加熱式迷你擴香機/香氛機 無火精油 兩段風速 擴香/香氛/驅蚊 USB供電</p>
+          <div class="item__price margin-bottom-sm">
+            <span class="price-original">2400</span>
+            <span class="price-symbol">$</span>
+            <span class="price-discount">2199</span>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="build__item">
+    <a href="<!--[GOOD_LINK_2]-->">
+      <div class="item__box">
+        <div class="item__pic xl__item">
+          <img
+            class="item__img lazyload"
+            data-src="https://media.etmall.com.tw/NXimg/003501/3501234/3501234-1_XXL.jpg"
+            src="1x1_low.png"
+            alt=""
+          />
+        </div>
+        <div class="item__info">
+          <div class="item__push--outerFrame">
+            <p class="item__push margin-top-sm margin-bottom-sm bg__gradient--red2">
+              <span>ECOCERT有機專利 啤酒花強化肌膚保護力</span>
+            </p>
+          </div>
+          <p class="item__name margin-bottom-md">自然美BIO UP高純度5D逆時超V女神面膜</p>
+          <div class="item__price margin-bottom-sm">
+            <span class="price-original">2400</span>
+            <span class="price-symbol">$</span>
+            <span class="price-discount">1100</span>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="build__item">
+    <a href="<!--[GOOD_LINK_3]-->">
+      <div class="item__box">
+        <div class="item__pic xl__item">
+          <img
+            class="item__img lazyload"
+            data-src="https://media.etmall.com.tw/NXimg/003552/3552412/3552412-1_XXL.jpg"
+            src="1x1_low.png"
+            alt=""
+          />
+        </div>
+        <div class="item__info">
+          <div class="item__push--outerFrame">
+            <p class="item__push margin-top-sm margin-bottom-sm bg__gradient--red2">
+              <span>飽滿淡皺、緊緻肌膚，打造臉部清晰輪廓線條</span>
+            </p>
+          </div>
+          <p class="item__name margin-bottom-md">DeMon NB 全能淨透組</p>
+          <div class="item__price margin-bottom-sm">            
+            <span class="price-original">5600</span>
+            <span class="price-symbol">$</span>
+            <span class="price-discount">4530</span>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="build__item">
+    <a href="<!--[GOOD_LINK_4]-->">
+      <div class="item__box">
+        <div class="item__pic xl__item">
+          <img
+            class="item__img lazyload"
+            data-src="https://media.etmall.com.tw/NXimg/003559/3559941/3559941-1_XXL.jpg"
+            src="1x1_low.png"
+            alt=""
+          />
+        </div>
+        <div class="item__info">
+          <div class="item__push--outerFrame">
+            <p class="item__push margin-top-sm margin-bottom-sm bg__gradient--red2">
+              <span>DeMon NB 全能淨透組</span>
+            </p>
+          </div>
+          <p class="item__name margin-bottom-md">《台塑生醫》醫之方先孅炭焙黑咖啡15盒</p>
+          <div class="item__price margin-bottom-sm">
+            <span class="price-original">899</span>
+            <span class="price-symbol">$</span>
+            <span class="price-discount">499</span>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<section class="build__wrap layout--main card--discount-price-4 item--4 wow">
+  <!-- ===== blue ===== -->
+  <div class="build__item">
+    <a href="<!--[GOOD_LINK_1]-->">
+      <div class="item__box">
+        <div class="item__pic xl__item">
+          <img
+            class="item__img lazyload"
+            data-src="https://media.etmall.com.tw/NXimg/003492/3492737/3492737-1_XXL.jpg"
+            src="1x1_low.png"
+            alt=""
+          />
+        </div>
+        <div class="item__info">
+          <div class="item__push--outerFrame">
+            <p class="item__push margin-top-sm margin-bottom-sm bg__gradient--blue">
+              <span>Arden明星暢銷品</span>
+            </p>
+          </div>
+          <p class="item__name margin-bottom-md">直升機香薰機 加熱式迷你擴香機/香氛機 無火精油 兩段風速 擴香/香氛/驅蚊 USB供電</p>
+          <div class="item__price margin-bottom-sm">
+            <span class="price-original">2400</span>
+            <span class="price-symbol">$</span>
+            <span class="price-discount">2199</span>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="build__item">
+    <a href="<!--[GOOD_LINK_2]-->">
+      <div class="item__box">
+        <div class="item__pic xl__item">
+          <img
+            class="item__img lazyload"
+            data-src="https://media.etmall.com.tw/NXimg/003501/3501234/3501234-1_XXL.jpg"
+            src="1x1_low.png"
+            alt=""
+          />
+        </div>
+        <div class="item__info">
+          <div class="item__push--outerFrame">
+            <p class="item__push margin-top-sm margin-bottom-sm bg__gradient--blue">
+              <span>ECOCERT有機專利 啤酒花強化肌膚保護力</span>
+            </p>
+          </div>
+          <p class="item__name margin-bottom-md">自然美BIO UP高純度5D逆時超V女神面膜</p>
+          <div class="item__price margin-bottom-sm">
+            <span class="price-original">2400</span>
+            <span class="price-symbol">$</span>
+            <span class="price-discount">1100</span>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="build__item">
+    <a href="<!--[GOOD_LINK_3]-->">
+      <div class="item__box">
+        <div class="item__pic xl__item">
+          <img
+            class="item__img lazyload"
+            data-src="https://media.etmall.com.tw/NXimg/003552/3552412/3552412-1_XXL.jpg"
+            src="1x1_low.png"
+            alt=""
+          />
+        </div>
+        <div class="item__info">
+          <div class="item__push--outerFrame">
+            <p class="item__push margin-top-sm margin-bottom-sm bg__gradient--blue">
+              <span>飽滿淡皺、緊緻肌膚，打造臉部清晰輪廓線條</span>
+            </p>
+          </div>
+          <p class="item__name margin-bottom-md">DeMon NB 全能淨透組</p>
+          <div class="item__price margin-bottom-sm">            
+            <span class="price-original">5600</span>
+            <span class="price-symbol">$</span>
+            <span class="price-discount">4530</span>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="build__item">
+    <a href="<!--[GOOD_LINK_4]-->">
+      <div class="item__box">
+        <div class="item__pic xl__item">
+          <img
+            class="item__img lazyload"
+            data-src="https://media.etmall.com.tw/NXimg/003559/3559941/3559941-1_XXL.jpg"
+            src="1x1_low.png"
+            alt=""
+          />
+        </div>
+        <div class="item__info">
+          <div class="item__push--outerFrame">
+            <p class="item__push margin-top-sm margin-bottom-sm bg__gradient--blue">
+              <span>DeMon NB 全能淨透組</span>
+            </p>
+          </div>
+          <p class="item__name margin-bottom-md">《台塑生醫》醫之方先孅炭焙黑咖啡15盒</p>
+          <div class="item__price margin-bottom-sm">
+            <span class="price-original">899</span>
+            <span class="price-symbol">$</span>
+            <span class="price-discount">499</span>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="build__item">
+    <a href="<!--[GOOD_LINK_1]-->">
+      <div class="item__box">
+        <div class="item__pic xl__item">
+          <img
+            class="item__img lazyload"
+            data-src="https://media.etmall.com.tw/NXimg/003492/3492737/3492737-1_XXL.jpg"
+            src="1x1_low.png"
+            alt=""
+          />
+        </div>
+        <div class="item__info">
+          <div class="item__push--outerFrame">
+            <p class="item__push margin-top-sm margin-bottom-sm bg__gradient--blue2">
+              <span>Arden明星暢銷品</span>
+            </p>
+          </div>
+          <p class="item__name margin-bottom-md">直升機香薰機 加熱式迷你擴香機/香氛機 無火精油 兩段風速 擴香/香氛/驅蚊 USB供電</p>
+          <div class="item__price margin-bottom-sm">
+            <span class="price-original">2400</span>
+            <span class="price-symbol">$</span>
+            <span class="price-discount">2199</span>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="build__item">
+    <a href="<!--[GOOD_LINK_2]-->">
+      <div class="item__box">
+        <div class="item__pic xl__item">
+          <img
+            class="item__img lazyload"
+            data-src="https://media.etmall.com.tw/NXimg/003501/3501234/3501234-1_XXL.jpg"
+            src="1x1_low.png"
+            alt=""
+          />
+        </div>
+        <div class="item__info">
+          <div class="item__push--outerFrame">
+            <p class="item__push margin-top-sm margin-bottom-sm bg__gradient--blue2">
+              <span>ECOCERT有機專利 啤酒花強化肌膚保護力</span>
+            </p>
+          </div>
+          <p class="item__name margin-bottom-md">自然美BIO UP高純度5D逆時超V女神面膜</p>
+          <div class="item__price margin-bottom-sm">
+            <span class="price-original">2400</span>
+            <span class="price-symbol">$</span>
+            <span class="price-discount">1100</span>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="build__item">
+    <a href="<!--[GOOD_LINK_3]-->">
+      <div class="item__box">
+        <div class="item__pic xl__item">
+          <img
+            class="item__img lazyload"
+            data-src="https://media.etmall.com.tw/NXimg/003552/3552412/3552412-1_XXL.jpg"
+            src="1x1_low.png"
+            alt=""
+          />
+        </div>
+        <div class="item__info">
+          <div class="item__push--outerFrame">
+            <p class="item__push margin-top-sm margin-bottom-sm bg__gradient--blue2">
+              <span>飽滿淡皺、緊緻肌膚，打造臉部清晰輪廓線條</span>
+            </p>
+          </div>
+          <p class="item__name margin-bottom-md">DeMon NB 全能淨透組</p>
+          <div class="item__price margin-bottom-sm">            
+            <span class="price-original">5600</span>
+            <span class="price-symbol">$</span>
+            <span class="price-discount">4530</span>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="build__item">
+    <a href="<!--[GOOD_LINK_4]-->">
+      <div class="item__box">
+        <div class="item__pic xl__item">
+          <img
+            class="item__img lazyload"
+            data-src="https://media.etmall.com.tw/NXimg/003559/3559941/3559941-1_XXL.jpg"
+            src="1x1_low.png"
+            alt=""
+          />
+        </div>
+        <div class="item__info">
+          <div class="item__push--outerFrame">
+            <p class="item__push margin-top-sm margin-bottom-sm bg__gradient--blue2">
+              <span>DeMon NB 全能淨透組</span>
+            </p>
+          </div>
+          <p class="item__name margin-bottom-md">《台塑生醫》醫之方先孅炭焙黑咖啡15盒</p>
+          <div class="item__price margin-bottom-sm">
+            <span class="price-original">899</span>
+            <span class="price-symbol">$</span>
+            <span class="price-discount">499</span>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<section class="build__wrap layout--main card--discount-price-4 item--4 wow">
+  <!-- ===== green ===== -->
+  <div class="build__item">
+    <a href="<!--[GOOD_LINK_1]-->">
+      <div class="item__box">
+        <div class="item__pic xl__item">
+          <img
+            class="item__img lazyload"
+            data-src="https://media.etmall.com.tw/NXimg/003492/3492737/3492737-1_XXL.jpg"
+            src="1x1_low.png"
+            alt=""
+          />
+        </div>
+        <div class="item__info">
+          <div class="item__push--outerFrame">
+            <p class="item__push margin-top-sm margin-bottom-sm bg__gradient--green">
+              <span>Arden明星暢銷品</span>
+            </p>
+          </div>
+          <p class="item__name margin-bottom-md">直升機香薰機 加熱式迷你擴香機/香氛機 無火精油 兩段風速 擴香/香氛/驅蚊 USB供電</p>
+          <div class="item__price margin-bottom-sm">
+            <span class="price-original">2400</span>
+            <span class="price-symbol">$</span>
+            <span class="price-discount">2199</span>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="build__item">
+    <a href="<!--[GOOD_LINK_2]-->">
+      <div class="item__box">
+        <div class="item__pic xl__item">
+          <img
+            class="item__img lazyload"
+            data-src="https://media.etmall.com.tw/NXimg/003501/3501234/3501234-1_XXL.jpg"
+            src="1x1_low.png"
+            alt=""
+          />
+        </div>
+        <div class="item__info">
+          <div class="item__push--outerFrame">
+            <p class="item__push margin-top-sm margin-bottom-sm bg__gradient--green">
+              <span>ECOCERT有機專利 啤酒花強化肌膚保護力</span>
+            </p>
+          </div>
+          <p class="item__name margin-bottom-md">自然美BIO UP高純度5D逆時超V女神面膜</p>
+          <div class="item__price margin-bottom-sm">
+            <span class="price-original">2400</span>
+            <span class="price-symbol">$</span>
+            <span class="price-discount">1100</span>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="build__item">
+    <a href="<!--[GOOD_LINK_3]-->">
+      <div class="item__box">
+        <div class="item__pic xl__item">
+          <img
+            class="item__img lazyload"
+            data-src="https://media.etmall.com.tw/NXimg/003552/3552412/3552412-1_XXL.jpg"
+            src="1x1_low.png"
+            alt=""
+          />
+        </div>
+        <div class="item__info">
+          <div class="item__push--outerFrame">
+            <p class="item__push margin-top-sm margin-bottom-sm bg__gradient--green">
+              <span>飽滿淡皺、緊緻肌膚，打造臉部清晰輪廓線條</span>
+            </p>
+          </div>
+          <p class="item__name margin-bottom-md">DeMon NB 全能淨透組</p>
+          <div class="item__price margin-bottom-sm">            
+            <span class="price-original">5600</span>
+            <span class="price-symbol">$</span>
+            <span class="price-discount">4530</span>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="build__item">
+    <a href="<!--[GOOD_LINK_4]-->">
+      <div class="item__box">
+        <div class="item__pic xl__item">
+          <img
+            class="item__img lazyload"
+            data-src="https://media.etmall.com.tw/NXimg/003559/3559941/3559941-1_XXL.jpg"
+            src="1x1_low.png"
+            alt=""
+          />
+        </div>
+        <div class="item__info">
+          <div class="item__push--outerFrame">
+            <p class="item__push margin-top-sm margin-bottom-sm bg__gradient--green">
+              <span>DeMon NB 全能淨透組</span>
+            </p>
+          </div>
+          <p class="item__name margin-bottom-md">《台塑生醫》醫之方先孅炭焙黑咖啡15盒</p>
+          <div class="item__price margin-bottom-sm">
+            <span class="price-original">899</span>
+            <span class="price-symbol">$</span>
+            <span class="price-discount">499</span>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="build__item">
+    <a href="<!--[GOOD_LINK_1]-->">
+      <div class="item__box">
+        <div class="item__pic xl__item">
+          <img
+            class="item__img lazyload"
+            data-src="https://media.etmall.com.tw/NXimg/003492/3492737/3492737-1_XXL.jpg"
+            src="1x1_low.png"
+            alt=""
+          />
+        </div>
+        <div class="item__info">
+          <div class="item__push--outerFrame">
+            <p class="item__push margin-top-sm margin-bottom-sm bg__gradient--green2">
+              <span>Arden明星暢銷品</span>
+            </p>
+          </div>
+          <p class="item__name margin-bottom-md">直升機香薰機 加熱式迷你擴香機/香氛機 無火精油 兩段風速 擴香/香氛/驅蚊 USB供電</p>
+          <div class="item__price margin-bottom-sm">
+            <span class="price-original">2400</span>
+            <span class="price-symbol">$</span>
+            <span class="price-discount">2199</span>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="build__item">
+    <a href="<!--[GOOD_LINK_2]-->">
+      <div class="item__box">
+        <div class="item__pic xl__item">
+          <img
+            class="item__img lazyload"
+            data-src="https://media.etmall.com.tw/NXimg/003501/3501234/3501234-1_XXL.jpg"
+            src="1x1_low.png"
+            alt=""
+          />
+        </div>
+        <div class="item__info">
+          <div class="item__push--outerFrame">
+            <p class="item__push margin-top-sm margin-bottom-sm bg__gradient--green2">
+              <span>ECOCERT有機專利 啤酒花強化肌膚保護力</span>
+            </p>
+          </div>
+          <p class="item__name margin-bottom-md">自然美BIO UP高純度5D逆時超V女神面膜</p>
+          <div class="item__price margin-bottom-sm">
+            <span class="price-original">2400</span>
+            <span class="price-symbol">$</span>
+            <span class="price-discount">1100</span>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="build__item">
+    <a href="<!--[GOOD_LINK_3]-->">
+      <div class="item__box">
+        <div class="item__pic xl__item">
+          <img
+            class="item__img lazyload"
+            data-src="https://media.etmall.com.tw/NXimg/003552/3552412/3552412-1_XXL.jpg"
+            src="1x1_low.png"
+            alt=""
+          />
+        </div>
+        <div class="item__info">
+          <div class="item__push--outerFrame">
+            <p class="item__push margin-top-sm margin-bottom-sm bg__gradient--green2">
+              <span>飽滿淡皺、緊緻肌膚，打造臉部清晰輪廓線條</span>
+            </p>
+          </div>
+          <p class="item__name margin-bottom-md">DeMon NB 全能淨透組</p>
+          <div class="item__price margin-bottom-sm">            
+            <span class="price-original">5600</span>
+            <span class="price-symbol">$</span>
+            <span class="price-discount">4530</span>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="build__item">
+    <a href="<!--[GOOD_LINK_4]-->">
+      <div class="item__box">
+        <div class="item__pic xl__item">
+          <img
+            class="item__img lazyload"
+            data-src="https://media.etmall.com.tw/NXimg/003559/3559941/3559941-1_XXL.jpg"
+            src="1x1_low.png"
+            alt=""
+          />
+        </div>
+        <div class="item__info">
+          <div class="item__push--outerFrame">
+            <p class="item__push margin-top-sm margin-bottom-sm bg__gradient--green2">
+              <span>DeMon NB 全能淨透組</span>
+            </p>
+          </div>
+          <p class="item__name margin-bottom-md">《台塑生醫》醫之方先孅炭焙黑咖啡15盒</p>
+          <div class="item__price margin-bottom-sm">
+            <span class="price-original">899</span>
+            <span class="price-symbol">$</span>
+            <span class="price-discount">499</span>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+</section>
+<script src="wow.min.js"></script>
+<script src="lazyload.js"></script>
+<script>
+  var initLazyload = lazyload();
+</script>

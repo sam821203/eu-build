@@ -1,0 +1,99 @@
+[
+  {
+    "StartTime": "2022-11-08T09:00:00",
+    "EndTime": "2022-11-08T15:00:00",
+    "Status": 1,
+    "Products": [
+      {
+        "Discount": "3折",
+        "id": 3073249,
+        "title": "Apple 巧控鍵盤，適用於 iPad Pro 12.9 吋 (第 5 代) - 中文 (注音)",
+        "imageUrl": "//media.etmall.com.tw/nximg/003073/3073249/3073249_ml.jpg?t=18434441763",
+        "pageLink": "/i/3073249?hs=MzA3MzI0OUB7DQogICJJZCI6IDE4MTksDQogICJTdGFydFRpbWUiOiAiMjAyMi0xMS0wN1QwOTowMDowMCIsDQogICJFbmRUaW1lIjogIjIwMjItMTEtMDdUMTU6MDA6MDAiLA0KICAiU3RhdHVzIjogMQ0KfQ==",
+        "marketingPrice": "10990",
+        "finalPrice": "10199"
+      },
+      {
+        "Discount": "43折",
+        "id": 3530591,
+        "title": "【聯名商品】GW水玻璃 Hello Kitty分離式除濕機 馬卡龍5件組(烘鞋管)",
+        "imageUrl": "//media.etmall.com.tw/nximg/003530/3530591/3530591_ml.jpg?t=18463587945",
+        "pageLink": "/i/3530591?hs=MzUzMDU5MUB7DQogICJJZCI6IDE4MjMsDQogICJTdGFydFRpbWUiOiAiMjAyMi0xMS0wOFQxNTowMDowMCIsDQogICJFbmRUaW1lIjogIjIwMjItMTEtMDhUMjI6MDA6MDAiLA0KICAiU3RhdHVzIjogMg0KfQ==",
+        "marketingPrice": "2980",
+        "finalPrice": "1290"
+      },
+      {
+        "Discount": "",
+        "id": 3073249,
+        "title": "Apple 巧控鍵盤，適用於 iPad Pro 12.9 吋 (第 5 代) - 中文 (注音)",
+        "imageUrl": "//media.etmall.com.tw/nximg/003073/3073249/3073249_ml.jpg?t=18434441763",
+        "pageLink": "/i/3073249?hs=MzA3MzI0OUB7DQogICJJZCI6IDE4MTksDQogICJTdGFydFRpbWUiOiAiMjAyMi0xMS0wN1QwOTowMDowMCIsDQogICJFbmRUaW1lIjogIjIwMjItMTEtMDdUMTU6MDA6MDAiLA0KICAiU3RhdHVzIjogMQ0KfQ==",
+        "marketingPrice": "10990",
+        "finalPrice": "10199"
+      },
+      {
+        "Discount": "",
+        "id": 3530591,
+        "title": "【聯名商品】GW水玻璃 Hello Kitty分離式除濕機 馬卡龍5件組(烘鞋管)",
+        "imageUrl": "//media.etmall.com.tw/nximg/003530/3530591/3530591_ml.jpg?t=18463587945",
+        "pageLink": "/i/3530591?hs=MzUzMDU5MUB7DQogICJJZCI6IDE4MjMsDQogICJTdGFydFRpbWUiOiAiMjAyMi0xMS0wOFQxNTowMDowMCIsDQogICJFbmRUaW1lIjogIjIwMjItMTEtMDhUMjI6MDA6MDAiLA0KICAiU3RhdHVzIjogMg0KfQ==",
+        "marketingPrice": "2980",
+        "finalPrice": "1290"
+      },
+      {
+        "Discount": "93折",
+        "id": 3073249,
+        "title": "Apple 巧控鍵盤，適用於 iPad Pro 12.9 吋 (第 5 代) - 中文 (注音)",
+        "imageUrl": "//media.etmall.com.tw/nximg/003073/3073249/3073249_ml.jpg?t=18434441763",
+        "pageLink": "/i/3073249?hs=MzA3MzI0OUB7DQogICJJZCI6IDE4MTksDQogICJTdGFydFRpbWUiOiAiMjAyMi0xMS0wN1QwOTowMDowMCIsDQogICJFbmRUaW1lIjogIjIwMjItMTEtMDdUMTU6MDA6MDAiLA0KICAiU3RhdHVzIjogMQ0KfQ==",
+        "marketingPrice": "10990",
+        "finalPrice": "10199"
+      },
+      {
+        "Discount": "43折",
+        "id": 3530591,
+        "title": "【聯名商品】GW水玻璃 Hello Kitty分離式除濕機 馬卡龍5件組(烘鞋管)",
+        "imageUrl": "//media.etmall.com.tw/nximg/003530/3530591/3530591_ml.jpg?t=18463587945",
+        "pageLink": "/i/3530591?hs=MzUzMDU5MUB7DQogICJJZCI6IDE4MjMsDQogICJTdGFydFRpbWUiOiAiMjAyMi0xMS0wOFQxNTowMDowMCIsDQogICJFbmRUaW1lIjogIjIwMjItMTEtMDhUMjI6MDA6MDAiLA0KICAiU3RhdHVzIjogMg0KfQ==",
+        "marketingPrice": "2980",
+        "finalPrice": "1290"
+      },
+      {
+        "Discount": "3折",
+        "id": 3073249,
+        "title": "Apple 巧控鍵盤，適用於 iPad Pro 12.9 吋 (第 5 代) - 中文 (注音)",
+        "imageUrl": "//media.etmall.com.tw/nximg/003073/3073249/3073249_ml.jpg?t=18434441763",
+        "pageLink": "/i/3073249?hs=MzA3MzI0OUB7DQogICJJZCI6IDE4MTksDQogICJTdGFydFRpbWUiOiAiMjAyMi0xMS0wN1QwOTowMDowMCIsDQogICJFbmRUaW1lIjogIjIwMjItMTEtMDdUMTU6MDA6MDAiLA0KICAiU3RhdHVzIjogMQ0KfQ==",
+        "marketingPrice": "10990",
+        "finalPrice": "10199"
+      },
+      {
+        "Discount": "3折",
+        "id": 3530591,
+        "title": "【聯名商品】GW水玻璃 Hello Kitty分離式除濕機 馬卡龍5件組(烘鞋管)",
+        "imageUrl": "//media.etmall.com.tw/nximg/003530/3530591/3530591_ml.jpg?t=18463587945",
+        "pageLink": "/i/3530591?hs=MzUzMDU5MUB7DQogICJJZCI6IDE4MjMsDQogICJTdGFydFRpbWUiOiAiMjAyMi0xMS0wOFQxNTowMDowMCIsDQogICJFbmRUaW1lIjogIjIwMjItMTEtMDhUMjI6MDA6MDAiLA0KICAiU3RhdHVzIjogMg0KfQ==",
+        "marketingPrice": "2980",
+        "finalPrice": "1290"
+      },
+      {
+        "Discount": "3折",
+        "id": 3530591,
+        "title": "【聯名商品】GW水玻璃 Hello Kitty分離式除濕機 馬卡龍5件組(烘鞋管)",
+        "imageUrl": "//media.etmall.com.tw/nximg/003530/3530591/3530591_ml.jpg?t=18463587945",
+        "pageLink": "/i/3530591?hs=MzUzMDU5MUB7DQogICJJZCI6IDE4MjMsDQogICJTdGFydFRpbWUiOiAiMjAyMi0xMS0wOFQxNTowMDowMCIsDQogICJFbmRUaW1lIjogIjIwMjItMTEtMDhUMjI6MDA6MDAiLA0KICAiU3RhdHVzIjogMg0KfQ==",
+        "marketingPrice": "2980",
+        "finalPrice": "1290"
+      },
+      {
+        "Discount": "3折",
+        "id": 3530591,
+        "title": "【聯名商品】GW水玻璃 Hello Kitty分離式除濕機 馬卡龍5件組(烘鞋管)",
+        "imageUrl": "//media.etmall.com.tw/nximg/003530/3530591/3530591_ml.jpg?t=18463587945",
+        "pageLink": "/i/3530591?hs=MzUzMDU5MUB7DQogICJJZCI6IDE4MjMsDQogICJTdGFydFRpbWUiOiAiMjAyMi0xMS0wOFQxNTowMDowMCIsDQogICJFbmRUaW1lIjogIjIwMjItMTEtMDhUMjI6MDA6MDAiLA0KICAiU3RhdHVzIjogMg0KfQ==",
+        "marketingPrice": "2980",
+        "finalPrice": "1290"
+      }
+    ]
+  }
+]

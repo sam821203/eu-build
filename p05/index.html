@@ -1,0 +1,294 @@
+﻿<!--<head>-->
+<!--<meta charset="utf-8">-->
+<!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--</head>-->
+<style>
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: PingFangTC-regular, "LiHei Pro", -apple-system,
+      BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+      "Noto Sans", "Source Han Sans TC", "Microsoft JhengHei", sans-serif,
+      "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+      "Noto Color Emoji";
+    margin: 0;
+    padding: 0;
+  }
+
+  /* 內錨點css */
+  .navbar__anchor {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0px;
+    z-index: 1;
+  }
+
+  .anchor__title__wrap {
+    position: relative;
+    overflow-x: auto;
+    z-index: 600;
+    width: 100%;
+    max-width: 960px;
+    top: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+  }
+
+  .anchor__title__wrap ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    /* custom */
+    height: 39px;
+  }
+
+  .anchor__title__wrap .anchor__ul:after {
+    content: "";
+    clear: both;
+    display: block;
+    zoom: 1;
+  }
+
+  .anchor__ul {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: initial;
+    /* custom */
+    background-color: #494949;
+    color: #fff;
+    background-color: <!--[CSS_BACKGROUND_COLOR]-->;
+  }
+
+  .anchor__ul::-webkit-scrollbar {
+    display: none;
+  }
+
+  .anchor__title__wrap li {
+    display: inline-block;
+    text-align: center;
+    font-size: 14px;
+    min-width: 87px;
+    overflow-y: hidden;
+    flex: 1 0 auto;
+    /* custom */
+    max-height: 39px;
+  }
+
+  .anchor__title__wrap a {
+    display: inline-block;
+    position: static;
+    z-index: 1;
+    overflow: hidden;
+    min-width: 127px;
+    height: 39px;
+    line-height: 39px;
+    padding: 1px 5px;
+    box-sizing: border-box;
+    text-decoration: none;
+    transition: all 0.15s ease-in-out;
+    /* custom */
+    color: #fff;
+  }
+
+  .navbar__anchor li a.active {
+    color: #1976d2;
+    color: <!--[CSS_COLOR]-->;
+  }
+
+  @media screen and (min-width: 767px) {
+    .navbar__anchor li a.active,
+    .navbar__anchor li a:hover {
+      color: #1976d2;
+      color: <!--[CSS_COLOR]-->;
+    }
+  }
+</style>
+<!-- banner 表頭 -->
+<section style="display: none">
+  <div class="build__item">
+    <a href="<!--[GOOD_LINK_1]-->">
+      <div class="item__box">
+        <div class="item__pic">
+          <img class="item__img" src="<!--[GOOD_IMG_L_1]-->" alt="" />
+        </div>
+        <div class="item__info">
+          <div class="item__push--outerFrame">
+            <p class="item__push margin-top-sm margin-bottom-sm bg__red">
+              <span><!--[GOOD_DESC_1]--></span>
+            </p>
+          </div>
+          <p class="item__name margin-bottom-md"><!--[GOOD_NAME_1]--></p>
+          <div class="item__price margin-bottom-sm">
+            <span>$</span>
+            <span><!--[GOOD_SALEPRC_1]--></span>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+</section>
+<!-- banner 表頭 end -->
+
+<!-- bar -->
+<div class="title__wrap" data-title="stop"></div>
+<nav role="navigation" class="navbar__anchor" id="navbarAnchor"></nav>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+<script src="https://www.etmall.com.tw/Scripts/lib/jquery/jquery-2.2.0.min.js"></script>
+<script>
+  $(document).ready(function () {
+    //
+    $("[id^='navbarAnchor']").each(function (index) {
+      var navId;
+      navId = $(this).attr("id", "navbarAnchor_" + (index + 1) + "");
+      //
+      navDetailList(navId);
+    });
+
+    //
+    function navDetailList(navId) {
+      var navList = [];
+      var navArray = [];
+
+      navArray += navId.attr("id");
+
+      navList += '<div class="anchor__title__wrap">';
+      navList += '<ul id="navClick" class="anchor__ul">';
+
+      //
+      var selectNavIdAll = navId.nextAll("[data-title]");
+
+      //
+      $(selectNavIdAll).each(function (index, element) {
+        //
+        if ($(this).closest(".title__wrap").attr("data-title") == "stop") {
+          return false;
+        }
+        //
+        var dataTitleVal = $(this).attr("data-title");
+        //
+        if (dataTitleVal && dataTitleVal != "stop") {
+          navList +=
+            ' <li><a href="#' +
+            dataTitleVal +
+            '">' +
+            dataTitleVal +
+            "</a></li>";
+        }
+      });
+      navList += "</ul></div>";
+
+      $(navId).empty();
+      $(navId).append(navList);
+    }
+
+    function bindNav() {
+      var arrSection = Array.apply(
+        null,
+        document.querySelectorAll("[data-title]")
+      );
+      var arrTitle = [];
+      var navClickItems = Array.apply(
+        null,
+        document.querySelectorAll("#navClick a")
+      );
+      var docScrollTop =
+        document.documentElement.scrollTop || document.body.scrollTop;
+      var navBarHeight =
+        document.querySelector(".navbar__anchor").offsetHeight + 2;
+      var targetIndex = 0;
+
+      arrSection.forEach(function (el) {
+        var valueEl = el.getAttribute("data-title");
+
+        if (valueEl && valueEl !== "stop") arrTitle.push(el);
+      });
+
+      arrTitle.forEach(function (el, index) {
+        if (docScrollTop - el.offsetTop + navBarHeight >= 0) {
+          targetIndex = index;
+        }
+      });
+
+      if (targetIndex === -1) return;
+      navClickItems.forEach(function (el) {
+        el.classList.remove("active");
+      });
+      navClickItems[targetIndex].classList.add("active");
+
+      // active move in the screen middle
+      var $winWt = $(document).width();
+      var moveLeft = $("#navClick li").width() || 90;
+      if ($(".active").length) {
+        //
+        var offsetLeft = moveLeft * targetIndex - $winWt / 3;
+        $(".anchor__ul").stop().animate({
+          scrollLeft: offsetLeft,
+        });
+      }
+      // active move in the screen middle /.END
+    }
+
+    $.debounce = function (func, wait, immediate) {
+      var timeout;
+      return function () {
+        var context = this,
+          args = arguments;
+        later = function () {
+          timeout = null;
+          if (!immediate) func.apply(context, args);
+        };
+        var callNow = immediate && !timeout;
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+        if (callNow) func.apply(context, args);
+      };
+    };
+    $.throttle = function (func, wait) {
+      var context, args, timeout, throttling, more, result;
+      var whenDone = $.debounce(function () {
+        more = throttling = false;
+      }, wait);
+      return function () {
+        (context = this), (args = arguments);
+        var later = function () {
+          timeout = null;
+          if (more) func.apply(context, args);
+          whenDone();
+        };
+        if (!timeout) timeout = setTimeout(later, wait);
+
+        if (throttling) {
+          more = true;
+        } else {
+          result = func.apply(context, args);
+        }
+        whenDone();
+        throttling = true;
+        return result;
+      };
+    };
+    var bind__handler = $.throttle(function (e) {
+      bindNav();
+    }, 200);
+
+    window.addEventListener("scroll", bind__handler);
+
+    //
+    $(document).on("click", "#navClick a", function (e) {
+      var _href = $(this).attr("href").substr(1);
+      var toElem = $('section[data-title="' + _href + '"]');
+      var toTop = toElem.offset().top + 10;
+      $("html, body").animate({ scrollTop: toTop - $("#navClick").height() });
+      return false;
+    });
+  });
+</script>

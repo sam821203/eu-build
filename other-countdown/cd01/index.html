@@ -1,0 +1,110 @@
+
+<style>
+  .countdown__zone {
+    position: relative;
+    z-index: 0;
+  }
+  .countdown__block {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    width: 100%;
+    pointer-events: none;
+  }
+  .countdown__box {
+    display: flex;
+    justify-content: space-between;
+    padding: 3.35% 9.5% 1% 18%;
+    color: #fff;
+    font-size: 6.35vw;
+  }
+  .time__block {
+    display: flex;
+    justify-content: space-between;
+    width: 13%;
+    max-width: 94px;
+  }
+
+  .time__box {
+    width: 50%;
+    text-align: center;
+  }
+  @media screen and (min-width: 768px) {
+
+    .countdown__box{
+      padding: 3.25% 9.5% 1% 17.9%;
+    }
+  }
+  @media screen and (min-width: 960px) {
+    .time__block {
+      font-size: 64px;
+    }
+  }
+
+  .countdown__wrap .build__item{
+    display: none;
+  }
+
+</style>
+
+<section class="countdown__wrap data__time--micro" data-time="<!--[CUSTOM_TAG1_1]-->" id="countdownMicro">
+  <div class="layout--main">
+    <div class="countdown__zone">
+      <img src="<!--[BANNER_IMG_1]-->" alt="">
+      <div class="countdown__block">
+        <div class="countdown__box" style="color: <!--[CSS_COLOR]-->;">
+          <div class="time__block">
+            <div class="time__box">
+              <span class="dayTens">0</span>
+            </div>
+            <div class="time__box">
+              <span class="dayUnits">0</span>
+            </div>
+          </div>
+          <div class="time__block">
+            <div class="time__box">
+              <span class="hourTens">0</span>
+            </div>
+            <div class="time__box">
+              <span class="hourUnits">0</span>
+            </div>
+          </div>
+          <div class="time__block">
+            <div class="time__box">
+              <span class="minTens">0</span>
+            </div>
+            <div class="time__box">
+              <span class="minUnits">0</span>
+            </div>
+          </div>
+          <div class="time__block">
+            <div class="time__box">
+              <span class="secTens">0</span>
+            </div>
+            <div class="time__box">
+              <span class="secUnits">0</span>
+            </div>
+          </div>
+          <div class="time__block">
+            <div class="time__box">
+              <span class="microTens">0</span>
+            </div>
+            <div class="time__box">
+              <span class="microUnits">0</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="build__item">
+      <a href="<!--[GOOD_LINK_1]-->">
+        <p><!--[GOOD_NAME_1]--></p>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<script src="countdown-micro.js"></script>

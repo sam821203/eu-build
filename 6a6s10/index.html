@@ -1,0 +1,341 @@
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css"
+    rel="stylesheet"
+  />
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css"
+    rel="stylesheet"
+  />
+</head>
+<style>
+  .build__wrap {
+    padding: 9px;
+  }
+
+  /* ===== card--6-moblie-slick ===== */
+  .card--6-moblie-slick {
+    overflow-x: hidden;
+  }
+
+  .card--6-moblie-slick .layout--main {
+    display: flex;
+  }
+
+  .card--6-moblie-slick .build__wrap {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: initial;
+  }
+
+  .card--6-moblie-slick .build__item {
+    margin-bottom: 0.8%;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 1px 1px rgba(0, 0, 0, 0.2);
+  }
+
+  .card--6-moblie-slick .build__item:active,
+  .card--6-moblie-slick .build__item:hover {
+    transform: scale(1.05);
+  }
+
+  /* ===== card--6-moblie-slick item *6 ===== */
+  .card--6-moblie-slick.item--6 .build__item {
+    width: 150px;
+    margin: 1% 0.25%;
+  }
+
+  .card--6-moblie-slick .build__item,
+  .card--6-moblie-slick .item__img {
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+  }
+
+  .card--6-moblie-slick .item__info {
+    position: relative;
+  }
+
+  .card--6-moblie-slick .item__name {
+    height: 30px;
+    margin-top: 5px;
+    font-size: 13px;
+  }
+
+  .card--6-moblie-slick .item__push span {
+    max-height: 21px;
+    color: #fff;
+    font-weight: 400;
+    line-height: 170%;
+    letter-spacing: 0;
+  }
+
+  .card--6-moblie-slick .item__push--outerFrame {
+    width: 100%;
+    height: 21px;
+    font-size: 13px;
+    text-align: center;
+  }
+
+  .card--6-moblie-slick .item__push {
+    position: relative;
+    z-index: 1;
+    height: auto;
+    line-height: 140%;
+  }
+
+  .card--6-moblie-slick.item--6 .item__info {
+    padding: 2% 6%;
+  }
+
+  .card--6-moblie-slick .variable-width .slick-slide {
+    height: auto !important;
+  }
+
+  .card--6-moblie-slick .variable-width .slick-next,
+  .card--6-moblie-slick .variable-width .slick-prev {
+    z-index: 100;
+  }
+
+  .card--6-moblie-slick .variable-width .slick-next {
+    right: 0;
+  }
+
+  .card--6-moblie-slick .variable-width .slick-prev {
+    left: 0;
+  }
+
+  .card--6-moblie-slick .variable-width .slick-next:before,
+  .card--6-moblie-slick .variable-width .slick-prev:before {
+    color: #767575;
+  }
+
+  .card--6-moblie-slick .variable-width .slick-dots {
+    bottom: -15px;
+  }
+  
+  /* ===== RWD 768 ===== */
+  @media screen and (min-width: 768px) {
+    .card--6-moblie-slick .build__item {
+      margin-bottom: 0.35%;
+    }
+
+    .card--6-moblie-slick .variable-width .slick-slide {
+      width: 150px;
+      min-width: 150px;
+      margin: 0 0.33%;
+    }
+
+    .card--6-moblie-slick .item__push--outerFrame {
+      height: 28px;
+      font-size: 14px;
+    }
+
+    .card--6-moblie-slick .item__push span {
+      max-height: 28px;
+      line-height: 200%;
+    }
+
+    .card--6-moblie-slick .item__name {
+      height: 37px;
+      font-size: 15px;
+    }
+
+    .card--6-moblie-slick.item--6 .item__info {
+      padding: 2%;
+    }
+
+    .card--6-moblie-slick .build__item {
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(0, 0, 0, 0.2);
+    }
+
+    .card--6-moblie-slick .variable-width .slick-list {
+      width: 100%;
+    }
+
+    .card--6-moblie-slick .variable-width .slick-track {
+      display: flex;
+      width: auto !important;
+      overflow-x: scroll;
+    }
+  }
+
+  /* ===== RWD 1024 ===== */
+  @media screen and (min-width: 1024px) {
+    .card--6-moblie-slick {
+      overflow-x: visible;
+    }
+
+    .card--6-moblie-slick .variable-width .slick-slide {
+      width: 16%;
+    }
+
+    .card--6-moblie-slick.item--6 .build__item {
+      width: 100%;
+    }
+
+    .card--6-moblie-slick .variable-width .slick-track {
+      overflow-x: visible ;
+    }
+  }
+</style>
+<!-- banner 表頭 -->
+<section class="title__wrap" data-title="<!--[BANNER_ALT_1]-->">
+  <a href="<!--[BANNER_LINK_1]-->">
+    <div
+      class="title__wrap__img"
+      style="background-image: url('<!--[BANNER_IMG_1]-->')"
+    ></div>
+  </a>
+</section>
+<!-- banner 表頭 end -->
+<section class="layout--main card--6-moblie-slick item--6">
+  <div class="build__wrap wow variable-width">
+    <div class="carousel__item">
+      <div class="build__item">
+        <a href="<!--[GOOD_LINK_1]-->">
+          <div class="item__box">
+            <div class="item__pic">
+              <img class="item__img" src="<!--[GOOD_IMG_XL_1]-->" alt="" />
+            </div>
+            <div class="item__info">
+              <div class="item__push--outerFrame">
+                <p class="item__push margin-top-sm margin-bottom-sm bg__red">
+                  <span><!--[GOOD_DESC_1]--></span>
+                </p>
+              </div>
+              <p class="item__name margin-bottom-md"><!--[GOOD_NAME_1]--></p>
+              <div class="item__price margin-bottom-sm">
+                <span>$</span>
+                <span><!--[GOOD_SALEPRC_1]--></span>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="carousel__item">
+      <div class="build__item">
+        <a href="<!--[GOOD_LINK_2]-->">
+          <div class="item__box">
+            <div class="item__pic">
+              <img class="item__img" src="<!--[GOOD_IMG_XL_2]-->" alt="" />
+            </div>
+            <div class="item__info">
+              <div class="item__push--outerFrame">
+                <p class="item__push margin-top-sm margin-bottom-sm bg__red">
+                  <span><!--[GOOD_DESC_2]--></span>
+                </p>
+              </div>
+              <p class="item__name margin-bottom-md"><!--[GOOD_NAME_2]--></p>
+              <div class="item__price margin-bottom-sm">
+                <span>$</span>
+                <span><!--[GOOD_SALEPRC_2]--></span>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="carousel__item">
+      <div class="build__item">
+        <a href="<!--[GOOD_LINK_3]-->">
+          <div class="item__box">
+            <div class="item__pic">
+              <img class="item__img" src="<!--[GOOD_IMG_XL_3]-->" alt="" />
+            </div>
+            <div class="item__info">
+              <div class="item__push--outerFrame">
+                <p class="item__push margin-top-sm margin-bottom-sm bg__red">
+                  <span><!--[GOOD_DESC_3]--></span>
+                </p>
+              </div>
+              <p class="item__name margin-bottom-md"><!--[GOOD_NAME_3]--></p>
+              <div class="item__price margin-bottom-sm">
+                <span>$</span>
+                <span><!--[GOOD_SALEPRC_3]--></span>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="carousel__item">
+      <div class="build__item">
+        <a href="<!--[GOOD_LINK_4]-->">
+          <div class="item__box">
+            <div class="item__pic">
+              <img class="item__img" src="<!--[GOOD_IMG_XL_4]-->" alt="" />
+            </div>
+            <div class="item__info">
+              <div class="item__push--outerFrame">
+                <p class="item__push margin-top-sm margin-bottom-sm bg__red">
+                  <span><!--[GOOD_DESC_4]--></span>
+                </p>
+              </div>
+              <p class="item__name margin-bottom-md"><!--[GOOD_NAME_4]--></p>
+              <div class="item__price margin-bottom-sm">
+                <span>$</span>
+                <span><!--[GOOD_SALEPRC_4]--></span>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="carousel__item">
+      <div class="build__item">
+        <a href="<!--[GOOD_LINK_5]-->">
+          <div class="item__box">
+            <div class="item__pic">
+              <img class="item__img" src="<!--[GOOD_IMG_XL_5]-->" alt="" />
+            </div>
+            <div class="item__info">
+              <div class="item__push--outerFrame">
+                <p class="item__push margin-top-sm margin-bottom-sm bg__red">
+                  <span><!--[GOOD_DESC_5]--></span>
+                </p>
+              </div>
+              <p class="item__name margin-bottom-md"><!--[GOOD_NAME_5]--></p>
+              <div class="item__price margin-bottom-sm">
+                <span>$</span>
+                <span><!--[GOOD_SALEPRC_5]--></span>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="carousel__item">
+      <div class="build__item">
+        <a href="<!--[GOOD_LINK_6]-->">
+          <div class="item__box">
+            <div class="item__pic">
+              <img class="item__img" src="<!--[GOOD_IMG_XL_6]-->" alt="" />
+            </div>
+            <div class="item__info">
+              <div class="item__push--outerFrame">
+                <p class="item__push margin-top-sm margin-bottom-sm bg__red">
+                  <span><!--[GOOD_DESC_6]--></span>
+                </p>
+              </div>
+              <p class="item__name margin-bottom-md"><!--[GOOD_NAME_6]--></p>
+              <div class="item__price margin-bottom-sm">
+                <span>$</span>
+                <span><!--[GOOD_SALEPRC_6]--></span>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script src="wow.min.js"></script>
+<script>
+  new WOW().init();
+</script>
+<!----- 輪播 ----->
+<script src="slick.min.js" defer></script>
+<script src="6a6s10.js" defer></script>

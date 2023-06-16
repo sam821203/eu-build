@@ -1,0 +1,166 @@
+﻿<style>
+  /* ===== build--4a0tt4s01 ===== */
+  .build--4a0tt4s01 .build__item {
+    width: 47%;
+    margin-bottom: 0.8%;
+    box-shadow: none;
+  }
+
+  .build--4a0tt4s01.item--4 .build__item:nth-of-type(n + 2) {
+    margin: 1% 0.5% 1% 1%;
+  }
+
+  .build--4a0tt4s01.item--4 .build__item:nth-of-type(2n + 1) {
+    margin: 1% 1% 1% 0.5%;
+  }
+
+  .build--4a0tt4s01 .build__item:active,
+  .build--4a0tt4s01 .build__item:hover {
+    transform: scale(1.05);
+  }
+
+  /* ===== build--4a0tt4s01 item *4 ===== */
+  .build--4a0tt4s01 .build__item,
+  .build--4a0tt4s01 .item__img {
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+  }
+
+  .build--4a0tt4s01 .item__info {
+    position: relative;
+  }
+
+  .build--4a0tt4s01 .item__name {
+    height: 32px;
+    margin-top: 0;
+    font-size: 14px;
+  }
+
+  /* ===== RWD 768 ===== */
+  @media screen and (min-width: 768px) {
+    .build--4a0tt4s01 .build__item {
+      margin-bottom: 0.35%;
+    }
+
+    .build--4a0tt4s01 .item__name {
+      height: 37px;
+      margin-top: 5px;
+      font-size: 16px;
+    }
+
+    .build--4a0tt4s01.item--4 .build__item,
+    .build--4a0tt4s01.item--4 .build__item:nth-of-type(n + 2),
+    .build--4a0tt4s01.item--4 .build__item:nth-of-type(2n + 1) {
+      width: 23%;
+      margin: 0.5% 0.33%;
+      margin-top: 0.8%;
+    }
+  }
+</style>
+<!-- banner 表頭 -->
+<section class="title__wrap" data-title="<!--[BANNER_ALT_1]-->">
+  <a href="<!--[BANNER_LINK_1]-->">
+    <div
+      class="title__wrap__img lazyload"
+      data-src="<!--[BANNER_IMG_1]-->"
+    ></div>
+  </a>
+</section>
+<!-- banner 表頭 end -->
+<section
+  class="build__wrap layout--main build--4a0tt4s01 item--4 wow"
+  style="background-color: <!--[CSS_BACKGROUND_COLOR]-->"
+>
+  <div class="build__item">
+    <a href="<!--[GOOD_LINK_1]-->">
+      <div class="item__box">
+        <div class="item__pic">
+          <img
+            class="item__img lazyload"
+            data-src="<!--[GOOD_IMG_XL_1]-->"
+            src="1x1_low.png"
+            alt=""
+          />
+        </div>
+        <div class="item__info">
+          <p class="item__name margin-bottom-md">
+            <!--[GOOD_NAME_1]-->
+          </p>
+          <div class="item__price margin-bottom-sm">
+            <span>$</span>
+            <span><!--[GOOD_SALEPRC_1]--></span>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="build__item">
+    <a href="<!--[GOOD_LINK_2]-->">
+      <div class="item__box">
+        <div class="item__pic">
+          <img
+            class="item__img lazyload"
+            data-src="<!--[GOOD_IMG_XL_2]-->"
+            src="1x1_low.png"
+            alt=""
+          />
+        </div>
+        <div class="item__info">
+          <p class="item__name margin-bottom-md"><!--[GOOD_NAME_2]--></p>
+          <div class="item__price margin-bottom-sm">
+            <span>$</span>
+            <span><!--[GOOD_SALEPRC_2]--></span>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="build__item">
+    <a href="<!--[GOOD_LINK_3]-->">
+      <div class="item__box">
+        <div class="item__pic">
+          <img
+            class="item__img lazyload"
+            data-src="<!--[GOOD_IMG_XL_3]-->"
+            src="1x1_low.png"
+            alt=""
+          />
+        </div>
+        <div class="item__info">
+          <p class="item__name margin-bottom-md"><!--[GOOD_NAME_3]--></p>
+          <div class="item__price margin-bottom-sm">
+            <span>$</span>
+            <span><!--[GOOD_SALEPRC_3]--></span>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="build__item">
+    <a href="<!--[GOOD_LINK_4]-->">
+      <div class="item__box">
+        <div class="item__pic">
+          <img
+            class="item__img lazyload"
+            data-src="<!--[GOOD_IMG_XL_4]-->"
+            src="1x1_low.png"
+            alt=""
+          />
+        </div>
+        <div class="item__info">
+          <p class="item__name margin-bottom-md"><!--[GOOD_NAME_4]--></p>
+          <div class="item__price margin-bottom-sm">
+            <span>$</span>
+            <span><!--[GOOD_SALEPRC_4]--></span>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+</section>
+<script src="wow.min.js"></script>
+<script src="lazyload.js"></script>
+<script>
+  new WOW().init();
+  var initLazyload = lazyload();
+</script>

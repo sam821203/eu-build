@@ -1,0 +1,426 @@
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<style>
+  a {
+    display: block;
+    text-decoration: none;
+    color: #000;
+  }
+
+  .layout--main {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 960px;
+  }
+
+  .election01 {
+    padding-left: 2%;
+    padding-right: 2%;
+    font-size: 14px;
+    font-family: "標楷體", DFKai-sb, BiauKai, PingFangTC-regular, Roboto,
+      "LiHei Pro", "Source Han Sans TC", -apple-system, BlinkMacSystemFont,
+      "Segoe UI", Arial, "Microsoft JhengHei", sans-serif;
+  }
+
+  .election01 .election__wrap {
+    padding: 2% 3%;
+    margin-bottom: 20px;
+    background-color: #fff;
+    box-shadow: 0 2.5px 6px 0 rgb(0 0 0 / 20%);
+  }
+
+  .election01 .election__zone {
+    padding: 2%;
+    background-color: #fff;
+  }
+
+  .election__title {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    margin-bottom: 6px;
+    color: #dd409a;
+  }
+
+  .election__title h2 {
+    font-size: 4.6vw;
+    font-weight: bold;
+  }
+
+  .election__title h3 {
+    font-size: 3.4vw;
+  }
+
+  .election__title + p {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    font-size: 3.2vw;
+    overflow: hidden;
+  }
+
+  .election__border {
+    border: 2px solid #dd409a;
+  }
+
+  .padding-xxs {
+    padding: 0.5%;
+  }
+
+  .margin-bottom-xs {
+    margin-bottom: 1.5%;
+  }
+
+  .election01 .build__ticket {
+    position: relative;
+    display: flex;
+    flex-wrap: nowrap;
+    background-color: #fff;
+    border-top: 2px solid #dd409a;
+    border-bottom: 0px solid #dd409a;
+  }
+
+  .election01 a:last-child .build__ticket {
+    border-bottom: 2px solid #dd409a;
+  }
+
+  .election01 .build__ticket:not(:first-child) {
+    border-top: none;
+  }
+
+  .election01 .build__ticket > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.6%;
+    border-left: 2px solid #dd409a;
+    border-right: 2px solid #dd409a;
+  }
+
+  .election01 .build__ticket > div:not(:first-child) {
+    border-top: none;
+    border-left: none;
+  }
+
+  .election01 .build__ticket:nth-child(2)::before {
+    content: "";
+    position: absolute;
+    top: -9%;
+    left: 3%;
+    z-index: 2;
+    width: 11vw;
+    height: 11vw;
+    background: url(vote.png) no-repeat;
+    background-size: 100%;
+  }
+
+  .election01 .build__ticket .product__img {
+    width: 30%;
+    padding: 2%;
+  }
+
+  .election01 .build__ticket .product__img a {
+    font-size: 0;
+  }
+
+  .election01 .build__ticket .product__img img {
+    width: 100%;
+  }
+
+  .election01 .build__ticket .product__price {
+    width: 18%;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: #dd409a;
+  }
+
+  .election01 .build__ticket:first-child > div {
+    font-weight: 700;
+  }
+
+  .election01 .build__ticket.first--child .product__price {
+    color: #000;
+  }
+
+  .election01 .build__ticket .product__price span {
+    margin-top: 0;
+    margin-right: 2%;
+    font-weight: 400;
+    color: #dd409a !important;
+  }
+
+  .election01 .build__ticket .product__name {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: 52%;
+    font-size: 12px;
+    line-height: 140%;
+    letter-spacing: 0.004em;
+  }
+
+  .election01 .build__ticket:first-child .product__name {
+    align-items: center;
+  }
+
+  .election01 .build__ticket .product__name p {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    max-height: 74px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  .election01 .product__description {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    height: 1.65em;
+    margin-top: 1%;
+    padding: 1.5% 0;
+    font-weight: bold;
+    color: #406cdd;
+    overflow: hidden;
+  }
+
+  /* ===== RWD 425 ===== */
+  @media screen and (min-width: 425px) {
+    .election01 .product__description {
+      padding: 1.2% 0;
+    }
+  }
+
+  @media screen and (min-width: 576px) {
+    .election01 .build__ticket .product__name {
+      font-size: 2.4vw;
+    }
+
+    .election01 .build__ticket .product__price {
+      font-size: 2.4vw;
+    }
+  }
+
+  /* ===== RWD 960 ===== */
+  @media screen and (min-width: 960px) {
+    .election01 {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    .election01 .margin-bottom-md {
+      margin-bottom: 40px;
+    }
+
+    .election__border {
+      border: 3px solid #dd409a;
+    }
+
+    .election__title {
+      padding-left: 0;
+      padding-right: 0;
+      margin-bottom: 20px;
+    }
+
+    .election__title h2 {
+      font-size: 40px;
+    }
+
+    .election__title h3 {
+      font-size: 32px;
+    }
+
+    .election__title + p {
+      font-size: 26px;
+    }
+
+    .election01 .election__wrap {
+      margin-bottom: 40px;
+    }
+
+    /* build tickets */
+    .election01 .build__ticket {
+      border-top: 3px solid #dd409a;
+      border-bottom: 0px solid #dd409a;
+    }
+
+    .election01 .build__ticket > div {
+      border-left: 3px solid #dd409a;
+      border-right: 3px solid #dd409a;
+    }
+
+    .election01 .build__ticket:first-child > div {
+      font-size: 28px;
+    }
+
+    .election01 .build__ticket:nth-child(2)::before {
+      top: -7%;
+      left: calc(50% - 430px);
+      background-size: auto;
+      width: 104px;
+      height: 104px;
+    }
+
+    .election01 a:last-child .build__ticket {
+      border-bottom: 3px solid #dd409a;
+    }
+
+    .election01 .build__ticket .product__name {
+      font-size: 26px;
+    }
+
+    .election01 .build__ticket .product__price {
+      font-size: 32px;
+    }
+
+    .election01 .build__ticket .product__price span {
+      font-size: 16px;
+      margin-top: 8px;
+      margin-right: 6px;
+    }
+  }
+</style>
+<section class="election01 layout--main">
+  <div class="election__wrap">
+    <div class="election__zone election__border">
+      <div class="election__title">
+        <h2>第87屆選舉搶購公報</h2>
+        <h3><!--[CUSTOM_TAG1_1]--></h3>
+      </div>
+      <p class="margin-bottom-xs">
+        <!--[CUSTOM_TAG2_1]-->
+      </p>
+      <ul class="build__tickets">
+        <li class="build__ticket first--child">
+          <div class="product__img">候選人</div>
+          <div class="product__price">售價</div>
+          <div class="product__name">品名</div>
+        </li>
+        <a href="<!--[GOOD_LINK_1]-->">
+          <li class="build__ticket">
+            <div class="product__img">
+              <img
+                class="lazyload"
+                data-src="<!--[GOOD_IMG_L_1]-->"
+                src="1x1_low.png"
+                alt=""
+              />
+            </div>
+            <div class="product__price">
+              <span>$</span
+              ><!--[GOOD_SALEPRC_1]-->
+            </div>
+            <div class="product__name">
+              <p>
+                <!--[GOOD_NAME_1]-->
+              </p>
+              <div class="product__description">
+                <!--[GOOD_DESC_1]-->
+              </div>
+            </div>
+          </li>
+        </a>
+        <a href="<!--[GOOD_LINK_2]-->">
+          <li class="build__ticket">
+            <div class="product__img">
+              <img
+                class="lazyload"
+                data-src="<!--[GOOD_IMG_L_2]-->"
+                src="1x1_low.png"
+                alt=""
+              />
+            </div>
+            <div class="product__price">
+              <span>$</span
+              ><!--[GOOD_SALEPRC_2]-->
+            </div>
+            <div class="product__name">
+              <p>
+                <!--[GOOD_NAME_2]-->
+              </p>
+              <div class="product__description">
+                <!--[GOOD_DESC_2]-->
+              </div>
+            </div>
+          </li>
+        </a>
+        <a href="<!--[GOOD_LINK_3]-->">
+          <li class="build__ticket">
+            <div class="product__img">
+              <img
+                class="lazyload"
+                data-src="<!--[GOOD_IMG_L_3]-->"
+                src="1x1_low.png"
+                alt=""
+              />
+            </div>
+            <div class="product__price">
+              <span>$</span
+              ><!--[GOOD_SALEPRC_3]-->
+            </div>
+            <div class="product__name">
+              <p>
+                <!--[GOOD_NAME_3]-->
+              </p>
+              <div class="product__description">
+                <!--[GOOD_DESC_3]-->
+              </div>
+            </div>
+          </li>
+        </a>
+        <a href="<!--[GOOD_LINK_4]-->">
+          <li class="build__ticket">
+            <div class="product__img">
+              <img
+                class="lazyload"
+                data-src="<!--[GOOD_IMG_L_4]-->"
+                src="1x1_low.png"
+                alt=""
+              />
+            </div>
+            <div class="product__price">
+              <span>$</span
+              ><!--[GOOD_SALEPRC_4]-->
+            </div>
+            <div class="product__name">
+              <p>
+                <!--[GOOD_NAME_4]-->
+              </p>
+              <div class="product__description">
+                <!--[GOOD_DESC_4]-->
+              </div>
+            </div>
+          </li>
+        </a>
+        <a href="<!--[GOOD_LINK_5]-->">
+          <li class="build__ticket">
+            <div class="product__img">
+              <img
+                class="lazyload"
+                data-src="<!--[GOOD_IMG_L_5]-->"
+                src="1x1_low.png"
+                alt=""
+              />
+            </div>
+            <div class="product__price">
+              <span>$</span
+              ><!--[GOOD_SALEPRC_5]-->
+            </div>
+            <div class="product__name">
+              <p>
+                <!--[GOOD_NAME_5]-->
+              </p>
+              <div class="product__description">
+                <!--[GOOD_DESC_5]-->
+              </div>
+            </div>
+          </li>
+        </a>
+      </ul>
+    </div>
+  </div>
+</section>
+<script src="lazyload.js"></script>
+<script>
+  var initLazyload = lazyload();
+</script>

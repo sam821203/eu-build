@@ -1,0 +1,1006 @@
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+  />
+</head>
+<style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  *:before,
+  *:after {
+    box-sizing: border-box;
+  }
+
+  a {
+    display: block;
+    text-decoration: none;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  img {
+    border: 0;
+  }
+
+  table img {
+    max-width: 100%;
+  }
+
+  section {
+    display: block;
+  }
+
+  body {
+    font-size: 14px;
+    font-family: PingFangTC-regular, Roboto, "LiHei Pro", "Source Han Sans TC",
+      -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, "Microsoft JhengHei",
+      sans-serif;
+  }
+
+  /* rwd title */
+  .header__wrap.header--show {
+    background: #fff;
+  }
+
+  .header__info {
+    margin: 0 auto;
+    max-width: 960px;
+    height: 55px;
+    background: #fff;
+    padding: 5px;
+  }
+
+  .header__info--sm {
+    max-width: 960px;
+  }
+
+  .header__wrap :after {
+    clear: both;
+    content: "";
+    display: block;
+    overflow: auto;
+  }
+
+  .community__ico {
+    float: right;
+  }
+
+  .header__ico {
+    float: left;
+  }
+
+  .header__ico img {
+    height: 45px;
+    width: auto;
+    padding-left: 5px;
+  }
+
+  .bg-line a {
+    width: 35px;
+    height: 35px;
+    background: url("https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1106167/line.jpg")
+      no-repeat;
+    background-size: 35px, 35px;
+    border-radius: 5px;
+  }
+
+  .bg-facebook a {
+    width: 35px;
+    height: 35px;
+    background: url("https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1106167/facebook.jpg")
+      no-repeat;
+    background-size: 35px, 35px;
+  }
+
+  .community__ico li {
+    display: inline-block;
+    cursor: pointer;
+    line-height: 40px;
+    margin-top: 4px;
+    margin-right: 5px;
+  }
+
+  .community__ico li.bg-line {
+    display: none;
+  }
+
+  @media screen and (max-width: 768px) {
+    .community__ico li.bg-line {
+      display: inline-block;
+    }
+  }
+
+  /* margin 調整 */
+  .margin-top-sm {
+    margin-top: 2%;
+  }
+
+  .margin-bottom-sm {
+    margin-bottom: 2%;
+  }
+
+  .margin-bottom-md {
+    margin-bottom: 4%;
+  }
+
+  .margin-bottom-lg {
+    margin-bottom: 8%;
+  }
+
+  /* build & item */
+  .layout--main {
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .build__wrap .item__wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  /* ===== RWD 768 ===== */
+  @media screen and (min-width: 960px) {
+    .build__wrap .item__wrap {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  .build__wrap {
+    display: flex;
+    flex-wrap: wrap;
+    /* 過渡期先將此設定各自放在新宮格裡 */
+    /* justify-content: space-between; */
+
+    /* 舊宮格樣式 */
+    justify-content: space-around;
+  }
+
+  .build__item {
+    width: calc(50% - 5px);
+    margin-bottom: 10px;
+    border-radius: 6px;
+    background-color: #fff;
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 20%);
+    overflow: hidden;
+    transition: all 0.16s;
+  }
+
+  /* hover float */
+  .build__item.hover--float-sm:active,
+  .build__item.hover--float-sm:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 2px 4.5px 0 rgb(0 0 0 / 25%);
+  }
+
+  /* hover scale */
+  .build__item.hover--scale-xs:active,
+  .build__item.hover--scale-xs:hover {
+    transform: scale(1.03);
+  }
+
+  .build__item.hover--scale-sm:active,
+  .build__item.hover--scale-sm:hover {
+    transform: scale(1.05);
+  }
+
+  /* ===== RWD 960 ===== */
+  @media screen and (min-width: 960px) {
+    .build__item {
+      width: calc(25% - 7.5px);
+    }
+  }
+
+  .build__item a {
+    color: #5d5d5d;
+  }
+
+  .item__pic {
+    position: relative;
+    z-index: 0;
+    padding-top: 100%;
+    overflow: hidden;
+  }
+
+  .item__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    display: block;
+    width: 100%;
+  }
+
+  .item__info {
+    padding: 2%;
+  }
+
+  .item__push {
+    width: 100%;
+    height: 28px;
+    text-align: center;
+  }
+
+  .item__push span {
+    position: relative;
+    z-index: 0;
+    display: block;
+    max-height: 28px;
+    margin: 0 3%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    line-height: 200%;
+    color: #cc1e05;
+    font-weight: bold;
+    overflow: hidden;
+  }
+
+  .item__name {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    text-overflow: ellipsis;
+    height: 36px;
+    line-height: 120%;
+    font-size: 15px;
+    overflow: hidden;
+  }
+
+  .item__price span:last-child {
+    color: #cc1e05;
+    font-size: 22px;
+  }
+
+  /* ===== build__banner--1 (750x328) ===== */
+  .build__banner--1 {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    border: 0;
+  }
+
+  .build__banner--1 .item__pic {
+    width: 100%;
+    /* banner 高(328) / 寬(750) 計算 padding-top*/
+    padding-top: 43.4%;
+    margin-top: 0;
+  }
+
+  .build__banner--1 .item__pic img {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  /* ===== build__banner--2 (630x940) ===== */
+  .build__banner--2 {
+    position: relative;
+    width: calc(50% - 5px);
+    text-align: center;
+    border: 0;
+  }
+
+  @media screen and (min-width: 960px) {
+    .build__banner--2 {
+      position: relative;
+      width: calc(25% - 7.5px);
+      text-align: center;
+      border: 0;
+    }
+  }
+
+  .build__banner--2 .item__pic {
+    width: 100%;
+    /* banner 高(940) / 寬(630) 計算 padding-top*/
+    padding-top: 149%;
+    margin-top: 0;
+  }
+
+  .build__banner--2 .item__pic img {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  /* ===== build__banner--3 (正方形圖片) ===== */
+  .build__banner--3 {
+    text-align: center;
+    background-color: #626483;
+    border: 0;
+    box-shadow: none;
+  }
+
+  /* ===== build__banner--4 (470x315) ===== */
+  .build__banner--4 {
+    position: relative;
+    text-align: center;
+    border: 0;
+    box-shadow: none;
+  }
+
+  /* ===== banner__hover ===== */
+  .banner__hover {
+    cursor: pointer;
+    transition: 0.2s !important;
+  }
+
+  .banner__hover:active,
+  .banner__hover:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 2px 4.5px 0 rgb(0 0 0 / 25%) !important;
+    filter: brightness(1.05) !important;
+  }
+
+  /* ===== item__price ===== */
+  .item__price span {
+    display: inline-flex;
+    height: 20px;
+    line-height: 20px;
+  }
+
+  .item__price .price-original {
+    text-decoration: line-through;
+    color: #999;
+  }
+
+  .item__price .price-t {
+    margin-left: 0;
+    max-width: 44px;
+    overflow: hidden;
+  }
+
+  .item__price .price-unit {
+    max-width: 44px;
+    overflow: hidden;
+  }
+
+  .item__price .price-t,
+  .item__price .price-symbol,
+  .item__price .price-unit {
+    color: #cc1e05 !important;
+    font-weight: 400;
+    font-size: 14px;
+  }
+
+  /* ===== border__arrow--right ===== */
+  .item--1b4s .border__arrow--right {
+    position: relative;
+    z-index: 0;
+    display: inline-block;
+    overflow: hidden;
+    cursor: pointer;
+    width: 15px;
+    height: 15px;
+  }
+
+  .item--1b4s .border__arrow--right::after {
+    transform: rotate(-45deg);
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 2px;
+    z-index: 1;
+    width: 60%;
+    height: 60%;
+    margin-top: 2px;
+    border-right: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    opacity: 0.75;
+  }
+
+  /* ===== animation setting start ===== */
+  .build__wrap.wow {
+    animation: 0.5s bounce-in-left both;
+  }
+
+  @keyframes bounce-in-left {
+    from {
+      transform: translateX(-30%);
+    }
+
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes bounce-in-left-top {
+    from {
+      transform: translate(-50%, 0);
+    }
+
+    to {
+      transform: translate(0, 0);
+    }
+  }
+  /* ===== animation setting end ===== */
+
+  /* banner 表頭 */
+  .title__wrap {
+    max-width: 960px;
+    margin: 0.5% auto;
+    padding: 0;
+  }
+
+  .title__wrap__img {
+    margin: 0;
+    height: 65px;
+    border: 0;
+    background: 50% 0% / auto auto no-repeat;
+  }
+  /* banner 表頭 end */
+
+  /* ===== item__push & item__btn background-color start ===== */
+  .item__btn {
+    position: relative;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 0.5px;
+  }
+
+  .item__btn.btn__solid {
+    border-radius: 2px;
+  }
+
+  .item__btn.btn__rounded--right {
+    border-radius: 4px 20px 20px 4px;
+  }
+
+  .item__btn.btn__rounded {
+    border-radius: 20px;
+  }
+
+  .item__push.bg__blue,
+  .item__btn.bg__blue {
+    background: #3000b1;
+    background: -webkit-linear-gradient(to right, #1a00ea, #3000b1, #1a00ea);
+    background: linear-gradient(to right, #1a00ea, #3000b1, #1a00ea);
+    /* background: -webkit-linear-gradient(90deg, #1A00EA -10%, #3000B1 105%);
+  background: linear-gradient(90deg, #1A00EA -10%, #3000B1 105%); */
+    border-radius: 20px;
+    color: #fff;
+    /* letter-spacing: 1.5px; */
+  }
+
+  .item__push.bg__green,
+  .item__btn.bg__green {
+    background: #3ca55c;
+    background: -webkit-linear-gradient(to right, #7fc313, #3ca55c, #7fc313);
+    background: linear-gradient(to right, #7fc313, #3ca55c, #7fc313);
+    /* background: -webkit-linear-gradient(90deg, #7fc313 -10%, #3ca55c 105%);
+  background: linear-gradient(90deg, #7fc313 -10%, #3ca55c 105%); */
+    border-radius: 20px;
+    color: #fff;
+    /* letter-spacing: 1.5px; */
+  }
+
+  .item__push.bg__red,
+  .item__btn.bg__red {
+    background: #f01400;
+    background: -webkit-linear-gradient(to right, #f07219, #f01400, #f07219);
+    background: linear-gradient(to right, #f07219, #f01400, #f07219);
+    /* background: -webkit-linear-gradient(90deg, #f07219 -10%, #f01400 105%);
+  background: linear-gradient(90deg, #f07219 -10%, #f01400 105%); */
+    border-radius: 20px;
+    color: #fff;
+    /* letter-spacing: 1.5px; */
+  }
+  /* ===== item__push & item__btn background-color end ===== */
+
+  /* ===== card--material (4px 的 border-radius) ===== */
+  .card--material .build__item {
+    margin-top: 1%;
+    margin-bottom: 1%;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(0, 0, 0, 0.2);
+  }
+
+  /* ===== card--small-space (更小的 margin) ===== */
+  .card--small-space .build__item {
+    margin-top: 0.4%;
+    margin-bottom: 0.4%;
+  }
+
+  /* 過渡期宮格縮 */
+  .build--1260 {
+    max-width: 960px !important;
+  }
+
+  .header__info--sm {
+    max-width: 960px;
+  }
+
+  /* 因應有些價格命名使用 price-unit 來當價格，先將 max-width 拿掉 */
+  .item__price .price-unit {
+    max-width: none;
+  }
+
+  /* =============== 共用 End =============== */
+
+  /* ===== build__banner ===== */
+  .card--6n1bn01.item--4 .build__banner--1 .item__pic {
+    border-radius: 6px;
+  }
+
+  .card--6n1bn01.item--4 .build__banner--1 .bn__sub__title {
+    position: absolute;
+    top: calc(100vw * 0.13);
+    z-index: 1;
+    padding: 2% 2% 2% 1%;
+    box-sizing: content-box;
+    color: #fff;
+    background-color: #3c3737;
+  }
+
+  /* ===== card--6n1bn01 ===== */
+  /* .card--6n1bn01 .build__item, */
+  /* 過渡期用，用來蓋過原本 build__wrap 的設定
+  並測試 item__wrap 的控制間距方式 */
+  .card--6n1bn01.item--4.build__wrap {
+    justify-content: space-between !important;
+    padding: 0 !important;
+  }
+
+  .card--6n1bn01.item--4 .build__items {
+    width: 100%;
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 20%);
+    border-radius: 6px;
+    transition: transform 0.16s;
+  }
+
+  .card--6n1bn01.item--4 .build__items {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    box-shadow: none;
+  }
+
+  .card--6n1bn01.item--4 .build__items .build__item {
+    width: calc(50% - 5px);
+    padding: 0%;
+  }
+
+  .card--6n1bn01 .build__item .item__price span:first-child {
+    display: none;
+  }
+
+  .card--6n1bn01 .build__items .build__item .item__price span:first-child {
+    display: inline-flex;
+  }
+
+  .card--6n1bn01.item--4 .item__push {
+    font-size: 14px;
+    font-weight: 700;
+    text-align: left;
+  }
+
+  /* ===== RWD 768 ===== */
+  @media screen and (min-width: 768px) {
+    .card--6n1bn01.item--4 .build__item {
+      width: calc(25% - 7.5px);
+    }
+  }
+
+  .card--6n1bn01.item--4 .build__items .build__item:last-child {
+    margin-bottom: 10px;
+  }
+
+  .card--6n1bn01 .build__item:active,
+  .card--6n1bn01 .build__item:hover {
+    transform: translateY(-3px);
+  }
+
+  .card--6n1bn01 .build__items .item__img {
+    border: 0;
+    border-radius: 6px 6px 0 0;
+  }
+
+  .card--6n1bn01 .item__name {
+    height: 41px;
+    line-height: 140%;
+  }
+
+  .card--6n1bn01 .item__box {
+    display: block;
+  }
+
+  .card--6n1bn01 .build__item .item__push span {
+    margin: 0;
+  }
+  /* ===== card--6n1bn01 item *9 ===== */
+  /* ===== 三大宮格(手機一大) ===== */
+  .card--6n1bn01.item--4 .build__item {
+    position: relative;
+  }
+
+  .card--6n1bn01.item--4 .build__items .item__pic {
+    width: 100%;
+  }
+
+  .card--6n1bn01.item--4 .build__item .item__info {
+    width: 100%;
+    margin-left: 0;
+    padding: 2% 4%;
+  }
+
+  .card--6n1bn01.item--4 .build__items .item__name {
+    font-size: 15px;
+    line-height: 140%;
+  }
+
+  .card--6n1bn01.item--4 .build__item .item__name.margin-bottom-lg {
+    margin-bottom: 8%;
+  }
+
+  /* ========== RWD 375 ========== */
+  @media screen and (min-width: 375px) {
+    .card--6n1bn01.item--4 .build__item .item__price {
+      margin-top: 10px;
+    }
+  }
+
+  /* ========== RWD 414 ========== */
+  @media screen and (min-width: 414px) {
+    .card--6n1bn01.item--4 .build__item .item__price {
+      margin-top: 11%;
+    }
+
+    .card--6n1bn01.item--4 .build__item .item__price {
+      margin-top: 13px;
+    }
+
+    .card--6n1bn01.item--4 .build__banner--1 .item__pic img {
+      max-width: 100vw;
+    }
+  }
+
+  /* ========== RWD 768 ========== */
+  @media screen and (min-width: 768px) {
+    .card--6n1bn01.item--4 .build__items .build__item {
+      width: 100%;
+      padding: 0 1.5%;
+    }
+
+    .card--6n1bn01.item--4 .build__items .item__pic {
+      width: 41.5%;
+      padding-top: 41.5%;
+    }
+
+    .card--6n1bn01.item--4 .build__item .item__name {
+      height: 2.5em;
+      margin-top: 4px;
+      font-size: 1.8vw;
+      line-height: 130%;
+    }
+
+    .card--6n1bn01.item--4 .build__item .item__name.margin-bottom-lg {
+      margin-bottom: 6%;
+    }
+
+    .card--6n1bn01.item--4 .build__item .item__price {
+      margin-top: 0;
+      margin-bottom: 2%;
+    }
+
+    .card--6n1bn01 .build__item .item__price span {
+      display: inline-block;
+    }
+    .card--6n1bn01 .build__item .item__price span:first-child {
+      display: inline-block;
+    }
+
+    .card--6n1bn01.item--4 .build__item.build__banner--1 {
+      width: calc(66% - 5px);
+    }
+
+    .card--6n1bn01.item--4 .build__items {
+      flex-direction: column;
+      width: calc(34% - 5px);
+      padding: 0.8% 1.35%;
+      box-shadow: 0 1px 3px 0 rgb(0 0 0 / 20%);
+    }
+
+    .card--6n1bn01.item--4 .build__item .item__price span:first-child {
+      font-size: 14px;
+    }
+
+    .card--6n1bn01 .build__items .item__box {
+      display: flex;
+    }
+
+    .card--6n1bn01.item--4 .build__items {
+      background-color: #fff;
+    }
+
+    .card--6n1bn01 .build__items .item__img {
+      border: 1px solid #e1e1e1;
+      border-radius: 6px;
+    }
+
+    .card--6n1bn01.item--4 .build__items .item__info {
+      width: 54%;
+      margin-left: 3%;
+      padding: 0;
+    }
+
+    .card--6n1bn01.item--4 .build__items {
+      justify-content: space-around;
+      margin-bottom: 10px;
+    }
+
+    .card--6n1bn01.item--4 .build__items .build__item {
+      box-shadow: none;
+      margin-bottom: 0;
+    }
+
+    .card--6n1bn01.item--4 .build__items .build__item:first-child,
+    .card--6n1bn01.item--4 .build__items .build__item:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  /* ===== rwd 960 ===== */
+  @media screen and (min-width: 960px) {
+    .card--6n1bn01.item--4 .build__banner--1 .item__pic img {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .card--6n1bn01.item--4 .build__item .item__name {
+      height: 41px;
+      font-size: 15px;
+    }
+
+    .card--6n1bn01.item--4 .build__item .item__price span {
+      font-size: 22px;
+    }
+
+    .card--6n1bn01.item--4 .build__item .item__price span:nth-child(2) {
+      font-size: 14px;
+    }
+
+    .card--6n1bn01.item--4 .build__items .build__item .item__price span {
+      font-size: 22px;
+    }
+
+    .card--6n1bn01.item--4
+      .build__items
+      .build__item
+      .item__price
+      span:first-child {
+      font-size: 14px;
+    }
+  }
+
+  /* 過度樣式，之後需統一 banner 共用樣式 */
+  .build__banner--1,
+  .build__banner--2,
+  .build__banner--3,
+  .build__banner--4 {
+    background-color: transparent !important;
+  }
+</style>
+<!-- banner 表頭 -->
+<section class="title__wrap" data-title="<!--[BANNER_ALT_1]-->">
+  <a href="<!--[BANNER_LINK_1]-->">
+    <div
+      class="title__wrap__img lazyload"
+      data-src="<!--[BANNER_IMG_1]-->"
+    ></div>
+  </a>
+</section>
+<!-- banner 表頭 end -->
+<section class="build__wrap layout--main card--6n1bn01 item--4 wow">
+  <div class="item__wrap">
+    <div class="build__item build__banner--1 banner__hover">
+      <div class="item__pic">
+        <a href="<!--[BANNER_LINK_2]-->">
+          <img
+            class="item__img lazyload"
+            data-src="<!--[BANNER_IMG_2]-->"
+            src="1x1_low.png"
+            alt=""
+          />
+        </a>
+      </div>
+    </div>
+    <div class="build__items">
+      <div class="build__item">
+        <a href="<!--[GOOD_LINK_1]-->">
+          <div class="item__box">
+            <div class="item__pic xl__item">
+              <img
+                class="item__img lazyload"
+                data-src="<!--[GOOD_IMG_L_1]-->"
+                src="1x1_low.png"
+                alt=""
+              />
+            </div>
+            <div class="item__info">
+              <p class="item__push">
+                <span class="item__push__txt"><!--[GOOD_DESC_1]--></span>
+              </p>
+              <p class="item__name margin-bottom-lg"><!--[GOOD_NAME_1]--></p>
+              <div class="item__price margin-bottom-sm">
+                <span class="price-symbol">$</span>
+                <span class="price-discount"><!--[GOOD_SALEPRC_1]--></span>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="build__item">
+        <a href="<!--[GOOD_LINK_2]-->">
+          <div class="item__box">
+            <div class="item__pic xl__item">
+              <img
+                class="item__img lazyload"
+                data-src="<!--[GOOD_IMG_L_2]-->"
+                src="1x1_low.png"
+                alt=""
+              />
+            </div>
+            <div class="item__info">
+              <p class="item__push">
+                <span class="item__push__txt"><!--[GOOD_DESC_2]--></span>
+              </p>
+              <p class="item__name margin-bottom-lg"><!--[GOOD_NAME_2]--></p>
+              <div class="item__price margin-bottom-sm">
+                <span class="price-symbol">$</span>
+                <span class="price-discount"><!--[GOOD_SALEPRC_2]--></span>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="build__item hover--float-sm">
+      <a href="<!--[GOOD_LINK_3]-->">
+        <div class="item__box">
+          <div class="item__pic">
+            <img
+              class="item__img lazyload"
+              data-src="<!--[GOOD_IMG_L_3]-->"
+              src="1x1_low.png"
+              alt=""
+            />
+          </div>
+          <div class="item__info">
+            <p class="item__push">
+              <span><!--[GOOD_DESC_3]--></span>
+            </p>
+            <p class="item__name margin-bottom-lg">
+              <!--[GOOD_NAME_3]-->
+            </p>
+            <div class="item__price margin-bottom-sm">
+              <span class="price-original"><!--[GOOD_CPRC_3]--></span>
+              <span class="price-symbol">$</span>
+              <span class="price-discount"><!--[GOOD_SALEPRC_3]--></span>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="build__item hover--float-sm">
+      <a href="<!--[GOOD_LINK_4]-->">
+        <div class="item__box">
+          <div class="item__pic">
+            <img
+              class="item__img lazyload"
+              data-src="<!--[GOOD_IMG_L_4]-->"
+              src="1x1_low.png"
+              alt=""
+            />
+          </div>
+          <div class="item__info">
+            <p class="item__push">
+              <span><!--[GOOD_DESC_4]--></span>
+            </p>
+            <p class="item__name margin-bottom-lg">
+              <!--[GOOD_NAME_4]-->
+            </p>
+            <div class="item__price margin-bottom-sm">
+              <span class="price-original"><!--[GOOD_CPRC_4]--></span>
+              <span class="price-symbol">$</span>
+              <span class="price-discount"><!--[GOOD_SALEPRC_4]--></span>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="build__item hover--float-sm">
+      <a href="<!--[GOOD_LINK_5]-->">
+        <div class="item__box">
+          <div class="item__pic">
+            <img
+              class="item__img lazyload"
+              data-src="<!--[GOOD_IMG_L_5]-->"
+              src="1x1_low.png"
+              alt=""
+            />
+          </div>
+          <div class="item__info">
+            <p class="item__push">
+              <span><!--[GOOD_DESC_5]--></span>
+            </p>
+            <p class="item__name margin-bottom-lg">
+              <!--[GOOD_NAME_5]-->
+            </p>
+            <div class="item__price margin-bottom-sm">
+              <span class="price-original"><!--[GOOD_CPRC_5]--></span>
+              <span class="price-symbol">$</span>
+              <span class="price-discount"><!--[GOOD_SALEPRC_5]--></span>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="build__item hover--float-sm">
+      <a href="<!--[GOOD_LINK_6]-->">
+        <div class="item__box">
+          <div class="item__pic">
+            <img
+              class="item__img lazyload"
+              data-src="<!--[GOOD_IMG_L_6]-->"
+              src="1x1_low.png"
+              alt=""
+            />
+          </div>
+          <div class="item__info">
+            <p class="item__push">
+              <span><!--[GOOD_DESC_6]--></span>
+            </p>
+            <p class="item__name margin-bottom-lg">
+              <!--[GOOD_NAME_6]-->
+            </p>
+            <div class="item__price margin-bottom-sm">
+              <span class="price-original"><!--[GOOD_CPRC_6]--></span>
+              <span class="price-symbol">$</span>
+              <span class="price-discount"><!--[GOOD_SALEPRC_6]--></span>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<script src="wow.min.js"></script>
+<script src="lazyload.js"></script>
+<script>
+  var initLazyload = lazyload();
+</script>
+<!--<script>-->
+
+<!--function isWinWt() {-->
+<!--var winWt = document.body.clientWidth;-->
+<!--if (winWt <= 768 && winWt > 425) {-->
+<!--changeSmallImg();-->
+<!--}-->
+<!--}-->
+<!--function changeSmallImg() {-->
+<!--//    圖片太小取代-->
+<!--var bigImgs = document.querySelectorAll('.xl__item img');-->
+<!--bigImgs.forEach(function (el) {-->
+<!--var linkArray = el.src.split('_L');-->
+<!--if (linkArray.length === 2) {-->
+<!--el.src = linkArray[0] + '_XXL' + linkArray[1];-->
+<!--}-->
+<!--});-->
+<!--}-->
+<!--window.addEventListener('load', isWinWt);-->
+<!--window.addEventListener('resize', isWinWt);-->
+<!--</script>-->

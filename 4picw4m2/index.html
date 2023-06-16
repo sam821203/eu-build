@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- TODO: 離線測試時打開，production版時關掉 -->
+  <!-- <link rel="stylesheet" href="https://media.etmall.com.tw/sp/12500/generate_v1.3.css"> -->
+
+  <style>
+    /* ========== start ========== */
+    .special__4pic--w4m2 {
+      margin-bottom: 24px;
+    }
+
+    @media screen and (min-width: 960px) {
+      .special__4pic--w4m2 {
+        margin-bottom: 32px;
+      }
+    }
+
+    .special__4pic--w4m2 .special__wrap {
+      border-radius: 30px;
+    }
+
+    @media screen and (min-width: 768px) {
+      .special__4pic--w4m2 .special__wrap {
+        border-radius: 60px;
+      }
+    }
+
+    .special__4pic--w4m2 .special__block {
+      padding: 2% 2% 0;
+    }
+
+    .special__4pic--w4m2 .special__items {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    
+    .special__4pic--w4m2 .special__item {
+      width: 49%;
+      margin-bottom: 2%;
+      cursor: pointer;
+    }
+    
+    section.special__4pic--w4m2 .special__item:hover,
+    section.special__4pic--w4m2 .special__item--add:hover {
+      transition: all .5s;
+      transform: translateY(-2%);
+      filter: saturate(1.2);
+    }
+
+
+    @media screen and (min-width: 768px) {
+      .special__4pic--w4m2 .special__item {
+        width: 23%;
+      }
+    }
+    /* ========== end ========== */
+
+    .special__wrap > .build__item{
+        display: none;
+      }
+
+  </style>
+</head>
+<body>
+
+  <!-- banner data 連結 -->
+<section class="title__wrap" data-title="<!--[BANNER_ALT_1]-->">
+  <a href="<!--[BANNER_LINK_1]-->">
+    <div
+      class="title__wrap__img"
+      style="background-image: url(<!--[BANNER_IMG_1]-->)"
+    ></div>
+  </a>
+</section>
+<!-- banner data 連結 End -->
+
+
+  <section class="special__4pic--w4m2">
+    <div class="layout--main">
+      <div class="special__wrap">
+        <div class="special__block">
+          <ul class="special__items">
+            <li class="special__item">
+              <a href="<!--[BANNER_LINK_2]-->" data-title="<!--[BANNER_ALT_2]-->">
+                <img class="lazyload" src="<!--[BANNER_IMG_2]-->" alt="東森好物報你知">
+              </a>
+            </li>
+            <li class="special__item">
+              <a href="<!--[BANNER_LINK_3]-->" data-title="<!--[BANNER_ALT_3]-->">
+                <img class="lazyload" src="<!--[BANNER_IMG_3]-->" alt="東森好物報你知">
+              </a>
+            </li>
+            <li class="special__item">
+              <a href="<!--[BANNER_LINK_4]-->" data-title="<!--[BANNER_ALT_4]-->">
+                <img class="lazyload" src="<!--[BANNER_IMG_4]-->" alt="東森好物報你知">
+              </a>
+            </li>
+            <li class="special__item">
+              <a href="<!--[BANNER_LINK_5]-->" data-title="<!--[BANNER_ALT_5]-->">
+                <img class="lazyload" src="<!--[BANNER_IMG_5]-->" alt="東森好物報你知">
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="build__item">
+          <a href="<!--[GOOD_LINK_1]-->">
+            <div class="item__box">
+              <div class="item__pic">
+                <img class="item__img lazyload" data-src="<!--[GOOD_IMG_L_1]-->" src="1x1_low.png" alt="" >
+              </div>
+              <div class="item__info">
+                <p class="item__name margin-bottom-md"><!--[GOOD_NAME_1]--></p>
+                <div class="item__price margin-bottom-sm">
+                  <span>$</span>
+                  <span><!--[GOOD_SALEPRC_1]--></span>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+<script src="lazyload.js"></script>
+
+</body>
+</html>

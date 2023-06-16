@@ -1,0 +1,637 @@
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<style>
+  /* ===== card--three-space ===== */
+  .card--carousel-sp12 .build__item {
+    margin-bottom: 0.8%;
+    box-shadow: none;
+  }
+
+  .card--carousel-sp12 .build__item:active,
+  .card--carousel-sp12 .build__item:hover {
+    transform: scale(1.05);
+  }
+
+  /* ===== card--three-space item *6 ===== */
+  .card--carousel-sp12.item--6 .build__item {
+    width: 32.5%;
+    margin: 1% 0.25%;
+    float: left;
+  }
+
+  .card--carousel-sp12 .build__item,
+  .card--carousel-sp12 .item__img {
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+  }
+
+  .card--carousel-sp12 .item__info {
+    position: relative;
+  }
+
+  .card--carousel-sp12 .item__name {
+    height: 32px;
+    margin-top: 5px;
+    font-size: 14px;
+  }
+
+  .card--carousel-sp12 .item__push span {
+    max-height: 21px;
+    line-height: 170%;
+    letter-spacing: 0;
+    color: #fff;
+    font-weight: 400;
+  }
+
+  .card--carousel-sp12 .item__push--outerFrame {
+    width: 100%;
+    height: 21px;
+    font-size: 13px;
+    text-align: center;
+  }
+
+  .card--carousel-sp12 .item__push {
+    position: relative;
+    z-index: 1;
+    height: auto;
+    line-height: 140%;
+  }
+
+  /* ===== 輪播 dots ===== */
+  .card--carousel-sp12 .dots {
+    margin: 0.5em auto 0 auto;
+  }
+
+  .card--carousel-sp12 .dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin-right: 0.35em;
+    background: rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    border-radius: 100%;
+    text-indent: -99999px;
+    transition: 0.3s all ease;
+  }
+
+  .card--carousel-sp12 .dot.active {
+    background: #000;
+  }
+
+  .card--carousel-sp12.carousel__slide {
+    position: relative;
+  }
+
+  .card--carousel-sp12.carousel__slide .build__item {
+    float: left;
+  }
+
+  /* ===== 輪播 ===== */
+  .card--carousel-sp12.carousel__slide .carousel__item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.8s;
+  }
+
+  .card--carousel-sp12.carousel__slide .carousel__item:first-child {
+    position: static;
+  }
+
+  .card--carousel-sp12.carousel__slide .carousel__item.show {
+    opacity: 1;
+    visibility: visible;
+    transition: 2s;
+    animation: 0.5s bounce-in-left-top both;
+  }
+
+  .card--carousel-sp12.carousel__slide .prev,
+  .carousel__slide .next {
+    position: absolute;
+    top: 50%;
+    display: block;
+    padding: 14px 12px;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.12);
+    transition: 0.4s;
+    transform: translateY(-50%);
+  }
+
+  .card--carousel-sp12 .carousel__slide .prev:hover,
+  .carousel__slide .next:hover {
+    background-color: rgba(0, 0, 0, 0.24);
+  }
+
+  .card--carousel-sp12.carousel__slide .prev:after,
+  .carousel__slide .next:after {
+    content: "";
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-top: 2px solid #fff;
+    border-right: 2px solid #fff;
+  }
+
+  .card--carousel-sp12.carousel__slide .prev {
+    left: 0;
+  }
+
+  .card--carousel-sp12.carousel__slide .prev:after {
+    transform: rotate(-135deg);
+    margin-left: 4px;
+  }
+
+  .card--carousel-sp12.carousel__slide .next {
+    right: 0;
+  }
+
+  .card--carousel-sp12.carousel__slide .next:after {
+    transform: rotate(45deg);
+    margin-right: 4px;
+  }
+
+  /* ===== RWD 768 ===== */
+  @media screen and (min-width: 768px) {
+    .card--carousel-sp12 .build__item {
+      margin-bottom: 0.35%;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(0, 0, 0, 0.2);
+    }
+
+    .card--carousel-sp12.carousel__slide .carousel__item {
+      position: relative;
+      width: 50%;
+      float: left;
+    }
+
+    .card--carousel-sp12.carousel__slide .carousel__item,
+    .card--carousel-sp12.carousel__slide .carousel__item.show {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .card--carousel-sp12 .dots {
+      display: none;
+    }
+
+    .card--carousel-sp12 .item__push--outerFrame {
+      height: 28px;
+      font-size: 14px;
+    }
+
+    .card--carousel-sp12 .item__push span {
+      max-height: 28px;
+      line-height: 200%;
+    }
+
+    .card--carousel-sp12 .item__name {
+      height: 37px;
+      font-size: 15px;
+    }
+
+    .card--carousel-sp12.carousel__slide {
+      position: static;
+    }
+
+    .card--carousel-sp12.carousel__slide .prev,
+    .carousel__slide .next {
+      display: none;
+    }
+  }
+</style>
+<!-- banner 表頭 -->
+<section class="title__wrap" data-title="<!--[BANNER_ALT_1]-->">
+  <a href="<!--[BANNER_LINK_1]-->">
+    <div
+      class="title__wrap__img lazyload"
+      data-src="<!--[BANNER_IMG_1]-->"
+    ></div>
+  </a>
+</section>
+<!-- banner 表頭 end -->
+<section
+  class="build__wrap layout--main card--carousel-sp12 item--6 wow carousel__slide"
+  style="padding: 0"
+>
+  <div class="carousel__item">
+    <div class="build__item">
+      <a href="<!--[GOOD_LINK_1]-->">
+        <div class="item__box">
+          <div class="item__pic">
+            <img
+              class="item__img lazyload"
+              data-src="<!--[GOOD_IMG_L_1]-->"
+              src="1x1_low.png"
+              alt=""
+            />
+          </div>
+          <div class="item__info">
+            <div class="item__push--outerFrame">
+              <p class="item__push margin-top-sm margin-bottom-sm bg__red">
+                <span><!--[GOOD_DESC_1]--></span>
+              </p>
+            </div>
+            <p class="item__name margin-bottom-md"><!--[GOOD_NAME_1]--></p>
+            <div class="item__price margin-bottom-sm">
+              <span>$</span>
+              <span><!--[GOOD_SALEPRC_1]--></span>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="build__item">
+      <a href="<!--[GOOD_LINK_2]-->">
+        <div class="item__box">
+          <div class="item__pic">
+            <img
+              class="item__img lazyload"
+              data-src="<!--[GOOD_IMG_L_2]-->"
+              src="1x1_low.png"
+              alt=""
+            />
+          </div>
+          <div class="item__info">
+            <div class="item__push--outerFrame">
+              <p class="item__push margin-top-sm margin-bottom-sm bg__red">
+                <span><!--[GOOD_DESC_2]--></span>
+              </p>
+            </div>
+            <p class="item__name margin-bottom-md"><!--[GOOD_NAME_2]--></p>
+            <div class="item__price margin-bottom-sm">
+              <span>$</span>
+              <span><!--[GOOD_SALEPRC_2]--></span>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="build__item">
+      <a href="<!--[GOOD_LINK_3]-->">
+        <div class="item__box">
+          <div class="item__pic">
+            <img
+              class="item__img lazyload"
+              data-src="<!--[GOOD_IMG_L_3]-->"
+              src="1x1_low.png"
+              alt=""
+            />
+          </div>
+          <div class="item__info">
+            <div class="item__push--outerFrame">
+              <p class="item__push margin-top-sm margin-bottom-sm bg__red">
+                <span><!--[GOOD_DESC_3]--></span>
+              </p>
+            </div>
+            <p class="item__name margin-bottom-md"><!--[GOOD_NAME_3]--></p>
+            <div class="item__price margin-bottom-sm">
+              <span>$</span>
+              <span><!--[GOOD_SALEPRC_3]--></span>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+  <div class="carousel__item">
+    <div class="build__item">
+      <a href="<!--[GOOD_LINK_4]-->">
+        <div class="item__box">
+          <div class="item__pic">
+            <img
+              class="item__img lazyload"
+              data-src="<!--[GOOD_IMG_L_4]-->"
+              src="1x1_low.png"
+              alt=""
+            />
+          </div>
+          <div class="item__info">
+            <div class="item__push--outerFrame">
+              <p class="item__push margin-top-sm margin-bottom-sm bg__red">
+                <span><!--[GOOD_DESC_4]--></span>
+              </p>
+            </div>
+            <p class="item__name margin-bottom-md"><!--[GOOD_NAME_4]--></p>
+            <div class="item__price margin-bottom-sm">
+              <span>$</span>
+              <span><!--[GOOD_SALEPRC_4]--></span>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="build__item">
+      <a href="<!--[GOOD_LINK_5]-->">
+        <div class="item__box">
+          <div class="item__pic">
+            <img
+              class="item__img lazyload"
+              data-src="<!--[GOOD_IMG_L_5]-->"
+              src="1x1_low.png"
+              alt=""
+            />
+          </div>
+          <div class="item__info">
+            <div class="item__push--outerFrame">
+              <p class="item__push margin-top-sm margin-bottom-sm bg__red">
+                <span><!--[GOOD_DESC_5]--></span>
+              </p>
+            </div>
+            <p class="item__name margin-bottom-md"><!--[GOOD_NAME_5]--></p>
+            <div class="item__price margin-bottom-sm">
+              <span>$</span>
+              <span><!--[GOOD_SALEPRC_5]--></span>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="build__item">
+      <a href="<!--[GOOD_LINK_6]-->">
+        <div class="item__box">
+          <div class="item__pic">
+            <img
+              class="item__img lazyload"
+              data-src="<!--[GOOD_IMG_L_6]-->"
+              src="1x1_low.png"
+              alt=""
+            />
+          </div>
+          <div class="item__info">
+            <div class="item__push--outerFrame">
+              <p class="item__push margin-top-sm margin-bottom-sm bg__red">
+                <span><!--[GOOD_DESC_6]--></span>
+              </p>
+            </div>
+            <p class="item__name margin-bottom-md"><!--[GOOD_NAME_6]--></p>
+            <div class="item__price margin-bottom-sm">
+              <span>$</span>
+              <span><!--[GOOD_SALEPRC_6]--></span>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+  <div class="carousel__item">
+    <div class="build__item">
+      <a href="<!--[GOOD_LINK_7]-->">
+        <div class="item__box">
+          <div class="item__pic">
+            <img
+              class="item__img lazyload"
+              data-src="<!--[GOOD_IMG_L_7]-->"
+              src="1x1_low.png"
+              alt=""
+            />
+          </div>
+          <div class="item__info">
+            <div class="item__push--outerFrame">
+              <p class="item__push margin-top-sm margin-bottom-sm bg__red">
+                <span><!--[GOOD_DESC_7]--></span>
+              </p>
+            </div>
+            <p class="item__name margin-bottom-md"><!--[GOOD_NAME_7]--></p>
+            <div class="item__price margin-bottom-sm">
+              <span>$</span>
+              <span><!--[GOOD_SALEPRC_7]--></span>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="build__item">
+      <a href="<!--[GOOD_LINK_8]-->">
+        <div class="item__box">
+          <div class="item__pic">
+            <img
+              class="item__img lazyload"
+              data-src="<!--[GOOD_IMG_L_8]-->"
+              src="1x1_low.png"
+              alt=""
+            />
+          </div>
+          <div class="item__info">
+            <div class="item__push--outerFrame">
+              <p class="item__push margin-top-sm margin-bottom-sm bg__red">
+                <span><!--[GOOD_DESC_8]--></span>
+              </p>
+            </div>
+            <p class="item__name margin-bottom-md"><!--[GOOD_NAME_8]--></p>
+            <div class="item__price margin-bottom-sm">
+              <span>$</span>
+              <span><!--[GOOD_SALEPRC_8]--></span>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="build__item">
+      <a href="<!--[GOOD_LINK_9]-->">
+        <div class="item__box">
+          <div class="item__pic">
+            <img
+              class="item__img lazyload"
+              data-src="<!--[GOOD_IMG_L_9]-->"
+              src="1x1_low.png"
+              alt=""
+            />
+          </div>
+          <div class="item__info">
+            <div class="item__push--outerFrame">
+              <p class="item__push margin-top-sm margin-bottom-sm bg__red">
+                <span><!--[GOOD_DESC_9]--></span>
+              </p>
+            </div>
+            <p class="item__name margin-bottom-md"><!--[GOOD_NAME_9]--></p>
+            <div class="item__price margin-bottom-sm">
+              <span>$</span>
+              <span><!--[GOOD_SALEPRC_9]--></span>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+  <div class="carousel__item">
+    <div class="build__item">
+      <a href="<!--[GOOD_LINK_10]-->">
+        <div class="item__box">
+          <div class="item__pic">
+            <img
+              class="item__img lazyload"
+              data-src="<!--[GOOD_IMG_L_10]-->"
+              src="1x1_low.png"
+              alt=""
+            />
+          </div>
+          <div class="item__info">
+            <div class="item__push--outerFrame">
+              <p class="item__push margin-top-sm margin-bottom-sm bg__red">
+                <span><!--[GOOD_DESC_10]--></span>
+              </p>
+            </div>
+            <p class="item__name margin-bottom-md"><!--[GOOD_NAME_10]--></p>
+            <div class="item__price margin-bottom-sm">
+              <span>$</span>
+              <span><!--[GOOD_SALEPRC_10]--></span>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="build__item">
+      <a href="<!--[GOOD_LINK_11]-->">
+        <div class="item__box">
+          <div class="item__pic">
+            <img
+              class="item__img lazyload"
+              data-src="<!--[GOOD_IMG_L_11]-->"
+              src="1x1_low.png"
+              alt=""
+            />
+          </div>
+          <div class="item__info">
+            <div class="item__push--outerFrame">
+              <p class="item__push margin-top-sm margin-bottom-sm bg__red">
+                <span><!--[GOOD_DESC_11]--></span>
+              </p>
+            </div>
+            <p class="item__name margin-bottom-md"><!--[GOOD_NAME_11]--></p>
+            <div class="item__price margin-bottom-sm">
+              <span>$</span>
+              <span><!--[GOOD_SALEPRC_11]--></span>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="build__item">
+      <a href="<!--[GOOD_LINK_12]-->">
+        <div class="item__box">
+          <div class="item__pic">
+            <img
+              class="item__img lazyload"
+              data-src="<!--[GOOD_IMG_L_12]-->"
+              src="1x1_low.png"
+              alt=""
+            />
+          </div>
+          <div class="item__info">
+            <div class="item__push--outerFrame">
+              <p class="item__push margin-top-sm margin-bottom-sm bg__red">
+                <span><!--[GOOD_DESC_12]--></span>
+              </p>
+            </div>
+            <p class="item__name margin-bottom-md"><!--[GOOD_NAME_12]--></p>
+            <div class="item__price margin-bottom-sm">
+              <span>$</span>
+              <span><!--[GOOD_SALEPRC_12]--></span>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+  <div class="gallery-controls"></div>
+</section>
+
+<script src="wow.min.js"></script>
+<script src="lazyload.js"></script>
+<script>
+  new WOW().init();
+  var initLazyload = lazyload();
+</script>
+<script>
+  // 輪播
+  var mediaWt = document.body.clientWidth;
+
+  var cardCarousel;
+  var cardCarousels = document.getElementsByClassName("card--carousel-sp12");
+
+  //    var arrraya =[];
+  for (var i = 0; (cardCarousel = cardCarousels[i]); i++) {
+    cardCarousel.id = "build__carouselSp12";
+    cardCarousel.id += "_" + (i + 1);
+    //       arrraya[i] += div.id;
+    var isResize = true;
+    clientSize();
+    var onresize = function (e) {
+      mediaWt = document.body.clientWidth;
+      clientSize();
+    };
+    window.addEventListener("resize", onresize);
+  }
+  function slides(wrapId) {
+    var slide = document.getElementById(wrapId);
+    var counter = 0,
+      //            slide = document.querySelector('#build__carousel'),
+      items = slide.querySelectorAll(".carousel__item"),
+      controls = document.querySelector(".gallery-controls"),
+      itemsCount = items.length,
+      prevBtn = document.createElement("a"),
+      nextBtn = document.createElement("a"),
+      timer = 4000,
+      interval = window.setInterval(showNext, timer);
+
+    //        function showControlNav() {
+    //            var dots = document.createElement('div');
+    //            dots.className = 'dots';
+    //            controls.appendChild(dots);
+    //            items.forEach(function (image, index) {
+    //                dots.innerHTML += "<span id=\"dot".concat(index, "\" class=\"dot\">").concat(index + 1, "</span>");
+    //            });
+    //        };
+    //
+    //        showControlNav();
+
+    prevBtn.classList.add("prev");
+    nextBtn.classList.add("next");
+    slide.appendChild(prevBtn);
+    slide.appendChild(nextBtn);
+
+    var showCurrent = function () {
+      var itemToShow = Math.abs(counter % itemsCount);
+      [].forEach.call(items, function (el) {
+        el.classList.remove("show");
+      });
+      items[itemToShow].classList.add("show");
+    };
+
+    function showNext() {
+      counter++;
+      showCurrent();
+    }
+
+    function showPrev() {
+      counter--;
+      showCurrent();
+    }
+
+    slide.addEventListener("mouseover", function () {
+      interval = clearInterval(interval);
+    });
+
+    slide.addEventListener("mouseout", function () {
+      interval = window.setInterval(showNext, timer);
+    });
+
+    nextBtn.addEventListener("click", showNext, false);
+    prevBtn.addEventListener("click", showPrev, false);
+
+    items[0].classList.add("show");
+  }
+
+  function clientSize() {
+    if (mediaWt < "768") {
+      if (isResize) {
+        slides(cardCarousel.id);
+        isResize = false;
+      }
+    }
+  }
+</script>

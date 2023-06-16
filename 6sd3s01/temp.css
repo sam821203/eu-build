@@ -1,0 +1,74 @@
+  /* ===== card--three-space ===== */
+  .card--three-space .build__item {
+    margin-bottom: 0.8%;
+  }
+
+  /* ===== card--three-space item *6 ===== */
+  .card--three-space.item--6 .build__item {
+    width: 95%;
+    margin: 1%;
+  }
+
+  .card--three-space .build__item,
+  .card--three-space .item__img {
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+  }
+
+  .card--three-space .item__info {
+    position: relative;
+  }
+
+  .card--three-space .item__name {
+    height: 32px;
+    margin-top: 5px;
+    font-size: 14px;
+  }
+
+  .card--three-space .item__push span {
+    color: #fff;
+    font-weight: 400;
+    max-height: 21px;
+    line-height: 170%;
+    letter-spacing: 0;
+  }
+
+  .card--three-space .item__push--outerFrame {
+    width: 100%;
+    height: 21px;
+    font-size: 13px;
+    text-align: center;
+  }
+
+  .card--three-space .item__push {
+    position: relative;
+    z-index: 1;
+    height: auto;
+  }
+
+  /* ===== RWD 768 ===== */
+  @media screen and (min-width: 768px) {
+    .card--three-space .build__item {
+      margin-bottom: 0.35%;
+    }
+
+    .card--three-space.item--6 .build__item {
+      /* width: 16%; */
+      margin: 0.33%;
+    }
+
+    .card--three-space .item__push--outerFrame {
+      height: 28px;
+      font-size: 14px;
+    }
+
+    .card--three-space .item__push span {
+      max-height: 28px;
+      line-height: 200%;
+    }
+
+    .card--three-space .item__name {
+      height: 37px;
+      font-size: 15px;
+    }
+  }

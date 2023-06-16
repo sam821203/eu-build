@@ -1,0 +1,612 @@
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+  />
+</head>
+<style>
+  /* ===== card--top12-space ===== */
+  .card--top12-space .build__item {
+    position: relative;
+		width: 48%;
+		margin: 0.8% 0.25%;
+    background: #eee;
+    background: -webkit-linear-gradient(to right, #ffffff, #eee);
+    background: linear-gradient(to right, #ffffff, #eee);
+  }
+
+  .card--top12-space .build__item:active,
+  .card--top12-space .build__item:hover {
+    z-index: 3;
+    transform: translateY(-15px);
+    transition: 0.3s;
+  }
+
+  /* ===== card--top12-space item *6 ===== */
+  .card--top12-space .build__item,
+  .card--top12-space .item__img {
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+  }
+
+  .card--top12-space .bg__red {
+    background: #f01400;
+    background: -webkit-linear-gradient(to right, #f07219, #f01400, #f07219);
+    background: linear-gradient(to right, #f07219, #f01400, #f07219);
+    border-radius: 20px;
+    color: #fff;
+    letter-spacing: 1.5px;
+  }
+
+  .item__btn:hover {
+    transform: scale(1.1);
+    transition: 0.6s;
+  }
+
+  /* ===== top30 Start  ===== */
+  .n-flag__wrap .flag__top {
+		display: none;
+  }
+
+  .card--top12-space .build__item .item__name {
+    height: 35px;
+		margin-top: 2px;
+		margin-bottom: 0;
+    font-size: 15px;
+    line-height: 125%;
+  }
+
+  .card--top12-space .build__item .item__btn {
+    position: absolute;
+    bottom: 4px;
+    right: 10px;
+		display: none;
+    width: 85px;
+    padding: 5px 10px;
+    border-radius: 50px;
+    text-align: center;
+  }
+
+  .card--top12-space .build__item .item__btn button {
+    color: #fff;
+    background: transparent;
+    border: 0;
+  }
+
+  .card--top12-space .build__item .item__push {
+    height: 24px;
+    font-size: 13px;
+  }
+
+  .card--top12-space .build__item .item__push span {
+    max-height: 24px;
+    line-height: 170%;
+    letter-spacing: 0;
+    color: #333;
+    font-weight: 300;
+  }
+
+  .card--top12-space .item__push span:before,
+  .card--top12-space .item__push span:after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #999;
+  }
+
+  .card--top12-space .item__push span:before {
+    top: 0;
+  }
+
+  .card--top12-space .item__push span:after {
+    bottom: 0;
+  }
+
+  .card--top12-space .build__item .item__price span {
+    display: inline-block;
+  }
+
+	.card--top12-space .item__price span:last-child {
+		font-size: 20px;
+	}
+
+  /* top 30 標籤 */
+  .item__box {
+    position: relative;
+  }
+
+  .n-flag__wrap {
+    position: absolute;
+    top: 0;
+    left: 5px;
+    z-index: 1;
+    width: 26px;
+    padding-top: 2px;
+    background-color: #fe2a00;
+    text-align: center;
+    color: #fff;
+  }
+
+  .n-flag__wrap:before,
+  .n-flag__wrap:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    z-index: -1;
+    width: 0;
+    height: 0;
+  }
+
+  .n-flag__wrap:before {
+    right: 0;
+    bottom: -10px;
+    border-top: 0 solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 0 solid transparent;
+    border-right: 26px solid #821000;
+  }
+
+  .n-flag__wrap:after {
+    left: 0;
+    bottom: -10px;
+    border-top: 0 solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 26px solid #fe2a00;
+  }
+
+  .card--top12-space .n-flag__wrap .flag__top {
+    font-size: 12px;
+  }
+
+  .n-flag__wrap .num {
+    font-size: 1.2em;
+  }
+
+  /* ===== RWD 600 ===== */
+	@media screen and (min-width: 600px) {
+    .card--top12-space .build__item .item__name {
+			margin-top: 5px;
+    }
+
+    .card--top12-space .item__price span:last-child {
+      font-size: 22px;
+    }
+
+    .card--top12-space .item__price.margin-bottom-sm {
+      margin-bottom: 0;
+    }
+  }
+
+  /* ===== RWD 768 ===== */
+  @media screen and (min-width: 768px) {
+    .card--top12-space .build__item {
+      width: 19%;
+			margin: 0.6% 0.25%;
+    }
+
+		.card--top12-space .n-flag__wrap .flag__top,
+    .card--top12-space .build__item .item__push {
+			display: block;
+    }
+
+		.card--top12-space .build__item .item__name {
+      font-size: 16px;
+      height: 41px;
+    }
+
+		.item__btn {
+      display: block;
+    }
+  }
+</style>
+<!-- banner 表頭 -->
+<section class="title__wrap">
+  <a href="<!--[BANNER_LINK_1]-->">
+    <div
+      class="title__wrap__img lazyload"
+      data-src="<!--[BANNER_IMG_1]-->"
+    ></div>
+  </a>
+</section>
+<!-- banner 表頭 end -->
+<section class="build__wrap layout--main card--top12-space item--30 wow">
+  <div class="build__item">
+    <a href="<!--[GOOD_LINK_1]-->">
+      <div class="item__box">
+        <div class="item__pic">
+          <img
+            class="item__img lazyload"
+            data-src="<!--[GOOD_IMG_L_1]-->"
+            src="1x1_low.png"
+            alt=""
+          />
+        </div>
+        <div class="n-flag__wrap">
+          <span class="n-flag__num">
+            <span class="flag__top">TOP</span>
+            <span class="num">1</span>
+          </span>
+        </div>
+        <div class="item__info">
+          <p class="item__push margin-top-sm margin-bottom-sm clearfix">
+            <span class="item__push__txt">
+              <!--[GOOD_DESC_1]-->
+            </span>
+          </p>
+          <p class="item__name margin-bottom-md">
+            <!--[GOOD_NAME_1]-->
+          </p>
+          <div class="item__price margin-bottom-sm">
+            <span>$</span>
+            <span><!--[GOOD_SALEPRC_1]--></span>
+          </div>
+          <div class="item__btn bg__red">
+            <button>立即購買</button>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="build__item">
+    <a href="<!--[GOOD_LINK_2]-->">
+      <div class="item__box">
+        <div class="item__pic">
+          <img
+            class="item__img lazyload"
+            data-src="<!--[GOOD_IMG_L_2]-->"
+            src="1x1_low.png"
+            alt=""
+          />
+        </div>
+        <div class="n-flag__wrap">
+          <span class="n-flag__num">
+            <span class="flag__top">TOP</span>
+            <span class="num">2</span>
+          </span>
+        </div>
+        <div class="item__info">
+          <p class="item__push margin-top-sm margin-bottom-sm clearfix">
+            <span class="item__push__txt">
+              <!--[GOOD_DESC_2]-->
+            </span>
+          </p>
+          <p class="item__name margin-bottom-md">
+            <!--[GOOD_NAME_2]-->
+          </p>
+          <div class="item__price margin-bottom-sm">
+            <span>$</span>
+            <span>
+              <!--[GOOD_SALEPRC_2]-->
+            </span>
+          </div>
+          <div class="item__btn bg__red">
+            <button>立即購買</button>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="build__item">
+    <a href="<!--[GOOD_LINK_3]-->">
+      <div class="item__box">
+        <div class="item__pic">
+          <img
+            class="item__img lazyload"
+            data-src="<!--[GOOD_IMG_L_3]-->"
+            src="1x1_low.png"
+            alt=""
+          />
+        </div>
+        <div class="n-flag__wrap">
+          <span class="n-flag__num">
+            <span class="flag__top">TOP</span>
+            <span class="num">3</span>
+          </span>
+        </div>
+        <div class="item__info">
+          <p class="item__push margin-top-sm margin-bottom-sm clearfix">
+            <span class="item__push__txt">
+              <!--[GOOD_DESC_3]-->
+            </span>
+          </p>
+          <p class="item__name margin-bottom-md">
+            <!--[GOOD_NAME_3]-->
+          </p>
+          <div class="item__price margin-bottom-sm">
+            <span>$</span>
+            <span>
+              <!--[GOOD_SALEPRC_3]-->
+            </span>
+          </div>
+          <div class="item__btn bg__red">
+            <button>立即購買</button>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="build__item">
+    <a href="<!--[GOOD_LINK_4]-->">
+      <div class="item__box">
+        <div class="item__pic">
+          <img
+            class="item__img lazyload"
+            data-src="<!--[GOOD_IMG_L_4]-->"
+            src="1x1_low.png"
+            alt=""
+          />
+        </div>
+        <div class="n-flag__wrap">
+          <span class="n-flag__num">
+            <span class="flag__top">TOP</span>
+            <span class="num">4</span>
+          </span>
+        </div>
+        <div class="item__info">
+          <p class="item__push margin-top-sm margin-bottom-sm clearfix">
+            <span class="item__push__txt">
+              <!--[GOOD_DESC_4]-->
+            </span>
+          </p>
+          <p class="item__name margin-bottom-md">
+            <!--[GOOD_NAME_4]-->
+          </p>
+          <div class="item__price margin-bottom-sm">
+            <span>$</span>
+            <span>
+              <!--[GOOD_SALEPRC_4]-->
+            </span>
+          </div>
+          <div class="item__btn bg__red">
+            <button>立即購買</button>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="build__item">
+    <a href="<!--[GOOD_LINK_5]-->">
+      <div class="item__box">
+        <div class="item__pic">
+          <img
+            class="item__img lazyload"
+            data-src="<!--[GOOD_IMG_L_5]-->"
+            src="1x1_low.png"
+            alt=""
+          />
+        </div>
+        <div class="n-flag__wrap">
+          <span class="n-flag__num">
+            <span class="flag__top">TOP</span>
+            <span class="num">5</span>
+          </span>
+        </div>
+        <div class="item__info">
+          <p class="item__push margin-top-sm margin-bottom-sm clearfix">
+            <span class="item__push__txt">
+              <!--[GOOD_DESC_5]-->
+            </span>
+          </p>
+          <p class="item__name margin-bottom-md">
+            <!--[GOOD_NAME_5]-->
+          </p>
+          <div class="item__price margin-bottom-sm">
+            <span>$</span>
+            <span>
+              <!--[GOOD_SALEPRC_5]-->
+            </span>
+          </div>
+          <div class="item__btn bg__red">
+            <button>立即購買</button>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="build__item">
+    <a href="<!--[GOOD_LINK_6]-->">
+      <div class="item__box">
+        <div class="item__pic">
+          <img
+            class="item__img lazyload"
+            data-src="<!--[GOOD_IMG_L_6]-->"
+            src="1x1_low.png"
+            alt=""
+          />
+        </div>
+        <div class="n-flag__wrap">
+          <span class="n-flag__num">
+            <span class="flag__top">TOP</span>
+            <span class="num">6</span>
+          </span>
+        </div>
+        <div class="item__info">
+          <p class="item__push margin-top-sm margin-bottom-sm clearfix">
+            <span class="item__push__txt">
+              <!--[GOOD_DESC_6]-->
+            </span>
+          </p>
+          <p class="item__name margin-bottom-md">
+            <!--[GOOD_NAME_6]-->
+          </p>
+          <div class="item__price margin-bottom-sm">
+            <span>$</span>
+            <span>
+              <!--[GOOD_SALEPRC_6]-->
+            </span>
+          </div>
+          <div class="item__btn bg__red">
+            <button>立即購買</button>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="build__item">
+    <a href="<!--[GOOD_LINK_7]-->">
+      <div class="item__box">
+        <div class="item__pic">
+          <img
+            class="item__img lazyload"
+            data-src="<!--[GOOD_IMG_L_7]-->"
+            src="1x1_low.png"
+            alt=""
+          />
+        </div>
+        <div class="n-flag__wrap">
+          <span class="n-flag__num">
+            <span class="flag__top">TOP</span>
+            <span class="num">7</span>
+          </span>
+        </div>
+        <div class="item__info">
+          <p class="item__push margin-top-sm margin-bottom-sm clearfix">
+            <span class="item__push__txt">
+              <!--[GOOD_DESC_7]-->
+            </span>
+          </p>
+          <p class="item__name margin-bottom-md">
+            <!--[GOOD_NAME_7]-->
+          </p>
+          <div class="item__price margin-bottom-sm">
+            <span>$</span>
+            <span>
+              <!--[GOOD_SALEPRC_7]-->
+            </span>
+          </div>
+          <div class="item__btn bg__red">
+            <button>立即購買</button>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="build__item">
+    <a href="<!--[GOOD_LINK_8]-->">
+      <div class="item__box">
+        <div class="item__pic">
+          <img
+            class="item__img lazyload"
+            data-src="<!--[GOOD_IMG_L_8]-->"
+            src="1x1_low.png"
+            alt=""
+          />
+        </div>
+        <div class="n-flag__wrap">
+          <span class="n-flag__num">
+            <span class="flag__top">TOP</span>
+            <span class="num">8</span>
+          </span>
+        </div>
+        <div class="item__info">
+          <p class="item__push margin-top-sm margin-bottom-sm clearfix">
+            <span class="item__push__txt">
+              <!--[GOOD_DESC_8]-->
+            </span>
+          </p>
+          <p class="item__name margin-bottom-md">
+            <!--[GOOD_NAME_8]-->
+          </p>
+          <div class="item__price margin-bottom-sm">
+            <span>$</span>
+            <span>
+              <!--[GOOD_SALEPRC_8]-->
+            </span>
+          </div>
+          <div class="item__btn bg__red">
+            <button>立即購買</button>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="build__item">
+    <a href="<!--[GOOD_LINK_9]-->">
+      <div class="item__box">
+        <div class="item__pic">
+          <img
+            class="item__img lazyload"
+            data-src="<!--[GOOD_IMG_L_9]-->"
+            src="1x1_low.png"
+            alt=""
+          />
+        </div>
+        <div class="n-flag__wrap">
+          <span class="n-flag__num">
+            <span class="flag__top">TOP</span>
+            <span class="num">9</span>
+          </span>
+        </div>
+        <div class="item__info">
+          <p class="item__push margin-top-sm margin-bottom-sm clearfix">
+            <span class="item__push__txt">
+              <!--[GOOD_DESC_9]-->
+            </span>
+          </p>
+          <p class="item__name margin-bottom-md">
+            <!--[GOOD_NAME_9]-->
+          </p>
+          <div class="item__price margin-bottom-sm">
+            <span>$</span>
+            <span>
+              <!--[GOOD_SALEPRC_9]-->
+            </span>
+          </div>
+          <div class="item__btn bg__red">
+            <button>立即購買</button>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="build__item">
+    <a href="<!--[GOOD_LINK_10]-->">
+      <div class="item__box">
+        <div class="item__pic">
+          <img
+            class="item__img lazyload"
+            data-src="<!--[GOOD_IMG_L_10]-->"
+            src="1x1_low.png"
+            alt=""
+          />
+        </div>
+        <div class="n-flag__wrap">
+          <span class="n-flag__num">
+            <span class="flag__top">TOP</span>
+            <span class="num">10</span>
+          </span>
+        </div>
+        <div class="item__info">
+          <p class="item__push margin-top-sm margin-bottom-sm clearfix">
+            <span class="item__push__txt">
+              <!--[GOOD_DESC_10]-->
+            </span>
+          </p>
+          <p class="item__name margin-bottom-md">
+            <!--[GOOD_NAME_10]-->
+          </p>
+          <div class="item__price margin-bottom-sm">
+            <span>$</span>
+            <span>
+              <!--[GOOD_SALEPRC_10]-->
+            </span>
+          </div>
+          <div class="item__btn bg__red">
+            <button>立即購買</button>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+</section>
+<script src="wow.min.js"></script>
+<script src="lazyload.js"></script>
+<script>
+  new WOW().init();
+  var initLazyload = lazyload();
+</script>

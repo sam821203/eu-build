@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>hastag</title>
+    <style>
+      .hastag__group {
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 960px;
+      }
+      .hastag__group li {
+        max-width: 960px;
+        padding: 0.5% 3%;
+        margin: 0 5px 10px;
+        list-style: none;
+        border: 1px solid #333;
+        border-radius: 30px;
+        box-shadow: 1px 3px #adadad;
+      }
+      .hastag__group li a {
+        text-decoration: none;
+        color: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <ul class="hastag__group" id="js-hastagGroup"></ul>
+  </body>
+  <script>
+    // data
+    var dataHastag = [
+      {
+        linkUrl: "a",
+        words: "hastag1",
+      },
+      {
+        linkUrl: "b",
+        words: "hastag2",
+      },
+      {
+        linkUrl: "c",
+        words: "hastag3",
+      },
+      {
+        linkUrl: "d",
+        words: "hastag4",
+      },
+      {
+        linkUrl: "e",
+        words: "hastag5",
+      },
+      {
+        linkUrl: "f",
+        words: "hastag6",
+      },
+      {
+        linkUrl: "g",
+        words: "hastag7",
+      },
+      {
+        linkUrl: "h",
+        words: "hastag8",
+      },
+      {
+        linkUrl: "a",
+        words: "hastag11",
+      },
+      {
+        linkUrl: "b",
+        words: "hastag12",
+      },
+      {
+        linkUrl: "c",
+        words: "hastag13",
+      },
+      {
+        linkUrl: "d",
+        words: "hastag14",
+      },
+      {
+        linkUrl: "e",
+        words: "hastag15",
+      },
+      {
+        linkUrl: "f",
+        words: "hastag16",
+      },
+      {
+        linkUrl: "g",
+        words: "hastag7",
+      },
+      {
+        linkUrl: "h",
+        words: "hastag8",
+      },
+    ];
+
+    // code
+    var jsHastagGroup = document.getElementById("js-hastagGroup");
+    var contentHtml = "";
+    for (var i = 1; i < dataHastag.length; i++) {
+      contentHtml +=
+        '<li><a href="' +
+        dataHastag[i].linkUrl +
+        '">' +
+        dataHastag[i].words +
+        "</a></li>";
+    }
+    jsHastagGroup.innerHTML = contentHtml;
+  </script>
+</html>

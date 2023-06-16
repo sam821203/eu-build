@@ -1,0 +1,137 @@
+<style>
+  /* ===== card--material ===== */
+  .card--material .build__item:active,
+  .card--material .build__item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2), 0 3px 3px rgba(0, 0, 0, 0.25);
+  }
+
+  /* ===== card--material item *4 ===== */
+  .card--material.item--4 .build__item {
+    width: 48%;
+  }
+
+  /* ===== RWD 768 ===== */
+  @media screen and (min-width: 768px) {
+    .card--material .build__item {
+      margin-top: 0.5%;
+      margin-bottom: 0.5%;
+    }
+
+    .card--material.item--4 .build__item {
+      width: 24%;
+    }
+  }
+</style>
+<!-- banner 表頭 -->
+<section class="title__wrap" data-title="<!--[BANNER_ALT_1]-->">
+  <a href="<!--[BANNER_LINK_1]-->">
+    <div
+      class="title__wrap__img lazyload"
+      data-src="<!--[BANNER_IMG_1]-->"
+    ></div>
+  </a>
+</section>
+<!-- banner 表頭 end -->
+<section class="build__wrap layout--main card--material item--4">
+  <div class="build__item">
+    <a href="<!--[GOOD_LINK_1]-->">
+      <div class="item__box">
+        <div class="item__pic xl__item">
+          <img
+            class="item__img lazyload"
+            data-src="<!--[GOOD_IMG_XXL_1]-->"
+            src="1x1_low.png"
+            alt=""
+          />
+        </div>
+        <div class="item__info">
+          <p class="item__push margin-top-sm margin-bottom-sm">
+            <span><!--[GOOD_DESC_1]--></span>
+          </p>
+          <p class="item__name margin-bottom-md"><!--[GOOD_NAME_1]--></p>
+          <div class="item__price margin-bottom-sm">
+            <span>$</span>
+            <span><!--[GOOD_SALEPRC_1]--></span>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="build__item">
+    <a href="<!--[GOOD_LINK_2]-->">
+      <div class="item__box">
+        <div class="item__pic xl__item">
+          <img
+            class="item__img lazyload"
+            data-src="<!--[GOOD_IMG_XXL_2]-->"
+            src="1x1_low.png"
+            alt=""
+          />
+        </div>
+        <div class="item__info">
+          <p class="item__push margin-top-sm margin-bottom-sm">
+            <span><!--[GOOD_DESC_2]--></span>
+          </p>
+          <p class="item__name margin-bottom-md"><!--[GOOD_NAME_2]--></p>
+          <div class="item__price margin-bottom-sm">
+            <span>$</span>
+            <span><!--[GOOD_SALEPRC_2]--></span>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="build__item">
+    <a href="<!--[GOOD_LINK_3]-->">
+      <div class="item__box">
+        <div class="item__pic xl__item">
+          <img
+            class="item__img lazyload"
+            data-src="<!--[GOOD_IMG_XXL_3]-->"
+            src="1x1_low.png"
+            alt=""
+          />
+        </div>
+        <div class="item__info">
+          <p class="item__push margin-top-sm margin-bottom-sm">
+            <span><!--[GOOD_DESC_3]--></span>
+          </p>
+          <p class="item__name margin-bottom-md"><!--[GOOD_NAME_3]--></p>
+          <div class="item__price margin-bottom-sm">
+            <span>$</span>
+            <span><!--[GOOD_SALEPRC_3]--></span>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="build__item">
+    <a href="<!--[GOOD_LINK_4]-->">
+      <div class="item__box">
+        <div class="item__pic xl__item">
+          <img
+            class="item__img lazyload"
+            data-src="<!--[GOOD_IMG_XXL_4]-->"
+            src="1x1_low.png"
+            alt=""
+          />
+        </div>
+        <div class="item__info">
+          <p class="item__push margin-top-sm margin-bottom-sm">
+            <span><!--[GOOD_DESC_4]--></span>
+          </p>
+          <p class="item__name margin-bottom-md"><!--[GOOD_NAME_4]--></p>
+          <div class="item__price margin-bottom-sm">
+            <span>$</span>
+            <span><!--[GOOD_SALEPRC_4]--></span>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+</section>
+<script src="lazyload.js"></script>
+<script>
+  var initLazyload = lazyload();
+</script>

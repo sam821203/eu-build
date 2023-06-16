@@ -1,0 +1,217 @@
+﻿* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+a {
+  display: block;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  border: 0;
+}
+
+section {
+  display: block;
+}
+
+body {
+  font-size: 14px;
+  font-family: PingFangTC-regular, Roboto, "LiHei Pro", "Source Han Sans TC",
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, "Microsoft JhengHei",
+    sans-serif;
+}
+
+/* 小網title */
+.head__wrap {
+  margin: 0 auto;
+  max-width: 960px;
+  height: 55px;
+  background: #fff;
+  padding: 5px;
+}
+
+.head__wrap :after {
+  clear: both;
+  content: "";
+  display: block;
+  overflow: auto;
+}
+
+.community__ico {
+  float: right;
+}
+
+.head__ico {
+  float: left;
+}
+
+.head__ico img {
+  height: 45px;
+  width: auto;
+  padding-left: 5px;
+}
+
+.bg-line a {
+  width: 35px;
+  height: 35px;
+  background: url("./images/line.jpg") no-repeat;
+  background-size: 35px, 35px;
+  border-radius: 5px;
+}
+
+.bg-facebook a {
+  width: 35px;
+  height: 35px;
+  background: url("./images/facebook.jpg") no-repeat;
+  background-size: 35px, 35px;
+}
+
+.community__ico li {
+  display: inline-block;
+  cursor: pointer;
+  line-height: 40px;
+  margin-top: 4px;
+  margin-right: 5px;
+}
+
+.community__ico li.bg-line {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .community__ico li.bg-line {
+    display: inline-block;
+  }
+}
+/* 小網title End */
+
+/* margin 調整 */
+.margin-top-sm {
+  margin-top: 2%;
+}
+
+.margin-bottom-sm {
+  margin-bottom: 2%;
+}
+
+.margin-bottom-md {
+  margin-bottom: 4%;
+}
+
+/* build & item */
+.layout--main {
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.build__wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.build__item a {
+  color: #5d5d5d;
+}
+
+.item__pic {
+  position: relative;
+  z-index: 0;
+  padding-top: 100%;
+  overflow: hidden;
+}
+
+.item__img {
+  display: block;
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.item__info {
+  padding: 2%;
+}
+
+.item__push {
+  width: 100%;
+  height: 28px;
+  text-align: center;
+}
+
+.item__push span {
+  display: block;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  position: relative;
+  z-index: 0;
+  margin: 0 3%;
+  max-height: 28px;
+  line-height: 200%;
+  color: #cc1e05;
+  font-weight: bold;
+  overflow: hidden;
+}
+
+.item__name {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  text-overflow: ellipsis;
+  height: 36px;
+  line-height: 120%;
+  font-size: 15px;
+  overflow: hidden;
+}
+
+.item__price span:last-child {
+  color: #cc1e05;
+  font-size: 22px;
+}
+
+/* banner 表頭 */
+.title__wrap {
+  max-width: 960px;
+  margin: 0.5% auto;
+  padding: 0;
+}
+
+.title__wrap__img {
+  margin: 0;
+  height: 65px;
+  border: 0;
+  background: 50% 0% / auto auto no-repeat;
+}
+/* banner 表頭 end */
+
+/* ===== animation setting start ===== */
+.build__wrap.wow {
+  animation: .5s bounce-in-left both;
+}
+
+@keyframes bounce-in-left {
+  from {
+      transform: translateX(-30%);
+  }
+
+  to {
+      transform: translateX(0);
+      opacity: 1;
+  }
+}
+/* ===== animation setting end ===== */
+
